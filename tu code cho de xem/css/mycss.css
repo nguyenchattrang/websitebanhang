@@ -1,4 +1,135 @@
+.header{
+    background-image: url("../img/backg.jpg");
+    background-size: cover;
+    background-repeat:no-repeat;
+    height: 100vh;
+}
+.icon{
+    width: 60px;
+    height: auto;
+}
+.article img{
+    width: 100%;
+    height: fit-content;
+}
+.btn1:hover{
+    width: 100px;
+}
+.f-icon img{
+    transition: all 0.3s ease 0s;
+}
+.article{
+    background-image:url("../img/background.webp");
+    background-repeat:no-repeat;
+    background-size: cover;
+
+}
+.container-fluid{
+    background-color: white;
+    box-shadow: 0 5px 30px #888888;  
+}
+.navbar{
+    margin: 0px 20px;
+}
+.sticky-top{
+    margin: 0 0;
+}
+.smallbanner{
+    box-shadow: 0 5px 30px #888888;  
+    margin-top: 100px;
+}
+.text{
+    padding: 12rem;
+}
+.slide{
+    overflow: hidden;
+}
+.blank{
+    padding: 40px 0px;
+}
+.navbar {
+    background-color: white;
+    padding-top: 0px;
+
+}
 .navbar-brand img{
+    height: 100px;
+}
+.navbar-brand{
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
+.nav-link{
+    color: black;
+}
+ .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+ }
+   .navbar .collapse .nav-item a{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 20px 20px;
+ }
+ .navbar .collapse .nav-item:hover .nav-link{
+     color: purple;
+ }
+ .navbar .collapse .dropdown-menu .dropdown-item:hover {
+    background-color:rgb(248, 195, 248);
+    color: white;
+   }
+   .navbar .collapse .dropdown-menu {
+       padding: 0px;
+   }
+   .navbar .collapse .dropdown-menu .dropdown-item {
+    padding: 0 30px;
+    width: 200px;
+    line-height: 45px;
+   }
+   .navbar .collapse .nav-item .nav-link.active{
+color: purple;
+   }
+   .content {
+    padding: 16px;
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .sticky + .content {
+    padding-top: 60px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .navbar-brand img{
     height: 100px;
 }
 .navbar-brand{
@@ -7,14 +138,12 @@
 }
 .navbar{
     background-color: white;
-    color: black;
     box-shadow: 0 5px 30px #888888;  
 }
 .dropdown:hover .dropdown-menu {
     display: block;
     margin-top: 0;
  }
-
  .navbar .collapse .dropdown:hover, .navbar .collapse a:hover {
   background-color:rgb(248, 195, 248);
  }
@@ -46,4 +175,4 @@ color: white;
     .nav-item .dropdown-menu{
          padding: 0px 0px;
          border: 0px 0px;
-     }
+     } */
