@@ -12,6 +12,9 @@
     width: 100%;
     height: fit-content;
 }
+.article .nav-link{
+color: white;
+}
 .btn1:hover{
     width: 100px;
 }
