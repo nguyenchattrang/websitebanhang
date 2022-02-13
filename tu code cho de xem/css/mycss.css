@@ -1,8 +1,16 @@
+
+body{
+    font-family:"Poppins", sans-serif;;
+}
 .header{
     background-image: url("../img/backg.jpg");
     background-size: cover;
     background-repeat:no-repeat;
     height: 100vh;
+}
+.product-details{
+    margin-top: 10px;
+    margin-bottom: 50px;
 }
 .icon{
     width: 60px;
@@ -12,8 +20,71 @@
     width: 100%;
     height: fit-content;
 }
+.price h6{
+    font-size: 15px;
+}
+del{
+    color: #888888;
+}
+.product-name{
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+footer{
+    margin-top: 50px;
+    color: white;
+    background-image:url("../img/blinking.webp");
+    background-repeat:no-repeat;
+    background-size: cover;
+    padding: 50px;
+}
+.each-link{
+    display: flex;
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.each-link i:hover{
+   color: white;
+   background-color: purple;
+
+}
+.each-link i{
+    padding: 10px 10px;
+    border-radius: 50px;
+    color: white;
+    background-color: palevioletred;
+ }
+.each-link:hover p{
+    text-align: center;
+left:45px;
+    visibility: visible;
+    opacity: 1;
+    width: 115px;
+    color: purple;
+    position: static;
+}
+.each-link p{
+    position: absolute;
+    left: -45px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    width: 100px;
+}
+.info{
+    display: flex;
+}
 .article .nav-link{
 color: white;
+}
+h6{
+    display: inline-block;
+}
+.sale-price{
+    margin-left: 10px;
 }
 .btn1:hover{
     width: 100px;
@@ -27,7 +98,7 @@ color: white;
     background-size: cover;
 
 }
-.container-fluid{
+.greybox{
     background-color: white;
     box-shadow: 0 5px 30px #888888;  
 }

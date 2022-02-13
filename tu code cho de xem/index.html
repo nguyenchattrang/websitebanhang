@@ -31,6 +31,7 @@
     <!-- script của mình -->
     <!-- <script src="https://unpkg.com/feather-icons"></script> -->
     <!-- script cho icon -->
+    <script src="https://kit.fontawesome.com/ca0aaad838.js" crossorigin="anonymous"></script>
     
 </head>
 <body>
@@ -45,7 +46,7 @@
         navbar-light:chữ hợp với màu nền trắng
         bg-light: màu nền trắng
         -->
-        <div class="container-fluid">
+        <div class="container-fluid greybox">
           <a class="navbar-brand" href="#"> <img class="" src="img/Kitten.png" alt="logo"> Kitten Cosmestics Shop</a>
           <!-- brand name có cả hình ảnh chữ logo to hơn bình thường -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarmenu" aria-controls="navbarmenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -96,11 +97,11 @@
 </nav>
 </div>
 <div id="slide" class="carousel carousel-dark slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
+  <!-- <div class="carousel-indicators">
     <button type="button" data-bs-target="#slide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#slide" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#slide" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
+  </div> -->
   <div class="carousel-inner">
     <div class="carousel-item active">
     <div class="row">
@@ -197,7 +198,7 @@
     <div class="row article">
 <div class="col-sm-6 bgcl text-center my-auto">
   <h5>Skin change after find the right products</h5>
-  <p>Find yours now.</p>
+  <p>Find your skincare routine.</p>
   <button class="btn btn-danger"><a class="nav-link" href="#">Start Now</a></button>
 </div>
 <div class="col-sm-6">
@@ -207,86 +208,427 @@
 
   </div>
 
-  <div id="sampleproduct" class="carousel slide container-fluid" data-bs-ride="carousel">
+  <div id="sampleproduct" class="carousel slide container-fluid greybox" data-bs-ride="carousel">
 
-    <div class="row text-center">
-      <div class="col-4">
-        <button class="" type="button" data-bs-target="#sampleproduct" data-bs-slide="prev">
-          <!-- <img class="icon" src="img/icon/pre" alt="" aria-hidden="true"> -->
-        <span class="btn btn-danger" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      
-     </button>
-    </div>
-    <div class="col-4">
-     <h1>New Product</h1>
-    </div>
-    <div class="col-4">
-     <button class="" type="button" data-bs-target="#sampleproduct" data-bs-slide="next">
-      <span class="btn btn-danger" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </div>
-  </div>
     
-    </button>
+  
     <div class="carousel-inner container">
       <div class="carousel-item active ">
+        <div class="row text-center">
+          <div class="col-4">
+            <a class="" role="button" data-bs-target="#sampleproduct" data-bs-slide="prev"><img class="icon btn-outline-danger" src="img/icon/previous.png" alt=""></a>
+              <!-- <img class="icon" src="img/icon/pre" alt="" aria-hidden="true"> -->
+          
+            <span class="visually-hidden">Previous</span>
+          
+      
+        </div>
+    
+        <div class="col-4">
+         <h1>New Product</h1>
+        </div>
+        <div class="col-4">
+          <a class="" role="button" data-bs-target="#sampleproduct" data-bs-slide="next"><img class="icon btn-outline-danger"" src="img/icon/next.png" alt=""></a>
+    
+          <span class="visually-hidden">Next</span>
+        </div>
+      </div>
         <div class="row">
         <div class="col-lg-3 col-md-6">
           <img src="img/Kitten.png" class="img-fluid" alt="...">
+          <div class="product-details ms-3">
+            <h6 class="product-name">Name something</h6>
+            <div class="price">
+              <h6>$120.00</h6>
+              <h6 class="sale-price"><del> $220.00</del></h6>
+                        </div>
+                        <div class="info">
+              <a class="each-link" href="">
+               <span> <i class="fa-solid fa-cart-plus"></i></span>
+               <p>Add to Cart</p> 
+              </a>
+              <a class="each-link" href="">
+                <span><i class="fa-regular fa-heart"></i></span>
+                <p>Wishlist</p>   
+               </a>
+
+
+          </div>
+
+          </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <img src="img/Kitten.png" class="img-fluid" alt="...">
+          <div class="product-details ms-3">
+            <h6 class="product-name">Name something</h6>
+            <div class="price">
+              <h6>$120.00</h6>
+              <h6 class="sale-price"><del> $220.00</del></h6>
+                        </div>
+                        <div class="info">
+              <a class="each-link" href="">
+               <span> <i class="fa-solid fa-cart-plus"></i></span>
+               <p>Add to Cart</p> 
+              </a>
+              <a class="each-link" href="">
+                <span><i class="fa-regular fa-heart"></i></span>
+                <p>Wishlist</p>   
+               </a>
+
+
+          </div>
+
+          </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <img src="img/Kitten.png" class="img-fluid" alt="...">
+          <div class="product-details ms-3">
+            <h6 class="product-name">Name something</h6>
+            <div class="price">
+              <h6>$120.00</h6>
+              <h6 class="sale-price"><del> $220.00</del></h6>
+                        </div>
+                        <div class="info">
+              <a class="each-link" href="">
+               <span> <i class="fa-solid fa-cart-plus"></i></span>
+               <p>Add to Cart</p> 
+              </a>
+              <a class="each-link" href="">
+                <span><i class="fa-regular fa-heart"></i></span>
+                <p>Wishlist</p>   
+               </a>
+
+
+          </div>
+
+          </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <img src="img/Kitten.png" class="img-fluid" alt="...">
+          <div class="product-details ms-3">
+            <h6 class="product-name">Name something</h6>
+            <div class="price">
+              <h6>$120.00</h6>
+              <h6 class="sale-price"><del> $220.00</del></h6>
+                        </div>
+                        <div class="info">
+              <a class="each-link" href="">
+               <span> <i class="fa-solid fa-cart-plus"></i></span>
+               <p>Add to Cart</p> 
+              </a>
+              <a class="each-link" href="">
+                <span><i class="fa-regular fa-heart"></i></span>
+                <p>Wishlist</p>   
+               </a>
+
+
+          </div>
+
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-3 col-md-6">
           <img src="img/Kitten.png" class="img-fluid" alt="...">
+          <div class="product-details ms-3">
+            <h6 class="product-name">Name something</h6>
+            <div class="price">
+              <h6>$120.00</h6>
+              <h6 class="sale-price"><del> $220.00</del></h6>
+                        </div>
+                        <div class="info">
+              <a class="each-link" href="">
+               <span> <i class="fa-solid fa-cart-plus"></i></span>
+               <p>Add to Cart</p> 
+              </a>
+              <a class="each-link" href="">
+                <span><i class="fa-regular fa-heart"></i></span>
+                <p>Wishlist</p>   
+               </a>
+
+
+          </div>
+
+          </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <img src="img/Kitten.png" class="img-fluid" alt="...">
+          <div class="product-details ms-3">
+            <h6 class="product-name">Name something</h6>
+            <div class="price">
+              <h6>$120.00</h6>
+              <h6 class="sale-price"><del> $220.00</del></h6>
+                        </div>
+                        <div class="info">
+              <a class="each-link" href="">
+               <span> <i class="fa-solid fa-cart-plus"></i></span>
+               <p>Add to Cart</p> 
+              </a>
+              <a class="each-link" href="">
+                <span><i class="fa-regular fa-heart"></i></span>
+                <p>Wishlist</p>   
+               </a>
+
+
+          </div>
+
+          </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <img src="img/Kitten.png" class="img-fluid" alt="...">
+          <div class="product-details ms-3">
+            <h6 class="product-name">Name something</h6>
+            <div class="price">
+              <h6>$120.00</h6>
+              <h6 class="sale-price"><del> $220.00</del></h6>
+                        </div>
+                        <div class="info">
+              <a class="each-link" href="">
+               <span> <i class="fa-solid fa-cart-plus"></i></span>
+               <p>Add to Cart</p> 
+              </a>
+              <a class="each-link" href="">
+                <span><i class="fa-regular fa-heart"></i></span>
+                <p>Wishlist</p>   
+               </a>
+
+
+          </div>
+
+          </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <img src="img/Kitten.png" class="img-fluid" alt="...">
+          <div class="product-details ms-3">
+            <h6 class="product-name">Name something</h6>
+            <div class="price">
+              <h6>$120.00</h6>
+              <h6 class="sale-price"><del> $220.00</del></h6>
+                        </div>
+                        <div class="info">
+              <a class="each-link" href="">
+               <span> <i class="fa-solid fa-cart-plus"></i></span>
+               <p>Add to Cart</p> 
+              </a>
+              <a class="each-link" href="">
+                <span><i class="fa-regular fa-heart"></i></span>
+                <p>Wishlist</p>   
+               </a>
+
+
+          </div>
+
+          </div>
         </div>
       </div>
       </div>
       <div class="carousel-item ">
+        <div class="row text-center">
+          <div class="col-4">
+            <a class="" role="button" data-bs-target="#sampleproduct" data-bs-slide="prev"><img class="icon btn-outline-danger" src="img/icon/previous.png" alt=""></a>
+              <!-- <img class="icon" src="img/icon/pre" alt="" aria-hidden="true"> -->
+          
+            <span class="visually-hidden">Previous</span>
+          
+      
+        </div>
+    
+        <div class="col-4">
+         <h1>Best Seller</h1>
+        </div>
+        <div class="col-4">
+          <a class="" role="button" data-bs-target="#sampleproduct" data-bs-slide="next"><img class="icon btn-outline-danger"" src="img/icon/next.png" alt=""></a>
+    
+          <span class="visually-hidden">Next</span>
+        </div>
+      </div>
         <div class="row">
         <div class="col-lg-3 col-md-6">
           <img src="img/Kitten.png" class="img-fluid" alt="...">
+          <div class="product-details ms-3">
+            <h6 class="product-name">Name something</h6>
+            <div class="price">
+              <h6>$120.00</h6>
+              <h6 class="sale-price"><del> $220.00</del></h6>
+                        </div>
+                        <div class="info">
+              <a class="each-link" href="">
+               <span> <i class="fa-solid fa-cart-plus"></i></span>
+               <p>Add to Cart</p> 
+              </a>
+              <a class="each-link" href="">
+                <span><i class="fa-regular fa-heart"></i></span>
+                <p>Wishlist</p>   
+               </a>
+
+
+          </div>
+
+          </div>
+     
         </div>
         <div class="col-lg-3 col-md-6">
           <img src="img/Kitten.png" class="img-fluid" alt="...">
+          <div class="product-details ms-3">
+            <h6 class="product-name">Name something</h6>
+            <div class="price">
+              <h6>$120.00</h6>
+              <h6 class="sale-price"><del> $220.00</del></h6>
+                        </div>
+                        <div class="info">
+              <a class="each-link" href="">
+               <span> <i class="fa-solid fa-cart-plus"></i></span>
+               <p>Add to Cart</p> 
+              </a>
+              <a class="each-link" href="">
+                <span><i class="fa-regular fa-heart"></i></span>
+                <p>Wishlist</p>   
+               </a>
+
+
+          </div>
+
+          </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <img src="img/Kitten.png" class="img-fluid" alt="...">
+          <div class="product-details ms-3">
+            <h6 class="product-name">Name something</h6>
+            <div class="price">
+              <h6>$120.00</h6>
+              <h6 class="sale-price"><del> $220.00</del></h6>
+                        </div>
+                        <div class="info">
+              <a class="each-link" href="">
+               <span> <i class="fa-solid fa-cart-plus"></i></span>
+               <p>Add to Cart</p> 
+              </a>
+              <a class="each-link" href="">
+                <span><i class="fa-regular fa-heart"></i></span>
+                <p>Wishlist</p>   
+               </a>
+
+
+          </div>
+
+          </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <img src="img/Kitten.png" class="img-fluid" alt="...">
+          <div class="product-details ms-3">
+            <h6 class="product-name">Name something</h6>
+            <div class="price">
+              <h6>$120.00</h6>
+              <h6 class="sale-price"><del> $220.00</del></h6>
+                        </div>
+                        <div class="info">
+              <a class="each-link" href="">
+               <span> <i class="fa-solid fa-cart-plus"></i></span>
+               <p>Add to Cart</p> 
+              </a>
+              <a class="each-link" href="">
+                <span><i class="fa-regular fa-heart"></i></span>
+                <p>Wishlist</p>   
+               </a>
+
+
+          </div>
+
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-3 col-md-6">
           <img src="img/Kitten.png" class="img-fluid" alt="...">
+          <div class="product-details ms-3">
+            <h6 class="product-name">Name something</h6>
+            <div class="price">
+              <h6>$120.00</h6>
+              <h6 class="sale-price"><del> $220.00</del></h6>
+                        </div>
+                        <div class="info">
+              <a class="each-link" href="">
+               <span> <i class="fa-solid fa-cart-plus"></i></span>
+               <p>Add to Cart</p> 
+              </a>
+              <a class="each-link" href="">
+                <span><i class="fa-regular fa-heart"></i></span>
+                <p>Wishlist</p>   
+               </a>
+
+
+          </div>
+
+          </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <img src="img/Kitten.png" class="img-fluid" alt="...">
+          <div class="product-details ms-3">
+            <h6 class="product-name">Name something</h6>
+            <div class="price">
+              <h6>$120.00</h6>
+              <h6 class="sale-price"><del> $220.00</del></h6>
+                        </div>
+                        <div class="info">
+              <a class="each-link" href="">
+               <span> <i class="fa-solid fa-cart-plus"></i></span>
+               <p>Add to Cart</p> 
+              </a>
+              <a class="each-link" href="">
+                <span><i class="fa-regular fa-heart"></i></span>
+                <p>Wishlist</p>   
+               </a>
+
+
+          </div>
+
+          </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <img src="img/Kitten.png" class="img-fluid" alt="...">
+          <div class="product-details ms-3">
+            <h6 class="product-name">Name something</h6>
+            <div class="price">
+              <h6>$120.00</h6>
+              <h6 class="sale-price"><del> $220.00</del></h6>
+                        </div>
+                        <div class="info">
+              <a class="each-link" href="">
+               <span> <i class="fa-solid fa-cart-plus"></i></span>
+               <p>Add to Cart</p> 
+              </a>
+              <a class="each-link" href="">
+                <span><i class="fa-regular fa-heart"></i></span>
+                <p>Wishlist</p>   
+               </a>
+
+
+          </div>
+
+          </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <img src="img/Kitten.png" class="img-fluid" alt="...">
+          <div class="product-details ms-3">
+            <h6 class="product-name">Name something</h6>
+            <div class="price">
+              <h6>$120.00</h6>
+              <h6 class="sale-price"><del> $220.00</del></h6>
+                        </div>
+                        <div class="info">
+              <a class="each-link" href="">
+               <span> <i class="fa-solid fa-cart-plus"></i></span>
+               <p>Add to Cart</p> 
+              </a>
+              <a class="each-link" href="">
+                <span><i class="fa-regular fa-heart"></i></span>
+                <p>Wishlist</p>   
+               </a>
+
+
+          </div>
+
+          </div>
         </div>
       </div>
       </div>
@@ -294,4 +636,33 @@
   </div>
 </div>
 
+<footer class="container-fluid text-center">
+<div class="row">
+<div class="col-4">
+<p>About us</p>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At fugiat voluptatum nihil illum aperiam nesciunt vitae aut dicta sequi, deleniti eveniet voluptatibus beatae eum saepe amet velit explicabo soluta libero?</p>
+</div>
+<div class="col-4">
+<p>About who</p>
+<form action="" method="">
+  <label for="email"></label>
+  <input type="text" id="email" name="email" placeholder="Enter your email">
+  <input type="submit" name="emailvalue" value="Send">
+</form>
+</div>
+<div class="col-4">
+<p>About me</p>
+<ul>
+  <li>Makeup Product</li>
+  <li>Some other product</li>
+  <li>Some other other product</li>
+</ul>
+<p>Follow us on</p>
+<a href=""><i class="fa-brands fa-facebook"></i></a>
+
+<a href=""><i class="fa-brands fa-instagram"></i></a>
+<a href=""><i class="fa-brands fa-twitter"></i></a>
+</div>
+
+</footer>
 </body>
