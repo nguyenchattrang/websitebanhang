@@ -8,6 +8,19 @@ body{
     background-repeat:no-repeat;
     height: 100vh;
 }
+.title{
+    color: white;
+    text-transform: uppercase;
+    text-align: right;
+    margin-right:  20%;
+    margin-top: 5%;
+}
+.header-category{
+    background-image: url("../img/backg.jpg");
+    background-size: cover;
+    background-repeat:no-repeat;
+   height: 60vh;
+}
 .product-details{
     margin-top: 10px;
     margin-bottom: 50px;
