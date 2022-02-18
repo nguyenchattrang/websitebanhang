@@ -192,7 +192,77 @@ color: purple;
   .sticky + .content {
     padding-top: 60px;
   }
+.product-category{
+    box-shadow: 0 5px 30px #888888;  
+}
+.product-category ul{
+    padding: 0px 20px;
+}
+.head{
+    padding: 20px 20px;
+    background-color: plum;
+    color: white;
+}
+.product-category li{
+    border-bottom: solid grey 1px;
+    list-style-type: none;
+    padding: 15px 20px;
+   
+}
+.product-category a{
+    color: black;
+    text-decoration: none;
+}
+.product-category a:hover{
+    color: blueviolet;
+}
+.choice li{
+list-style-type: none;
+margin-bottom: 0.5rem;
 
+}
+.choice label{
+    font-size: 14px;
+}
+.choice input{
+    padding: 20px;
+}
+.sub-head{
+    padding: 0px 20px;
+    line-height: 60px;
+    font-weight: bold;
+}
+.base-price{
+    /* margin: 20px; */
+    position: relative;
+    height: 6px;
+    background-color: #eee;
+}
+.price-min{
+    width: 10px;
+    height: 10px;
+    border-radius: 10px 10px;
+    background-color: purple;
+    padding: 10px 10px;
+    position: absolute;
+    top:25%;
+    z-index: 99;
+}
+.price-max{
+    width: 10px;
+    height: 10px;
+    border-radius: 10px 10px;
+    background-color: purple;
+    padding: 10px 10px;
+    position: absolute;
+    top:25%;
+    right: 0;
+    z-index: 99;
+}
+.price{
+    position: relative;
+    padding: 20px;
+}
 
 
 
