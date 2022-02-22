@@ -121,34 +121,329 @@
 </ul>
 </div>
       </div>
-      <div class="slidecontainer">
-        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-      </div>
-      <input type="number" min="200" max="100" step="1" id="input-number">
-
-      <input type="number" min="200" max="1000" step="1" id="input-number">
 
       <div class="sub-head">Price
 
       </div>
-      <div class="price">
-      <div class="base-price">
-     
-     
 
+    <div class="middle">
+      <div class="multi-range-slider">
+        <input type="range" id="input-left" min="0" max="5000000" value="25000" step="50000" onchange="a()">
+        <input type="range" id="input-right" min="0" max="5000000" value="4000000"  step="50000" onchange="b()">
+    
+        <div class="slider">
+          <div class="track"></div>
+          <div class="range"></div>
+          <div class="thumb left" ></div>
+          <div class="thumb right" onchange="b()"></div>
+        </div>
       </div>
-      <div class="price-min">
+      <div class="price-info">
+        Price from <p id="min">25000</p> to <p id="max">4000000</p>
       </div>
-      <div class="price-max">
-
-      </div>
+   
     </div>
-<p>Left</p>
 </div>
 <div class="col-md-8">
-<p>Right</p>
+
+  <div class="filter-bar">
+    <div class="head">
+      <p class="left">PRODUCTS LIST</p>
+      <p>Total Products x </p>
+      <Select>
+        <Option>
+          Price(High To Low)
+        </Option>
+        <Option>
+          Price(Low To High)
+        </Option>
+        <Option>
+          Price(Best Seller)
+        </Option>
+        <Option>
+          Top Rated
+        </Option>
+        <Option>
+          New
+        </Option>
+      </Select>
+    </div>
+    </div>
+    <div class="product-area">
+
+<div class="row line-product">
+  <div class="col-4">
+    <img src="img/Kitten.png" class="img-fluid" alt="...">
+    <div class="product-details ms-3">
+      <h6 class="product-name">Name something</h6>
+      <div class="price">
+        <h6>$120.00</h6>
+        <h6 class="sale-price"><del> $220.00</del></h6>
+                  </div>
+                  <div class="info">
+        <a class="each-link" href="">
+         <span> <i class="fa-solid fa-cart-plus"></i></span>
+         <p>Add to Cart</p> 
+        </a>
+        <a class="each-link" href="">
+          <span><i class="fa-regular fa-heart"></i></span>
+          <p>Wishlist</p>   
+         </a>
+  </div>
 </div>
 </div>
-      </div>
+  <div class="col-4">
+    <img src="img/Kitten.png" class="img-fluid" alt="...">
+    <div class="product-details ms-3">
+      <h6 class="product-name">Name something</h6>
+      <div class="price">
+        <h6>$120.00</h6>
+        <h6 class="sale-price"><del> $220.00</del></h6>
+                  </div>
+                  <div class="info">
+        <a class="each-link" href="">
+         <span> <i class="fa-solid fa-cart-plus"></i></span>
+         <p>Add to Cart</p> 
+        </a>
+        <a class="each-link" href="">
+          <span><i class="fa-regular fa-heart"></i></span>
+          <p>Wishlist</p>   
+         </a>
+  </div>
+
+</div>
+</div>
+<div class="col-4">
+<img src="img/Kitten.png" class="img-fluid" alt="...">
+<div class="product-details ms-3">
+  <h6 class="product-name">Name something</h6>
+  <div class="price">
+    <h6>$120.00</h6>
+    <h6 class="sale-price"><del> $220.00</del></h6>
+              </div>
+              <div class="info">
+    <a class="each-link" href="">
+     <span> <i class="fa-solid fa-cart-plus"></i></span>
+     <p>Add to Cart</p> 
+    </a>
+    <a class="each-link" href="">
+      <span><i class="fa-regular fa-heart"></i></span>
+      <p>Wishlist</p>   
+     </a>
+</div>
+
+</div>
+</div>
+</div>
+<div class="row line-product">
+  <div class="col-4">
+    <img src="img/Kitten.png" class="img-fluid" alt="...">
+    <div class="product-details ms-3">
+      <h6 class="product-name">Name something</h6>
+      <div class="price">
+        <h6>$120.00</h6>
+        <h6 class="sale-price"><del> $220.00</del></h6>
+                  </div>
+                  <div class="info">
+        <a class="each-link" href="">
+         <span> <i class="fa-solid fa-cart-plus"></i></span>
+         <p>Add to Cart</p> 
+        </a>
+        <a class="each-link" href="">
+          <span><i class="fa-regular fa-heart"></i></span>
+          <p>Wishlist</p>   
+         </a>
+  </div>
+</div>
+</div>
+  <div class="col-4">
+    <img src="img/Kitten.png" class="img-fluid" alt="...">
+    <div class="product-details ms-3">
+      <h6 class="product-name">Name something</h6>
+      <div class="price">
+        <h6>$120.00</h6>
+        <h6 class="sale-price"><del> $220.00</del></h6>
+                  </div>
+                  <div class="info">
+        <a class="each-link" href="">
+         <span> <i class="fa-solid fa-cart-plus"></i></span>
+         <p>Add to Cart</p> 
+        </a>
+        <a class="each-link" href="">
+          <span><i class="fa-regular fa-heart"></i></span>
+          <p>Wishlist</p>   
+         </a>
+  </div>
+
+</div>
+</div>
+<div class="col-4">
+<img src="img/Kitten.png" class="img-fluid" alt="...">
+<div class="product-details ms-3">
+  <h6 class="product-name">Name something</h6>
+  <div class="price">
+    <h6>$120.00</h6>
+    <h6 class="sale-price"><del> $220.00</del></h6>
+              </div>
+              <div class="info">
+    <a class="each-link" href="">
+     <span> <i class="fa-solid fa-cart-plus"></i></span>
+     <p>Add to Cart</p> 
+    </a>
+    <a class="each-link" href="">
+      <span><i class="fa-regular fa-heart"></i></span>
+      <p>Wishlist</p>   
+     </a>
+</div>
+
+</div>
+</div>
+</div>
+<div class="row line-product">
+  <div class="col-4">
+    <img src="img/Kitten.png" class="img-fluid" alt="...">
+    <div class="product-details ms-3">
+      <h6 class="product-name">Name something</h6>
+      <div class="price">
+        <h6>$120.00</h6>
+        <h6 class="sale-price"><del> $220.00</del></h6>
+                  </div>
+                  <div class="info">
+        <a class="each-link" href="">
+         <span> <i class="fa-solid fa-cart-plus"></i></span>
+         <p>Add to Cart</p> 
+        </a>
+        <a class="each-link" href="">
+          <span><i class="fa-regular fa-heart"></i></span>
+          <p>Wishlist</p>   
+         </a>
+  </div>
+</div>
+</div>
+  <div class="col-4">
+    <img src="img/Kitten.png" class="img-fluid" alt="...">
+    <div class="product-details ms-3">
+      <h6 class="product-name">Name something</h6>
+      <div class="price">
+        <h6>$120.00</h6>
+        <h6 class="sale-price"><del> $220.00</del></h6>
+                  </div>
+                  <div class="info">
+        <a class="each-link" href="">
+         <span> <i class="fa-solid fa-cart-plus"></i></span>
+         <p>Add to Cart</p> 
+        </a>
+        <a class="each-link" href="">
+          <span><i class="fa-regular fa-heart"></i></span>
+          <p>Wishlist</p>   
+         </a>
+  </div>
+
+</div>
+</div>
+<div class="col-4">
+<img src="img/Kitten.png" class="img-fluid" alt="...">
+<div class="product-details ms-3">
+  <h6 class="product-name">Name something</h6>
+  <div class="price">
+    <h6>$120.00</h6>
+    <h6 class="sale-price"><del> $220.00</del></h6>
+              </div>
+              <div class="info">
+    <a class="each-link" href="">
+     <span> <i class="fa-solid fa-cart-plus"></i></span>
+     <p>Add to Cart</p> 
+    </a>
+    <a class="each-link" href="">
+      <span><i class="fa-regular fa-heart"></i></span>
+      <p>Wishlist</p>   
+     </a>
+</div>
+
+</div>
+</div>
+</div>
+<div class="head">
+  <div class="page">
+  <p>Total Page x</p>
+ <button>
+   Prev
+ </button>
+ <p>1</p>
+ <button>
+   Next
+ </button>
+</div>
+</div>
+</div>
+<script>
+ 
+
+  var inputLeft = document.getElementById("input-left");
+var inputRight = document.getElementById("input-right");
+
+
+ 
+var thumbLeft = document.querySelector(".slider > .thumb.left");
+var thumbRight = document.querySelector(".slider > .thumb.right");
+var range = document.querySelector(".slider > .range");
+
+function setLeftValue() {
+	var _this = inputLeft,
+		min = parseInt(_this.min),
+		max = parseInt(_this.max);
+
+	_this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) - 1);
+
+	var percent = ((_this.value - min) / (max - min)) * 100;
+
+	thumbLeft.style.left = percent + "%";
+	range.style.left = percent + "%";
+}
+setLeftValue();
+
+function setRightValue() {
+	var _this = inputRight,
+		min = parseInt(_this.min),
+		max = parseInt(_this.max);
+
+	_this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1);
+
+	var percent = ((_this.value - min) / (max - min)) * 100;
+
+	thumbRight.style.right = (100 - percent) + "%";
+	range.style.right = (100 - percent) + "%";
+}
+setRightValue();
+
+inputLeft.addEventListener("input", setLeftValue);
+inputRight.addEventListener("input", setRightValue);
+
+inputLeft.addEventListener("mouseover", function() {
+	thumbLeft.classList.add("hover");
+});
+inputLeft.addEventListener("mouseout", function() {
+	thumbLeft.classList.remove("hover");
+});
+inputLeft.addEventListener("mousedown", function() {
+	thumbLeft.classList.add("active");
+});
+inputLeft.addEventListener("mouseup", function() {
+	thumbLeft.classList.remove("active");
+});
+
+inputRight.addEventListener("mouseover", function() {
+	thumbRight.classList.add("hover");
+});
+inputRight.addEventListener("mouseout", function() {
+	thumbRight.classList.remove("hover");
+});
+inputRight.addEventListener("mousedown", function() {
+	thumbRight.classList.add("active");
+});
+inputRight.addEventListener("mouseup", function() {
+	thumbRight.classList.remove("active");
+});
+</script>
 </body>
 </html>
