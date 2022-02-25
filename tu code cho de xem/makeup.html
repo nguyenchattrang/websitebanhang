@@ -48,8 +48,8 @@
                         Shop
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="makeup.html">Makeup Products</a></li>
-                        <li><a class="dropdown-item" href="#">Skincare Products</a></li>
+                        <li><a class="dropdown-item" href="#">Makeup Products</a></li>
+                        <li><a class="dropdown-item" href="skincare.html">Skincare Products</a></li>
                       </ul>
                     </li>
                     <li class="nav-item">
@@ -90,14 +90,30 @@
       <div class="container category my-5">
 <div class="row">
 <div class="col-md-4 side-bar">
+    <div class="sidename">Makeup Products</div>
   <div class="product-category">
+     
     <div class="head">Browse Categories</div>
-<ul>
+<ul class="brows">
   <li>
-  <a href="">Makeup Products</a>  
+      <label for="face">Face</label>
+  <input type="checkbox" id="face">  
   </li>
   <li>
-   <a href="">Skincare Products</a> 
+    <label for="eye">Eyes</label>
+    <input type="checkbox" id="eye">  
+  </li>
+  <li>
+    <label for="lip">Lips</label>
+    <input type="checkbox" id="lip">  
+  </li>
+  <li>
+    <label for="blender">Blender</label>
+    <input type="checkbox" id="blender">  
+  </li>
+  <li>
+    <label for="other">Others</label>
+    <input type="checkbox" id="other">  
   </li>
 </ul>
     </div>
@@ -364,21 +380,25 @@
 </div>
 </div>
 <div class="head">
+    
   <div class="page">
   <p>Total Page x</p>
- <button>
-   Prev
+
+ <button >
+
+        <i class="fa-solid fa-backward"></i>
+ 
+
  </button>
  <p>1</p>
  <button>
-   Next
+    <i class="fa-solid fa-forward"></i>
  </button>
 </div>
 </div>
 </div>
-<script>
- 
 
+<script>
   var inputLeft = document.getElementById("input-left");
 var inputRight = document.getElementById("input-right");
 

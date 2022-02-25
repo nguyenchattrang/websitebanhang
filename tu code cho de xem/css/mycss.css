@@ -296,7 +296,20 @@ padding: 0px 20px;
 .page{
     text-align: right;
 }
+.brows li label{
+width: 70px;
+font-size: 17px;
+}
+.brows-2 li label{
+    width: 45%;
+    font-size: 17px;
+    }
+.sidename{
+    text-align: center;
+    font-size: 30px;
+    margin: 20px;
 
+}
 
 
 
