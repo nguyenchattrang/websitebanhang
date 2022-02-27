@@ -453,4 +453,10 @@ color: white;
         background-color: red;
         -webkit-appearance: none;
     }
+    .img-item {
+        display: flex;
+    }
+    .img-item img{
+        width: 50%;
+    }
     
