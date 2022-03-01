@@ -459,4 +459,402 @@ color: white;
     .img-item img{
         width: 50%;
     }
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* cart bootstrap */
+
+
+.title {
+    margin-bottom: 5vh
+}
+
+.card {
+    margin: auto;
+    margin-top: 50px;
+    max-width: 950px;
+    width: 90%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    border: transparent
+}
+
+@media(max-width:767px) {
+    .card {
+        margin: 3vh auto
+    }
+}
+
+.cart {
+    background-color: rgb(230, 162, 188);
+    padding: 4vh 5vh;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem
+}
+
+@media(max-width:767px) {
+    .cart {
+        padding: 4vh;
+        border-bottom-left-radius: unset;
+        border-top-right-radius: 1rem
+    }
+}
+
+.summary {
+    background-image: url(../img/background5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 4vh;
+    color: white;
+}
+
+@media(max-width:767px) {
+    .summary {
+        border-top-right-radius: unset;
+        border-bottom-left-radius: 1rem
+    }
+}
+
+.summary .col-2 {
+    padding: 0
+}
+
+.summary .col-10 {
+    padding: 0
+}
+
+.row {
+    margin: 0
+}
+
+.title b {
+    font-size: 1.5rem
+}
+
+.main {
+    margin: 0;
+    padding: 2vh 0;
+    width: 100%
+}
+
+.col-2,
+.col {
+    padding: 0 1vh
+}
+
+a {
+    padding: 0 1vh
+}
+
+.close {
+    margin-left: auto;
+    font-size: 0.7rem
+}
+
+
+
+.back-to-shop {
+    margin-top: 4.5rem
+}
+
+h5 {
+    margin-top: 4vh
+}
+
+hr {
+    margin-top: 1.25rem
+}
+
+form {
+    padding: 2vh 0
+}
+
+.select-code {
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1.5vh 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247)
+}
+
+.input-code {
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247)
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent
+}
+
+.btn {
+    width: 50%;
+    font-size: 0.7rem;
+    margin-top: 4vh;
+    padding: 1vh;
+}
+
+.btn:focus {
+    box-shadow: none;
+    outline: none;
+    box-shadow: none;
+    color: white;
+    -webkit-box-shadow: none;
+    -webkit-user-select: none;
+    transition: none
+}
+
+a {
+    color: black
+}
+
+a:hover {
+    color: black;
+    text-decoration: none
+}
+
+#code {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253), rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: center
+}
+/* end cart */
+
+    /* Image gallery */
+    .column {
+        float: left;
+        width: 25%;
+        padding: 10px;
+      }
+      .bigpicture{
+          height: 500px;
+          overflow: hidden;
+      }
+      
+      /* Style the images inside the grid */
+      .column img {
+          width: 100%;
+        opacity: 0.8;
+        cursor: pointer;
+      }
+      
+      .column img:hover {
+        opacity: 1;
+      }
+      #expandedImg{
+          width: 100%;
+         
+      }
+      
+      /* Clear floats after the columns */
+      .row-r:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+/* Product */
+.product_text{
+    margin-top: 50px;
+}
+.product_text .list a{
+text-decoration: none;
+color: black;
+}
+.product_text h3{
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    }
+
+    .product_text p{
+        border-top: 1px dotted #d5d5d5;
+        padding-top: 20px;
+        padding-bottom: 50px;
+       color: #777777;
+        }
+
+.product_text .list a:hover{
+   
+    color: purple;
+    }
+    .product_count input{
+        width: 10%;
+        margin-left: 20px;
+    }
+.list{
+    list-style-type: none;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.product_image_area{
+margin-top: 50px;
+}
+.product_text h2{
+    color: purple;
+    font-weight: bold;
+    font-size: 24px;
+}
+.card-area .btn{
+    width: 50%;
+}
+
+/* navtab */
+.nav-tabs{
+    background-color: #e8f0f2;
+}
+.nav-tabs a{
+    color: purple;
+}
+.nav-tabs a:hover{
+    color: black;
+}
+.tab-content{
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 30px;
+}
+/* Ratings */
+.box_total{
+    background: #e8f0f2;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.box_total h5{
+    color: #222222;
+    margin-bottom: 0px;
+    font-size: 24px;
+}
+.box_total h4{
+    font-size: 48px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(90deg, #ff00f2 0%, #ff6a00 100%);
+    background: -moz-linear-gradient(90deg, #ff00f2 0%, #ff6c00 100%);
+    background: -o-linear-gradient(90deg, #ff00f2 0%, #ff6c00 100%);
+    background: linear-gradient(90deg, #ff00f2 0%, #ff6c00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.box_total h6{
+    color: #222222;
+    margin-bottom: 0px;
+    font-size: 14px;
+    color: #777777;
+    font-weight: normal;
+}
+.rating_list h3{
+    font-size: 18px;
+    color: #222222;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.list li a{
+    font-size: 14px;
+    color: #777777;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+.list li a i{
+    color: #fbd600;
+}
+.review_item .media .media-body i {
+    color: #fbd600;
+}
+.review_item p {
+    padding-top: 10px;
+    margin-bottom: 0px;
+    color: #777777;
+}
+.review_box p{
+    display: inline-block;
+}
+.review_box .list{
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.review_box .list li {
+    display: inline-block;
+}
+.media img{
+    width: 70px;
+}
+.review_item{
+    margin: 5% 2%;
+}
+.media{
+    display: flex;
+}
+/* Rating star */
+.rating__star {
+    font-size: 1.3em;
+    cursor: pointer;
+    color: #dabd18b2;
+    transition: filter linear .3s;
+ }
+ 
+ .rating__star:hover {
+    filter: drop-shadow(1px 1px 4px gold);
+ }.rating {
+    position: relative;
+    width: 180px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .3em;
+    padding: 5px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 2px #b3acac;
+ }
+ 
+ .rating__result {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-10px) translateX(-5px);
+    z-index: -9;
+    font: 3em Arial, Helvetica, sans-serif;
+    color: #ebebeb8e;
+    pointer-events: none;
+ }
