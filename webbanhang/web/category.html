@@ -1,833 +1,814 @@
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
+<html lang="en">
 
 <head>
-	<!-- Mobile Specific Meta -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- Favicon-->
-	<link rel="shortcut icon" href="img/fav.png">
-	<!-- Author Meta -->
-	<meta name="author" content="CodePixar">
-	<!-- Meta Description -->
-	<meta name="description" content="">
-	<!-- Meta Keyword -->
-	<meta name="keywords" content="">
-	<!-- meta character set -->
-	<meta charset="UTF-8">
-	<!-- Site Title -->
-	<title>Karma Shop</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/mycss.css">
+  <!-- css của mình -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <!-- bundle của bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- bootstrap css -->
+  <script src="js/myjs.js"></script>
+  <!-- script của mình -->
+  <!-- <script src="https://unpkg.com/feather-icons"></script> -->
+  <!-- script cho icon -->
+  <script src="https://kit.fontawesome.com/ca0aaad838.js" crossorigin="anonymous"></script>
 
-	<!--
-            CSS
-            ============================================= -->
-	<link rel="stylesheet" href="css/linearicons.css">
-	<link rel="stylesheet" href="css/owl.carousel.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/themify-icons.css">
-	<link rel="stylesheet" href="css/nice-select.css">
-	<link rel="stylesheet" href="css/nouislider.min.css">
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/main.css">
 </head>
 
-<body id="category">
+<body>
+  <section class="header-category">
 
-	<!-- Start Header Area -->
-	<header class="header_area sticky-header">
-		<div class="main_menu">
-			<nav class="navbar navbar-expand-lg navbar-light main_box">
-				<div class="container">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-						<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-							<li class="nav-item submenu dropdown active">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Shop</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item active"><a class="nav-link" href="category.html">Shop Category</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a></li>
-									<li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li>
-									<li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>
-									<li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
-								</ul>
-							</li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Blog</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-								</ul>
-							</li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Pages</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-									<li class="nav-item"><a class="nav-link" href="tracking.html">Tracking</a></li>
-									<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-								</ul>
-							</li>
-							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-						</ul>
-						<ul class="nav navbar-nav navbar-right">
-							<li class="nav-item"><a href="#" class="cart"><span class="ti-bag"></span></a></li>
-							<li class="nav-item">
-								<button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-		</div>
-		<div class="search_input" id="search_input_box">
-			<div class="container">
-				<form class="d-flex justify-content-between">
-					<input type="text" class="form-control" id="search_input" placeholder="Search Here">
-					<button type="submit" class="btn"></button>
-					<span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
-				</form>
-			</div>
-		</div>
-	</header>
-	<!-- End Header Area -->
+    <div class="blank">
 
-	<!-- Start Banner Area -->
-	<section class="banner-area organic-breadcrumb">
-		<div class="container">
-			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
-				<div class="col-first">
-					<h1>Shop Category page</h1>
-					<nav class="d-flex align-items-center">
-						<a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
-						<a href="#">Shop<span class="lnr lnr-arrow-right"></span></a>
-						<a href="category.html">Fashon Category</a>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Banner Area -->
-	<div class="container">
-		<div class="row">
-			<div class="col-xl-3 col-lg-4 col-md-5">
-				<div class="sidebar-categories">
-					<div class="head">Browse Categories</div>
-					<ul class="main-categories">
-						<li class="main-nav-list"><a data-toggle="collapse" href="#fruitsVegetable" aria-expanded="false" aria-controls="fruitsVegetable"><span
-								 class="lnr lnr-arrow-right"></span>Fruits and Vegetables<span class="number">(53)</span></a>
-							<ul class="collapse" id="fruitsVegetable" data-toggle="collapse" aria-expanded="false" aria-controls="fruitsVegetable">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
+    </div>
+    <nav id="navbar" class=" py-0 sticky-top navbar navbar-expand-lg navbar-light  ">
+      <!-- navbar là cái tên class k phải ở bootstrap
+          navbar-expand-lg: màn hình to thì nó dài ra còn bé hơn thì nó có cái nút
+          navbar-light:chữ hợp với màu nền trắng
+          bg-light: màu nền trắng
+          -->
+      <div class="container-fluid greybox">
+        <a class="navbar-brand" href="#"> <img class="" src="img/Kitten.png" alt="logo"> Kitten Cosmestics Shop</a>
+        <!-- brand name có cả hình ảnh chữ logo to hơn bình thường -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarmenu"
+          aria-controls="navbarmenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- navbar toggler là cái nút có ba cái gạch ngang, màn hình nhỏ thì nó có hay xao kb -->
+        <div class="collapse navbar-collapse" id="navbarmenu">
+          <!-- navbar-collapse để gộp nó vào, cái id liên kết với cái databstarget bên trên nên phải đặt cho nó đúng tên -->
+          <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link " href="category.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Shop
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="makeup.html">Makeup Products</a></li>
+                <li><a class="dropdown-item" href="#">Skincare Products</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Pages
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Login</a></li>
+                <li><a class="dropdown-item" href="#">Tracking</a></li>
 
-						<li class="main-nav-list"><a data-toggle="collapse" href="#meatFish" aria-expanded="false" aria-controls="meatFish"><span
-								 class="lnr lnr-arrow-right"></span>Meat and Fish<span class="number">(53)</span></a>
-							<ul class="collapse" id="meatFish" data-toggle="collapse" aria-expanded="false" aria-controls="meatFish">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#cooking" aria-expanded="false" aria-controls="cooking"><span
-								 class="lnr lnr-arrow-right"></span>Cooking<span class="number">(53)</span></a>
-							<ul class="collapse" id="cooking" data-toggle="collapse" aria-expanded="false" aria-controls="cooking">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#beverages" aria-expanded="false" aria-controls="beverages"><span
-								 class="lnr lnr-arrow-right"></span>Beverages<span class="number">(24)</span></a>
-							<ul class="collapse" id="beverages" data-toggle="collapse" aria-expanded="false" aria-controls="beverages">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#homeClean" aria-expanded="false" aria-controls="homeClean"><span
-								 class="lnr lnr-arrow-right"></span>Home and Cleaning<span class="number">(53)</span></a>
-							<ul class="collapse" id="homeClean" data-toggle="collapse" aria-expanded="false" aria-controls="homeClean">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a href="#">Pest Control<span class="number">(24)</span></a></li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#officeProduct" aria-expanded="false" aria-controls="officeProduct"><span
-								 class="lnr lnr-arrow-right"></span>Office Products<span class="number">(77)</span></a>
-							<ul class="collapse" id="officeProduct" data-toggle="collapse" aria-expanded="false" aria-controls="officeProduct">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#beauttyProduct" aria-expanded="false" aria-controls="beauttyProduct"><span
-								 class="lnr lnr-arrow-right"></span>Beauty Products<span class="number">(65)</span></a>
-							<ul class="collapse" id="beauttyProduct" data-toggle="collapse" aria-expanded="false" aria-controls="beauttyProduct">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#healthProduct" aria-expanded="false" aria-controls="healthProduct"><span
-								 class="lnr lnr-arrow-right"></span>Health Products<span class="number">(29)</span></a>
-							<ul class="collapse" id="healthProduct" data-toggle="collapse" aria-expanded="false" aria-controls="healthProduct">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a href="#">Pet Care<span class="number">(29)</span></a></li>
-						<li class="main-nav-list"><a data-toggle="collapse" href="#homeAppliance" aria-expanded="false" aria-controls="homeAppliance"><span
-								 class="lnr lnr-arrow-right"></span>Home Appliances<span class="number">(15)</span></a>
-							<ul class="collapse" id="homeAppliance" data-toggle="collapse" aria-expanded="false" aria-controls="homeAppliance">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-						<li class="main-nav-list"><a class="border-bottom-0" data-toggle="collapse" href="#babyCare" aria-expanded="false"
-							 aria-controls="babyCare"><span class="lnr lnr-arrow-right"></span>Baby Care<span class="number">(48)</span></a>
-							<ul class="collapse" id="babyCare" data-toggle="collapse" aria-expanded="false" aria-controls="babyCare">
-								<li class="main-nav-list child"><a href="#">Frozen Fish<span class="number">(13)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Dried Fish<span class="number">(09)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-								<li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-								<li class="main-nav-list child"><a href="#" class="border-bottom-0">Meat<span class="number">(11)</span></a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				<div class="sidebar-filter mt-50">
-					<div class="top-filter-head">Product Filters</div>
-					<div class="common-filter">
-						<div class="head">Brands</div>
-						<form action="#">
-							<ul>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="apple" name="brand"><label for="apple">Apple<span>(29)</span></label></li>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="asus" name="brand"><label for="asus">Asus<span>(29)</span></label></li>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="gionee" name="brand"><label for="gionee">Gionee<span>(19)</span></label></li>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="micromax" name="brand"><label for="micromax">Micromax<span>(19)</span></label></li>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="samsung" name="brand"><label for="samsung">Samsung<span>(19)</span></label></li>
-							</ul>
-						</form>
-					</div>
-					<div class="common-filter">
-						<div class="head">Color</div>
-						<form action="#">
-							<ul>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="black" name="color"><label for="black">Black<span>(29)</span></label></li>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="balckleather" name="color"><label for="balckleather">Black
-										Leather<span>(29)</span></label></li>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="blackred" name="color"><label for="blackred">Black
-										with red<span>(19)</span></label></li>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="gold" name="color"><label for="gold">Gold<span>(19)</span></label></li>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="spacegrey" name="color"><label for="spacegrey">Spacegrey<span>(19)</span></label></li>
-							</ul>
-						</form>
-					</div>
-					<div class="common-filter">
-						<div class="head">Price</div>
-						<div class="price-range-area">
-							<div id="price-range"></div>
-							<div class="value-wrapper d-flex">
-								<div class="price">Price:</div>
-								<span>$</span>
-								<div id="lower-value"></div>
-								<div class="to">to</div>
-								<span>$</span>
-								<div id="upper-value"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xl-9 col-lg-8 col-md-7">
-				<!-- Start Filter Bar -->
-				<div class="filter-bar d-flex flex-wrap align-items-center">
-					<div class="sorting">
-						<select>
-							<option value="1">Default sorting</option>
-							<option value="1">Default sorting</option>
-							<option value="1">Default sorting</option>
-						</select>
-					</div>
-					<div class="sorting mr-auto">
-						<select>
-							<option value="1">Show 12</option>
-							<option value="1">Show 12</option>
-							<option value="1">Show 12</option>
-						</select>
-					</div>
-					<div class="pagination">
-						<a href="#" class="prev-arrow"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
-						<a href="#" class="active">1</a>
-						<a href="#">2</a>
-						<a href="#">3</a>
-						<a href="#" class="dot-dot"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
-						<a href="#">6</a>
-						<a href="#" class="next-arrow"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-				<!-- End Filter Bar -->
-				<!-- Start Best Seller -->
-				<section class="lattest-product-area pb-40 category-list">
-					<div class="row">
-						<!-- single product -->
-						<div class="col-lg-4 col-md-6">
-							<div class="single-product">
-								<img class="img-fluid" src="img/product/p1.jpg" alt="">
-								<div class="product-details">
-									<h6>addidas New Hammer sole
-										for Sports person</h6>
-									<div class="price">
-										<h6>$150.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-									<div class="prd-bottom">
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><img class="icon" src="img/icon/cart.png"></a>
+            </li>
+            <li>
+              <form class="d-flex">
+                <input class="form-control mx-3" type="search" placeholder="Search" aria-label="Search">
+                <img class="icon  btn-outline-danger " type="submit" src="img/icon/search2.png">
+              </form>
+            </li>
+          </ul>
 
-										<a href="" class="social-info">
-											<span class="ti-bag"></span>
-											<p class="hover-text">add to bag</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-heart"></span>
-											<p class="hover-text">Wishlist</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-sync"></span>
-											<p class="hover-text">compare</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-move"></span>
-											<p class="hover-text">view more</p>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- single product -->
-						<div class="col-lg-4 col-md-6">
-							<div class="single-product">
-								<img class="img-fluid" src="img/product/p2.jpg" alt="">
-								<div class="product-details">
-									<h6>addidas New Hammer sole
-										for Sports person</h6>
-									<div class="price">
-										<h6>$150.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-									<div class="prd-bottom">
+        </div>
 
-										<a href="" class="social-info">
-											<span class="ti-bag"></span>
-											<p class="hover-text">add to bag</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-heart"></span>
-											<p class="hover-text">Wishlist</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-sync"></span>
-											<p class="hover-text">compare</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-move"></span>
-											<p class="hover-text">view more</p>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- single product -->
-						<div class="col-lg-4 col-md-6">
-							<div class="single-product">
-								<img class="img-fluid" src="img/product/p3.jpg" alt="">
-								<div class="product-details">
-									<h6>addidas New Hammer sole
-										for Sports person</h6>
-									<div class="price">
-										<h6>$150.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-									<div class="prd-bottom">
+    </nav>
+    <div class="title">
+      <h1>
+        Shop Category
+      </h1>
+      <p>Home -> Shop -> Category</p>
+    </div>
+  </section>
 
-										<a href="" class="social-info">
-											<span class="ti-bag"></span>
-											<p class="hover-text">add to bag</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-heart"></span>
-											<p class="hover-text">Wishlist</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-sync"></span>
-											<p class="hover-text">compare</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-move"></span>
-											<p class="hover-text">view more</p>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- single product -->
-						<div class="col-lg-4 col-md-6">
-							<div class="single-product">
-								<img class="img-fluid" src="img/product/p4.jpg" alt="">
-								<div class="product-details">
-									<h6>addidas New Hammer sole
-										for Sports person</h6>
-									<div class="price">
-										<h6>$150.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-									<div class="prd-bottom">
-
-										<a href="" class="social-info">
-											<span class="ti-bag"></span>
-											<p class="hover-text">add to bag</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-heart"></span>
-											<p class="hover-text">Wishlist</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-sync"></span>
-											<p class="hover-text">compare</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-move"></span>
-											<p class="hover-text">view more</p>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- single product -->
-						<div class="col-lg-4 col-md-6">
-							<div class="single-product">
-								<img class="img-fluid" src="img/product/p5.jpg" alt="">
-								<div class="product-details">
-									<h6>addidas New Hammer sole
-										for Sports person</h6>
-									<div class="price">
-										<h6>$150.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-									<div class="prd-bottom">
-
-										<a href="" class="social-info">
-											<span class="ti-bag"></span>
-											<p class="hover-text">add to bag</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-heart"></span>
-											<p class="hover-text">Wishlist</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-sync"></span>
-											<p class="hover-text">compare</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-move"></span>
-											<p class="hover-text">view more</p>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- single product -->
-						<div class="col-lg-4 col-md-6">
-							<div class="single-product">
-								<img class="img-fluid" src="img/product/p6.jpg" alt="">
-								<div class="product-details">
-									<h6>addidas New Hammer sole
-										for Sports person</h6>
-									<div class="price">
-										<h6>$150.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-									<div class="prd-bottom">
-
-										<a href="" class="social-info">
-											<span class="ti-bag"></span>
-											<p class="hover-text">add to bag</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-heart"></span>
-											<p class="hover-text">Wishlist</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-sync"></span>
-											<p class="hover-text">compare</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-move"></span>
-											<p class="hover-text">view more</p>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				<!-- End Best Seller -->
-				<!-- Start Filter Bar -->
-				<div class="filter-bar d-flex flex-wrap align-items-center">
-					<div class="sorting mr-auto">
-						<select>
-							<option value="1">Show 12</option>
-							<option value="1">Show 12</option>
-							<option value="1">Show 12</option>
-						</select>
-					</div>
-					<div class="pagination">
-						<a href="#" class="prev-arrow"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
-						<a href="#" class="active">1</a>
-						<a href="#">2</a>
-						<a href="#">3</a>
-						<a href="#" class="dot-dot"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
-						<a href="#">6</a>
-						<a href="#" class="next-arrow"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-				<!-- End Filter Bar -->
-			</div>
-		</div>
-	</div>
-
-	<!-- Start related-product Area -->
-	<section class="related-product-area section_gap">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-6 text-center">
-					<div class="section-title">
-						<h1>Deals of the Week</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-							magna aliqua.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-9">
-					<div class="row">
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r1.jpg" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r2.jpg" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r3.jpg" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r5.jpg" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r6.jpg" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r7.jpg" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r9.jpg" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r10.jpg" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="img/r11.jpg" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="ctg-right">
-						<a href="#" target="_blank">
-							<img class="img-fluid d-block mx-auto" src="img/category/c5.jpg" alt="">
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End related-product Area -->
-
-	<!-- start footer Area -->
-	<footer class="footer-area section_gap">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3  col-md-6 col-sm-6">
-					<div class="single-footer-widget">
-						<h6>About Us</h6>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore
-							magna aliqua.
-						</p>
-					</div>
-				</div>
-				<div class="col-lg-4  col-md-6 col-sm-6">
-					<div class="single-footer-widget">
-						<h6>Newsletter</h6>
-						<p>Stay update with our latest</p>
-						<div class="" id="mc_embed_signup">
-
-							<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-							 method="get" class="form-inline">
-
-								<div class="d-flex flex-row">
-
-									<input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '"
-									 required="" type="email">
-
-
-									<button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
-									<div style="position: absolute; left: -5000px;">
-										<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-									</div>
-
-									<!-- <div class="col-lg-4 col-md-4">
-													<button class="bb-btn btn"><span class="lnr lnr-arrow-right"></span></button>
-												</div>  -->
-								</div>
-								<div class="info"></div>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3  col-md-6 col-sm-6">
-					<div class="single-footer-widget mail-chimp">
-						<h6 class="mb-20">Instragram Feed</h6>
-						<ul class="instafeed d-flex flex-wrap">
-							<li><img src="img/i1.jpg" alt=""></li>
-							<li><img src="img/i2.jpg" alt=""></li>
-							<li><img src="img/i3.jpg" alt=""></li>
-							<li><img src="img/i4.jpg" alt=""></li>
-							<li><img src="img/i5.jpg" alt=""></li>
-							<li><img src="img/i6.jpg" alt=""></li>
-							<li><img src="img/i7.jpg" alt=""></li>
-							<li><img src="img/i8.jpg" alt=""></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-2 col-md-6 col-sm-6">
-					<div class="single-footer-widget">
-						<h6>Follow Us</h6>
-						<p>Let us be social</p>
-						<div class="footer-social d-flex align-items-center">
-							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-dribbble"></i></a>
-							<a href="#"><i class="fa fa-behance"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
-				<p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</p>
-			</div>
-		</div>
-	</footer>
-	<!-- End footer Area -->
-
-	<!-- Modal Quick Product View -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="container relative">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-				<div class="product-quick-view">
-					<div class="row align-items-center">
-						<div class="col-lg-6">
-							<div class="quick-view-carousel">
-								<div class="item" style="background: url(img/organic-food/q1.jpg);">
-
-								</div>
-								<div class="item" style="background: url(img/organic-food/q1.jpg);">
-
-								</div>
-								<div class="item" style="background: url(img/organic-food/q1.jpg);">
-
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="quick-view-content">
-								<div class="top">
-									<h3 class="head">Mill Oil 1000W Heater, White</h3>
-									<div class="price d-flex align-items-center"><span class="lnr lnr-tag"></span> <span class="ml-10">$149.99</span></div>
-									<div class="category">Category: <span>Household</span></div>
-									<div class="available">Availibility: <span>In Stock</span></div>
-								</div>
-								<div class="middle">
-									<p class="content">Mill Oil is an innovative oil filled radiator with the most modern technology. If you are
-										looking for something that can make your interior look awesome, and at the same time give you the pleasant
-										warm feeling during the winter.</p>
-									<a href="#" class="view-full">View full Details <span class="lnr lnr-arrow-right"></span></a>
-								</div>
-								<div class="bottom">
-									<div class="color-picker d-flex align-items-center">Color:
-										<span class="single-pick"></span>
-										<span class="single-pick"></span>
-										<span class="single-pick"></span>
-										<span class="single-pick"></span>
-										<span class="single-pick"></span>
-									</div>
-									<div class="quantity-container d-flex align-items-center mt-15">
-										Quantity:
-										<input type="text" class="quantity-amount ml-15" value="1" />
-										<div class="arrow-btn d-inline-flex flex-column">
-											<button class="increase arrow" type="button" title="Increase Quantity"><span class="lnr lnr-chevron-up"></span></button>
-											<button class="decrease arrow" type="button" title="Decrease Quantity"><span class="lnr lnr-chevron-down"></span></button>
-										</div>
-
-									</div>
-									<div class="d-flex mt-20">
-										<a href="#" class="view-btn color-2"><span>Add to Cart</span></a>
-										<a href="#" class="like-btn"><span class="lnr lnr-layers"></span></a>
-										<a href="#" class="like-btn"><span class="lnr lnr-heart"></span></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="wrapper">
+    <div class="d-flex row">
+      <div class="h3 col-8">Shop Categories</div>
+      <div class=" views col-4 d-flex align-items-center">
+        <span class="btn "> <span class="fas fa-th"></span>
+        Grid view
+        </span>
+        <span class="btn"> <span class="fas fa-list-ul"></span>
+        List view 
+      </span>
+        <span class="purple-label ">428</span> Products
+      </div>
+    </div>
+    <div class="d-lg-flex align-items-lg-center pt-2">
+      <div class="form-inline d-flex align-items-center my-2 mr-lg-2 radio bg-light border"> <label class="options">Most
+          Popular <input type="radio" name="radio"> <span class="checkmark"></span> </label> <label
+          class="options">Cheapest <input type="radio" name="radio" checked> <span class="checkmark"></span> </label>
+      </div>
+      <div class="form-inline d-flex align-items-center my-2 checkbox bg-light border mx-lg-2"> <label class="tick">Farm
+          <input type="checkbox" checked="checked"> <span class="check"></span> </label> <span
+          class="text-success px-2 count"> 328</span> </div>
+      <div class="form-inline d-flex align-items-center my-2 checkbox bg-light border mx-lg-2"> <label class="tick">Bio
+          <input type="checkbox"> <span class="check"></span> </label> <span class="text-success px-2 count"> 72</span>
+      </div>
+      <div class="form-inline d-flex align-items-center my-2 checkbox bg-light border mx-lg-2"> <label
+          class="tick">Czech republic <input type="checkbox"> <span class="check"></span> </label> <span
+          class="border px-1 mx-2 mr-3 font-weight-bold count"> 12</span> <select name="country" id="country"
+          class="bg-light">
+          <option value="" hidden>Country</option>
+          <option value="India">India</option>
+          <option value="USA">USA</option>
+          <option value="Uk">UK</option>
+        </select> </div>
+    </div>
+    <div class="d-sm-flex align-items-sm-center pt-2 clear">
+      <div class="text-muted filter-label">Applied Filters:</div>
+      <div class="purple-label font-weight-bold p-0 px-1 mx-sm-1 mx-0 my-sm-0 my-2">Selected Filtre <span
+          class=" px-1 close">&times;</span> </div>
+      <div class="purple-label font-weight-bold p-0 px-1 mx-sm-1 mx-0">Selected Filtre <span
+          class=" px-1 close">&times;</span> </div>
+    </div>
+    <div class="filters"> <button class="btn btn-dark btn-outline-light">Filter<span
+          class="px-1 fas fa-filter"></span></button> </div>
+    <div class=" py-md-0 py-3 mb-5">
+      <section id="sidebar">
+        <div class="py-3">
+          <h5 class="font-weight-bold">Categories</h5>
+          <ul class="list-group">
+            <li
+              class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category">
+              Skincare Products <span class="badge badge-primary badge-pill">328</span> </li>
+            <li
+              class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category">
+              Makeup Products <span class="badge badge-primary badge-pill">112</span> </li>
+            <li
+              class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category">
+              Gift Sets <span class="badge badge-primary badge-pill">32</span> </li>
+          </ul>
+        </div>
+        <div class="py-3">
+          <h5 class="font-weight-bold">A</h5>
+          <form class="brand">
+            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Face <input
+                  type="checkbox"> <span class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Eyes <input
+                  type="checkbox" checked> <span class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Lips <input
+                  type="checkbox" checked> <span class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Blender <input
+                  type="checkbox"> <span class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Others <input
+                  type="checkbox"> <span class="check"></span> </label> </div>
+          </form>
+        </div>
+        <div class="py-3">
+          <h5 class="font-weight-bold">Brands</h5>
+          <form class="brand">
+            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Laroche Possay <input
+                  type="checkbox"> <span class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Kiehls <input
+                  type="checkbox" checked> <span class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Clinique <input
+                  type="checkbox" checked> <span class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Innisfree <input
+                  type="checkbox"> <span class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Anessa <input
+                  type="checkbox"> <span class="check"></span> </label> </div>
+          </form>
+        </div>
+        <div class="py-3">
+          <h5 class="font-weight-bold">Rating</h5>
+          <form class="rating">
+            <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span
+                  class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span
+                  class="fas fa-star"></span> <span class="fas fa-star"></span> <input type="checkbox"> <span
+                  class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-2"> <label class="tick"> <span
+                  class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span
+                  class="fas fa-star"></span> <span class="far fa-star px-1 text-muted"></span> <input type="checkbox">
+                <span class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span
+                  class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span
+                  class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <input
+                  type="checkbox"> <span class="check"></span> </label> </div>
+            <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span
+                  class="fas fa-star"></span> <span class="fas fa-star"></span> <span
+                  class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <span
+                  class="far fa-star px-1 text-muted"></span> <input type="checkbox"> <span class="check"></span>
+              </label> </div>
+            <div class="form-inline d-flex align-items-center py-2"> <label class="tick"> <span
+                  class="fas fa-star"></span> <span class="far fa-star px-1 text-muted"></span> <span
+                  class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <span
+                  class="far fa-star px-1 text-muted"></span> <input type="checkbox"> <span class="check"></span>
+              </label> </div>
+          </form>
+        </div>
+      </section> <!-- Products Section -->
+      <section id="products">
+        <div class="container py-3">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-5">
+              <div class="card"> <div class="card-img-top" ><img class="img-fluid"
+                  src="img/sample1.jpg">
+                </div> 
+                <div class="card-body">
+                  <h6 class="font-weight-bold pt-1">Kem Lót Che Khuyết Điểm, Se Khít Lỗ Chân Lông Maybelline Baby Skin Pore Eraser 22ml</h6>
+                  <div class="text-muted description">Space for small product description</div>
+                  <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span
+                      class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
+                    <span class="far fa-star"></span> </div>
+                  <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
+                    <div class="d-flex flex-column">
+                      <div class="h6 font-weight-bold">36.99 USD</div>
+                      <div > <del>48.56</del></div>
+                    </div>
+                    <div class="btn btn-primary">Buy now</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-5">
+              <div class="card"> <div class="card-img-top" ><img class="img-fluid"
+                  src="img/sample1.jpg">
+                </div> 
+                <div class="card-body">
+                  <h6 class="font-weight-bold pt-1">Product title</h6>
+                  <div class="text-muted description">Space for small product description</div>
+                  <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span
+                      class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
+                    <span class="far fa-star"></span> </div>
+                  <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
+                    <div class="d-flex flex-column">
+                      <div class="h6 font-weight-bold">36.99 USD</div>
+                      <div > <del>48.56</del></div>
+                    </div>
+                    <div class="btn btn-primary">Buy now</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-5">
+              <div class="card"> <div class="card-img-top" ><img class="img-fluid"
+                  src="img/sample2.jpg">
+                </div> 
+                <div class="card-body">
+                  <h6 class="font-weight-bold pt-1">Cọ Viền Môi Merzy Lip Brush</h6>
+                  <div class="text-muted description">Space for small product description</div>
+                  <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span
+                      class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
+                    <span class="far fa-star"></span> </div>
+                  <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
+                    <div class="d-flex flex-column">
+                      <div class="h6 font-weight-bold">36.99 USD</div>
+                      <div > <del>48.56</del></div>
+                    </div>
+                    <div class="btn btn-primary">Buy now</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-5">
+              <div class="card"> <div class="card-img-top" ><img class="img-fluid"
+                  src="img/sample1.jpg">
+                </div> 
+                <div class="card-body">
+                  <h6 class="font-weight-bold pt-1">Product title</h6>
+                  <div class="text-muted description">Space for small product description</div>
+                  <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span
+                      class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
+                    <span class="far fa-star"></span> </div>
+                  <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
+                    <div class="d-flex flex-column">
+                      <div class="h6 font-weight-bold">36.99 USD</div>
+                      <div > <del>48.56</del></div>
+                    </div>
+                    <div class="btn btn-primary">Buy now</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-5">
+              <div class="card"> <div class="card-img-top" ><img class="img-fluid"
+                  src="img/sample1.jpg">
+                </div> 
+                <div class="card-body">
+                  <h6 class="font-weight-bold pt-1">Product title</h6>
+                  <div class="text-muted description">Space for small product description</div>
+                  <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span
+                      class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
+                    <span class="far fa-star"></span> </div>
+                  <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
+                    <div class="d-flex flex-column">
+                      <div class="h6 font-weight-bold">36.99 USD</div>
+                      <div > <del>48.56</del></div>
+                    </div>
+                    <div class="btn btn-primary">Buy now</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-5">
+              <div class="card"> <div class="card-img-top" ><img class="img-fluid"
+                  src="img/sample1.jpg">
+                </div> 
+                <div class="card-body">
+                  <h6 class="font-weight-bold pt-1">Product title</h6>
+                  <div class="text-muted description">Space for small product description</div>
+                  <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span
+                      class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
+                    <span class="far fa-star"></span> </div>
+                  <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
+                    <div class="d-flex flex-column">
+                      <div class="h6 font-weight-bold">36.99 USD</div>
+                      <div > <del>48.56</del></div>
+                    </div>
+                    <div class="btn btn-primary">Buy now</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
+              <div class="card"> <div class="card-img-top" ><img class="img-fluid"
+                  src="img/sample1.jpg">
+                </div> 
+                <div class="card-body">
+                  <h6 class="font-weight-bold pt-1">Product title</h6>
+                  <div class="text-muted description">Space for small product description</div>
+                  <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span
+                      class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
+                    <span class="far fa-star"></span> </div>
+                  <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
+                    <div class="d-flex flex-column">
+                      <div class="h6 font-weight-bold">36.99 USD</div>
+                      <div > <del>48.56</del></div>
+                    </div>
+                    <div class="btn btn-primary">Buy now</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
+              <div class="card"> <div class="card-img-top" ><img class="img-fluid"
+                  src="img/sample1.jpg">
+                </div> 
+                <div class="card-body">
+                  <h6 class="font-weight-bold pt-1">Product title</h6>
+                  <div class="text-muted description">Space for small product description</div>
+                  <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span
+                      class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
+                    <span class="far fa-star"></span> </div>
+                  <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
+                    <div class="d-flex flex-column">
+                      <div class="h6 font-weight-bold">36.99 USD</div>
+                      <div > <del>48.56</del></div>
+                    </div>
+                    <div class="btn btn-primary">Buy now</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
+              <div class="card"> <div class="card-img-top" ><img class="img-fluid"
+                  src="img/sample1.jpg">
+                </div> 
+                <div class="card-body">
+                  <h6 class="font-weight-bold pt-1">Product title</h6>
+                  <div class="text-muted description">Space for small product description</div>
+                  <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span
+                      class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
+                    <span class="far fa-star"></span> </div>
+                  <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
+                    <div class="d-flex flex-column">
+                      <div class="h6 font-weight-bold">36.99 USD</div>
+                      <div > <del>48.56</del></div>
+                    </div>
+                    <div class="btn btn-primary">Buy now</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+          <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
+         
+        </div>
+      </section>
+    </div>
+  </div>
 
 
 
-	<script src="js/vendor/jquery-2.2.4.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-	 crossorigin="anonymous"></script>
-	<script src="js/vendor/bootstrap.min.js"></script>
-	<script src="js/jquery.ajaxchimp.min.js"></script>
-	<script src="js/jquery.nice-select.min.js"></script>
-	<script src="js/jquery.sticky.js"></script>
-	<script src="js/nouislider.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<!--gmaps Js-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-	<script src="js/gmaps.min.js"></script>
-	<script src="js/main.js"></script>
+  <!-- <div class="container category my-5">
+    <div class="row">
+
+      <div class="col-md-4 side-bar">
+        <div class="product-category">
+          <div class="head">Browse Categories</div>
+          <ul>
+            <li>
+              <a href="">Makeup Products</a>
+            </li>
+            <li>
+              <a href="">Skincare Products</a>
+            </li>
+          </ul>
+        </div>
+
+
+
+
+        <div class="product-filter">
+          <div class="head">Product Filters</div>
+          <div class="sub-head">Brands
+          </div>
+          <div class="choice">
+            <ul>
+
+              <li>
+                <input type="checkbox" name="" id="1"> <label for="1">a</label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="2"> <label for="2">b</label>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="3"> <label for="3">c</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sub-head">Price
+
+        </div>
+
+        <div class="middle">
+          <div class="multi-range-slider">
+            <input type="range" id="input-left" min="0" max="5000000" value="25000" step="50000" onchange="a()">
+            <input type="range" id="input-right" min="0" max="5000000" value="4000000" step="50000" onchange="b()">
+
+            <div class="slider">
+              <div class="track"></div>
+              <div class="range"></div>
+              <div class="thumb left"></div>
+              <div class="thumb right" onchange="b()"></div>
+            </div>
+          </div>
+          <div class="price-info">
+            Price from <p id="min">25000</p> to <p id="max">4000000</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-8">
+
+        <div class="filter-bar">
+          <div class="head">
+            <p class="left">PRODUCTS LIST</p>
+            <p>Total Products x </p>
+            <Select>
+              <Option>
+                Price(High To Low)
+              </Option>
+              <Option>
+                Price(Low To High)
+              </Option>
+              <Option>
+                Price(Best Seller)
+              </Option>
+              <Option>
+                Top Rated
+              </Option>
+              <Option>
+                New
+              </Option>
+            </Select>
+          </div>
+        </div>
+        <div class="product-area">
+
+          <div class="row line-product">
+            <div class="col-4">
+              <img src="img/Kitten.png" class="img-fluid" alt="...">
+              <div class="product-details ms-3">
+                <h6 class="product-name">Name something</h6>
+                <div class="price">
+                  <h6>$120.00</h6>
+                  <h6 class="sale-price"><del> $220.00</del></h6>
+                </div>
+                <div class="info">
+                  <a class="each-link" href="">
+                    <span> <i class="fa-solid fa-cart-plus"></i></span>
+                    <p>Add to Cart</p>
+                  </a>
+                  <a class="each-link" href="">
+                    <span><i class="fa-regular fa-heart"></i></span>
+                    <p>Wishlist</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <img src="img/Kitten.png" class="img-fluid" alt="...">
+              <div class="product-details ms-3">
+                <h6 class="product-name">Name something</h6>
+                <div class="price">
+                  <h6>$120.00</h6>
+                  <h6 class="sale-price"><del> $220.00</del></h6>
+                </div>
+                <div class="info">
+                  <a class="each-link" href="">
+                    <span> <i class="fa-solid fa-cart-plus"></i></span>
+                    <p>Add to Cart</p>
+                  </a>
+                  <a class="each-link" href="">
+                    <span><i class="fa-regular fa-heart"></i></span>
+                    <p>Wishlist</p>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-4">
+              <img src="img/Kitten.png" class="img-fluid" alt="...">
+              <div class="product-details ms-3">
+                <h6 class="product-name">Name something</h6>
+                <div class="price">
+                  <h6>$120.00</h6>
+                  <h6 class="sale-price"><del> $220.00</del></h6>
+                </div>
+                <div class="info">
+                  <a class="each-link" href="">
+                    <span> <i class="fa-solid fa-cart-plus"></i></span>
+                    <p>Add to Cart</p>
+                  </a>
+                  <a class="each-link" href="">
+                    <span><i class="fa-regular fa-heart"></i></span>
+                    <p>Wishlist</p>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="row line-product">
+            <div class="col-4">
+              <img src="img/Kitten.png" class="img-fluid" alt="...">
+              <div class="product-details ms-3">
+                <h6 class="product-name">Name something</h6>
+                <div class="price">
+                  <h6>$120.00</h6>
+                  <h6 class="sale-price"><del> $220.00</del></h6>
+                </div>
+                <div class="info">
+                  <a class="each-link" href="">
+                    <span> <i class="fa-solid fa-cart-plus"></i></span>
+                    <p>Add to Cart</p>
+                  </a>
+                  <a class="each-link" href="">
+                    <span><i class="fa-regular fa-heart"></i></span>
+                    <p>Wishlist</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <img src="img/Kitten.png" class="img-fluid" alt="...">
+              <div class="product-details ms-3">
+                <h6 class="product-name">Name something</h6>
+                <div class="price">
+                  <h6>$120.00</h6>
+                  <h6 class="sale-price"><del> $220.00</del></h6>
+                </div>
+                <div class="info">
+                  <a class="each-link" href="">
+                    <span> <i class="fa-solid fa-cart-plus"></i></span>
+                    <p>Add to Cart</p>
+                  </a>
+                  <a class="each-link" href="">
+                    <span><i class="fa-regular fa-heart"></i></span>
+                    <p>Wishlist</p>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-4">
+              <img src="img/Kitten.png" class="img-fluid" alt="...">
+              <div class="product-details ms-3">
+                <h6 class="product-name">Name something</h6>
+                <div class="price">
+                  <h6>$120.00</h6>
+                  <h6 class="sale-price"><del> $220.00</del></h6>
+                </div>
+                <div class="info">
+                  <a class="each-link" href="">
+                    <span> <i class="fa-solid fa-cart-plus"></i></span>
+                    <p>Add to Cart</p>
+                  </a>
+                  <a class="each-link" href="">
+                    <span><i class="fa-regular fa-heart"></i></span>
+                    <p>Wishlist</p>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="row line-product">
+            <div class="col-4">
+              <img src="img/Kitten.png" class="img-fluid" alt="...">
+              <div class="product-details ms-3">
+                <h6 class="product-name">Name something</h6>
+                <div class="price">
+                  <h6>$120.00</h6>
+                  <h6 class="sale-price"><del> $220.00</del></h6>
+                </div>
+                <div class="info">
+                  <a class="each-link" href="">
+                    <span> <i class="fa-solid fa-cart-plus"></i></span>
+                    <p>Add to Cart</p>
+                  </a>
+                  <a class="each-link" href="">
+                    <span><i class="fa-regular fa-heart"></i></span>
+                    <p>Wishlist</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <img src="img/Kitten.png" class="img-fluid" alt="...">
+              <div class="product-details ms-3">
+                <h6 class="product-name">Name something</h6>
+                <div class="price">
+                  <h6>$120.00</h6>
+                  <h6 class="sale-price"><del> $220.00</del></h6>
+                </div>
+                <div class="info">
+                  <a class="each-link" href="">
+                    <span> <i class="fa-solid fa-cart-plus"></i></span>
+                    <p>Add to Cart</p>
+                  </a>
+                  <a class="each-link" href="">
+                    <span><i class="fa-regular fa-heart"></i></span>
+                    <p>Wishlist</p>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-4">
+              <img src="img/Kitten.png" class="img-fluid" alt="...">
+              <div class="product-details ms-3">
+                <h6 class="product-name">Name something</h6>
+                <div class="price">
+                  <h6>$120.00</h6>
+                  <h6 class="sale-price"><del> $220.00</del></h6>
+                </div>
+                <div class="info">
+                  <a class="each-link" href="">
+                    <span> <i class="fa-solid fa-cart-plus"></i></span>
+                    <p>Add to Cart</p>
+                  </a>
+                  <a class="each-link" href="">
+                    <span><i class="fa-regular fa-heart"></i></span>
+                    <p>Wishlist</p>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="head">
+            <div class="page">
+              <p>Total Page x</p>
+              <button>
+                Prev
+              </button>
+              <p>1</p>
+              <button>
+                Next
+              </button>
+            </div>
+          </div>
+        </div> -->
+        <footer class="container-fluid text-center clear ">
+          <div class="row">
+          <div class="col-4">
+          <p>About us</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At fugiat voluptatum nihil illum aperiam nesciunt vitae aut dicta sequi, deleniti eveniet voluptatibus beatae eum saepe amet velit explicabo soluta libero?</p>
+          </div>
+          <div class="col-4">
+          <p>About who</p>
+          <form action="" method="">
+            <label for="email"></label>
+            <input type="text" id="email" name="email" placeholder="Enter your email">
+            <input type="submit" name="emailvalue" value="Send">
+          </form>
+          </div>
+          <div class="col-4">
+          <p>About me</p>
+          <ul>
+            <li>Makeup Product</li>
+            <li>Some other product</li>
+            <li>Some other other product</li>
+          </ul>
+          <p>Follow us on</p>
+          <a href=""><i class="fa-brands fa-facebook"></i></a>
+          
+          <a href=""><i class="fa-brands fa-instagram"></i></a>
+          <a href=""><i class="fa-brands fa-twitter"></i></a>
+          </div>
+          
+          </footer>
+        <script>
+
+
+          var inputLeft = document.getElementById("input-left");
+          var inputRight = document.getElementById("input-right");
+
+
+
+          var thumbLeft = document.querySelector(".slider > .thumb.left");
+          var thumbRight = document.querySelector(".slider > .thumb.right");
+          var range = document.querySelector(".slider > .range");
+
+          function setLeftValue() {
+            var _this = inputLeft,
+              min = parseInt(_this.min),
+              max = parseInt(_this.max);
+
+            _this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) - 1);
+
+            var percent = ((_this.value - min) / (max - min)) * 100;
+
+            thumbLeft.style.left = percent + "%";
+            range.style.left = percent + "%";
+          }
+          setLeftValue();
+
+          function setRightValue() {
+            var _this = inputRight,
+              min = parseInt(_this.min),
+              max = parseInt(_this.max);
+
+            _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1);
+
+            var percent = ((_this.value - min) / (max - min)) * 100;
+
+            thumbRight.style.right = (100 - percent) + "%";
+            range.style.right = (100 - percent) + "%";
+          }
+          setRightValue();
+
+          inputLeft.addEventListener("input", setLeftValue);
+          inputRight.addEventListener("input", setRightValue);
+
+          inputLeft.addEventListener("mouseover", function () {
+            thumbLeft.classList.add("hover");
+          });
+          inputLeft.addEventListener("mouseout", function () {
+            thumbLeft.classList.remove("hover");
+          });
+          inputLeft.addEventListener("mousedown", function () {
+            thumbLeft.classList.add("active");
+          });
+          inputLeft.addEventListener("mouseup", function () {
+            thumbLeft.classList.remove("active");
+          });
+
+          inputRight.addEventListener("mouseover", function () {
+            thumbRight.classList.add("hover");
+          });
+          inputRight.addEventListener("mouseout", function () {
+            thumbRight.classList.remove("hover");
+          });
+          inputRight.addEventListener("mousedown", function () {
+            thumbRight.classList.add("active");
+          });
+          inputRight.addEventListener("mouseup", function () {
+            thumbRight.classList.remove("active");
+          });
+        </script>
 </body>
 
 </html>
