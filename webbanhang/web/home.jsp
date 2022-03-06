@@ -1,3 +1,12 @@
+<%-- 
+    Document   : home
+    Created on : Mar 5, 2022, 11:50:41 PM
+    Author     : ADMIN
+--%>
+
+<%@page import="DAL.DAO"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 
@@ -106,7 +115,8 @@
   </div> -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-    <div class="row">
+        
+    <div class="row">  
       <div class="col-sm-6  col-xs-6 text-center text">
         <h5>Limited Edition Sun-Kissed Essentials Set</h5>
         <p>A look as easy as summer. Includes 5 full sizes + a bright train case.</p>
@@ -228,14 +238,19 @@
       </div>
     </div>
       <div class="row row-item">
+          <c:forEach items="${list}" var="a"  begin = "1" end = "8">
       <div class="col-lg-3 col-md-6 item  ">
         <a href="" class="item-a">
-        <img src="img/4117_c9f4655916214f12b8fdc5a50f268c40.png" class="img-fluid" alt="...">
+        <img src="${a.getPicture()}" class="img-fluid" alt="...">
+        
         <div class="product-details ">
-          <h6 class="product-name">Lilybyred Mood Cinema Velvet Lilybyred Mood Cinema Velvet Lilybyred Mood Cinema Velvet</h6>
+          <h6 class="product-name">${a.name}</h6>
+          <div class="short-desc">${a.sdesc}</div> 
           <div class="price">
-            <h6>$120.00</h6>
-            <h6 class="sale-price"><del> $220.00</del></h6>
+              <c:set var="price" value="${a.getLowestandHighestPrice()}" scope="session"></c:set>
+            <h6>${price[0]}  <c:if test="${price[1]!=null}">  - ${price[1]} </c:if> </h6>
+           
+ 
                       </div>
                       <div class="info">
             <a class="each-link" href="">
@@ -253,183 +268,8 @@
         </div>
       </a>
       </div>
-      <div class="col-lg-3 col-md-6 item  ">
-        <a href="" class="item-a">
-        <img src="img/Kitten.png" class="img-fluid" alt="...">
-        <div class="product-details ">
-          <h6 class="product-name">Lilybyred Mood Cinema Velvet</h6>
-          <div class="price">
-            <h6>$120.00</h6>
-            <h6 class="sale-price"><del> $220.00</del></h6>
-                      </div>
-                      <div class="info">
-            <a class="each-link" href="">
-             <span> <i class="fa-solid fa-cart-plus"></i></span>
-             <p>Add to Cart</p> 
-            </a>
-            <a class="each-link" href="">
-              <span><i class="fa-regular fa-heart"></i></span>
-              <p>Wishlist</p>   
-             </a>
-
-
-        </div>
-
-        </div>
-      </a>
-      </div>
-      <div class="col-lg-3 col-md-6 item  ">
-        <a href="" class="item-a">
-        <img src="img/4117_c9f4655916214f12b8fdc5a50f268c40.png" class="img-fluid" alt="...">
-        <div class="product-details ">
-          <h6 class="product-name">Lilybyred Mood Cinema Velvet</h6>
-          <div class="price">
-            <h6>$120.00</h6>
-            <h6 class="sale-price"><del> $220.00</del></h6>
-                      </div>
-                      <div class="info">
-            <a class="each-link" href="">
-             <span> <i class="fa-solid fa-cart-plus"></i></span>
-             <p>Add to Cart</p> 
-            </a>
-            <a class="each-link" href="">
-              <span><i class="fa-regular fa-heart"></i></span>
-              <p>Wishlist</p>   
-             </a>
-
-
-        </div>
-
-        </div>
-      </a>
-      </div>
-      <div class="col-lg-3 col-md-6 item  ">
-        <a href="" class="item-a">
-        <img src="img/4117_c9f4655916214f12b8fdc5a50f268c40.png" class="img-fluid" alt="...">
-        <div class="product-details ">
-          <h6 class="product-name">Lilybyred Mood Cinema Velvet</h6>
-          <div class="price">
-            <h6>$120.00</h6>
-            <h6 class="sale-price"><del> $220.00</del></h6>
-                      </div>
-                      <div class="info">
-            <a class="each-link" href="">
-             <span> <i class="fa-solid fa-cart-plus"></i></span>
-             <p>Add to Cart</p> 
-            </a>
-            <a class="each-link" href="">
-              <span><i class="fa-regular fa-heart"></i></span>
-              <p>Wishlist</p>   
-             </a>
-
-
-        </div>
-
-        </div>
-      </a>
-      </div>
-    </div>
-    <div class="row row-item">
-      <div class="col-lg-3 col-md-6 item  ">
-        <a href="" class="item-a">
-        <img src="img/4117_c9f4655916214f12b8fdc5a50f268c40.png" class="img-fluid" alt="...">
-        <div class="product-details ">
-          <h6 class="product-name">Lilybyred Mood Cinema Velvet</h6>
-          <div class="price">
-            <h6>$120.00</h6>
-            <h6 class="sale-price"><del> $220.00</del></h6>
-                      </div>
-                      <div class="info">
-            <a class="each-link" href="">
-             <span> <i class="fa-solid fa-cart-plus"></i></span>
-             <p>Add to Cart</p> 
-            </a>
-            <a class="each-link" href="">
-              <span><i class="fa-regular fa-heart"></i></span>
-              <p>Wishlist</p>   
-             </a>
-
-
-        </div>
-
-        </div>
-      </a>
-      </div>
-      <div class="col-lg-3 col-md-6 item  ">
-        <a href="" class="item-a">
-        <img src="img/Kitten.png" class="img-fluid" alt="...">
-        <div class="product-details ">
-          <h6 class="product-name">Lilybyred Mood Cinema Velvet</h6>
-          <div class="price">
-            <h6>$120.00</h6>
-            <h6 class="sale-price"><del> $220.00</del></h6>
-                      </div>
-                      <div class="info">
-            <a class="each-link" href="">
-             <span> <i class="fa-solid fa-cart-plus"></i></span>
-             <p>Add to Cart</p> 
-            </a>
-            <a class="each-link" href="">
-              <span><i class="fa-regular fa-heart"></i></span>
-              <p>Wishlist</p>   
-             </a>
-
-
-        </div>
-
-        </div>
-      </a>
-      </div>
-      <div class="col-lg-3 col-md-6 item  ">
-        <a href="" class="item-a">
-        <img src="img/4117_c9f4655916214f12b8fdc5a50f268c40.png" class="img-fluid" alt="...">
-        <div class="product-details ">
-          <h6 class="product-name">Lilybyred Mood Cinema Velvet</h6>
-          <div class="price">
-            <h6>$120.00</h6>
-            <h6 class="sale-price"><del> $220.00</del></h6>
-                      </div>
-                      <div class="info">
-            <a class="each-link" href="">
-             <span> <i class="fa-solid fa-cart-plus"></i></span>
-             <p>Add to Cart</p> 
-            </a>
-            <a class="each-link" href="">
-              <span><i class="fa-regular fa-heart"></i></span>
-              <p>Wishlist</p>   
-             </a>
-
-
-        </div>
-
-        </div>
-      </a>
-      </div>
-      <div class="col-lg-3 col-md-6 item  ">
-        <a href="" class="item-a">
-        <img src="img/4117_c9f4655916214f12b8fdc5a50f268c40.png" class="img-fluid" alt="...">
-        <div class="product-details ">
-          <h6 class="product-name">Lilybyred Mood Cinema Velvet</h6>
-          <div class="price">
-            <h6>$120.00</h6>
-            <h6 class="sale-price"><del> $220.00</del></h6>
-                      </div>
-                      <div class="info">
-            <a class="each-link" href="">
-             <span> <i class="fa-solid fa-cart-plus"></i></span>
-             <p>Add to Cart</p> 
-            </a>
-            <a class="each-link" href="">
-              <span><i class="fa-regular fa-heart"></i></span>
-              <p>Wishlist</p>   
-             </a>
-
-
-        </div>
-
-        </div>
-      </a>
-      </div>
+      </c:forEach>
+     
     </div>
     <div class="button">
     <a href="#" class="btn btn-light">View All</a>

@@ -1,3 +1,11 @@
+<%-- 
+    Document   : category
+    Created on : Mar 6, 2022, 10:13:27 PM
+    Author     : ADMIN
+--%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +28,7 @@
   <!-- <script src="https://unpkg.com/feather-icons"></script> -->
   <!-- script cho icon -->
   <script src="https://kit.fontawesome.com/ca0aaad838.js" crossorigin="anonymous"></script>
-
+<% String[] b=null; %>
 </head>
 
 <body>
@@ -218,187 +226,29 @@
       <section id="products">
         <div class="container py-3">
           <div class="row">
-             
+               <c:forEach items="${list}" var="a"  >
             <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-5">
               <div class="card"> <div class="card-img-top" ><img class="img-fluid"
-                  src="img/sample1.jpg">
+                  src="${a.getPicture()}">
                 </div> 
                 <div class="card-body">
-                  <h6 class="font-weight-bold pt-1">Kem Lót Che Khuyết Điểm, Se Khít Lỗ Chân Lông Maybelline Baby Skin Pore Eraser 22ml</h6>
-                  <div class="text-muted description">Space for small product description</div>
+                  <h6 class="font-weight-bold pt-1">${a.name}</h6>
+                  <div class="text-muted description">${a.sdesc}</div>
                   <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span
                       class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
                     <span class="far fa-star"></span> </div>
                   <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
                     <div class="d-flex flex-column">
-                      <div class="h6 font-weight-bold">36.99 USD</div>
-                      <div > <del>48.56</del></div>
+                        <c:set var="price" value="${a.getLowestandHighestPrice()}"></c:set>
+                      <div class="h6">${price[0]} <c:if test="${price[1]!=null}">-${price[1]} </c:if> </div>
+     
                     </div>
                     <div class="btn btn-primary">Buy now</div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-5">
-              <div class="card"> <div class="card-img-top" ><img class="img-fluid"
-                  src="img/sample1.jpg">
-                </div> 
-                <div class="card-body">
-                  <h6 class="font-weight-bold pt-1">Product title</h6>
-                  <div class="text-muted description">Space for small product description</div>
-                  <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span
-                      class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
-                    <span class="far fa-star"></span> </div>
-                  <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
-                    <div class="d-flex flex-column">
-                      <div class="h6 font-weight-bold">36.99 USD</div>
-                      <div > <del>48.56</del></div>
-                    </div>
-                    <div class="btn btn-primary">Buy now</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-5">
-              <div class="card"> <div class="card-img-top" ><img class="img-fluid"
-                  src="img/sample2.jpg">
-                </div> 
-                <div class="card-body">
-                  <h6 class="font-weight-bold pt-1">Cọ Viền Môi Merzy Lip Brush</h6>
-                  <div class="text-muted description">Space for small product description</div>
-                  <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span
-                      class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
-                    <span class="far fa-star"></span> </div>
-                  <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
-                    <div class="d-flex flex-column">
-                      <div class="h6 font-weight-bold">36.99 USD</div>
-                      <div > <del>48.56</del></div>
-                    </div>
-                    <div class="btn btn-primary">Buy now</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-5">
-              <div class="card"> <div class="card-img-top" ><img class="img-fluid"
-                  src="img/sample1.jpg">
-                </div> 
-                <div class="card-body">
-                  <h6 class="font-weight-bold pt-1">Product title</h6>
-                  <div class="text-muted description">Space for small product description</div>
-                  <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span
-                      class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
-                    <span class="far fa-star"></span> </div>
-                  <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
-                    <div class="d-flex flex-column">
-                      <div class="h6 font-weight-bold">36.99 USD</div>
-                      <div > <del>48.56</del></div>
-                    </div>
-                    <div class="btn btn-primary">Buy now</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-5">
-              <div class="card"> <div class="card-img-top" ><img class="img-fluid"
-                  src="img/sample1.jpg">
-                </div> 
-                <div class="card-body">
-                  <h6 class="font-weight-bold pt-1">Product title</h6>
-                  <div class="text-muted description">Space for small product description</div>
-                  <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span
-                      class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
-                    <span class="far fa-star"></span> </div>
-                  <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
-                    <div class="d-flex flex-column">
-                      <div class="h6 font-weight-bold">36.99 USD</div>
-                      <div > <del>48.56</del></div>
-                    </div>
-                    <div class="btn btn-primary">Buy now</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-5">
-              <div class="card"> <div class="card-img-top" ><img class="img-fluid"
-                  src="img/sample1.jpg">
-                </div> 
-                <div class="card-body">
-                  <h6 class="font-weight-bold pt-1">Product title</h6>
-                  <div class="text-muted description">Space for small product description</div>
-                  <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span
-                      class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
-                    <span class="far fa-star"></span> </div>
-                  <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
-                    <div class="d-flex flex-column">
-                      <div class="h6 font-weight-bold">36.99 USD</div>
-                      <div > <del>48.56</del></div>
-                    </div>
-                    <div class="btn btn-primary">Buy now</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
-              <div class="card"> <div class="card-img-top" ><img class="img-fluid"
-                  src="img/sample1.jpg">
-                </div> 
-                <div class="card-body">
-                  <h6 class="font-weight-bold pt-1">Product title</h6>
-                  <div class="text-muted description">Space for small product description</div>
-                  <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span
-                      class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
-                    <span class="far fa-star"></span> </div>
-                  <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
-                    <div class="d-flex flex-column">
-                      <div class="h6 font-weight-bold">36.99 USD</div>
-                      <div > <del>48.56</del></div>
-                    </div>
-                    <div class="btn btn-primary">Buy now</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
-              <div class="card"> <div class="card-img-top" ><img class="img-fluid"
-                  src="img/sample1.jpg">
-                </div> 
-                <div class="card-body">
-                  <h6 class="font-weight-bold pt-1">Product title</h6>
-                  <div class="text-muted description">Space for small product description</div>
-                  <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span
-                      class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
-                    <span class="far fa-star"></span> </div>
-                  <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
-                    <div class="d-flex flex-column">
-                      <div class="h6 font-weight-bold">36.99 USD</div>
-                      <div > <del>48.56</del></div>
-                    </div>
-                    <div class="btn btn-primary">Buy now</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
-              <div class="card"> <div class="card-img-top" ><img class="img-fluid"
-                  src="img/sample1.jpg">
-                </div> 
-                <div class="card-body">
-                  <h6 class="font-weight-bold pt-1">Product title</h6>
-                  <div class="text-muted description">Space for small product description</div>
-                  <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span
-                      class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
-                    <span class="far fa-star"></span> </div>
-                  <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
-                    <div class="d-flex flex-column">
-                      <div class="h6 font-weight-bold">36.99 USD</div>
-                      <div > <del>48.56</del></div>
-                    </div>
-                    <div class="btn btn-primary">Buy now</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+               </c:forEach>
           </div>
         </div>
        

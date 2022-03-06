@@ -5,6 +5,8 @@
  */
 package model;
 
+import DAL.DAO;
+
 /**
  *
  * @author ADMIN
@@ -56,7 +58,18 @@ public class Product {
     public void setLongdesc(String longdesc) {
         this.longdesc = longdesc;
     }
-
+public String getPicture()
+{
+    DAO dao = new DAO();
+        return dao.getPicture(""+id) ;
+    
+}
+public String[] getLowestandHighestPrice()
+{
+    DAO dao = new DAO();
+        return dao.getLowestandHighestPrice(""+id) ;
+    
+}
     @Override
     public String toString() {
         return "Product{" + "id=" + id + ", name=" + name + ", sdesc=" + sdesc + ", longdesc=" + longdesc + '}';

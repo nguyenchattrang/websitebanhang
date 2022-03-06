@@ -50,12 +50,11 @@ body{
     -webkit-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
 }
-.item:hover .product-details{
+/* .item:hover .product-details{
     padding-top: 40px 0px;
-}
+} */
 .item:hover{
-    padding: 0px 0px;
-    margin: 0px;
+   transform: scale(1.1);
 }
 .container-item{
     background-color: #29212a;
@@ -75,7 +74,9 @@ body{
     height: fit-content;
 }
 .price h6{
-    font-size: 15px;
+    font-size: 20px;
+    padding-top: 20px;
+    font-weight: bold;
 }
 del{
     color: #E2DEA9;
@@ -140,8 +141,16 @@ footer{
     -webkit-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
 }
-.item:hover h6{
-    
+.item h6{
+    font-size: 20px;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: initial;
+    height: 45px;
 }
 .item:hover .info{
     visibility: visible;
@@ -156,9 +165,23 @@ footer{
 }
 .item img:hover{
     background: rgba(0, 0, 0, 0.3);
+    transform: matrix();
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
+}
+.short-desc{
+    margin-top: 20px;
+    padding: 0 5px;
+        font-size: 15px;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    white-space: initial;
+    height: 65px;
 }
 .button{
     text-align: center;
@@ -677,6 +700,15 @@ color: white;
     margin-bottom: 5vh
 }
 
+.cardd {
+    margin: auto;
+    margin-top: 50px;
+    max-width: 950px;
+    width: 90%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    border: transparent
+}
 .card {
     margin: auto;
     margin-top: 50px;
@@ -688,7 +720,7 @@ color: white;
 }
 
 @media(max-width:767px) {
-    .card {
+    .cardd {
         margin: 3vh auto
     }
 }
@@ -1391,6 +1423,9 @@ div.text-muted {
     -webkit-transition: all 0.7s ease-out;
     -o-transition: all 0.7s ease-out;
 }
+.bottom-price .h6{
+    font-weight: bold;
+}
 .card:hover .bottom-price{
     background-color: rgba(128, 128, 128, 0.342);
 }
@@ -1403,7 +1438,17 @@ div.text-muted {
 
 .card-body .description {
     font-size: 0.78rem;
-    padding-bottom: 8px
+    padding-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    white-space: initial;
+    height: 75px;
+    text-align: left;
+    padding: 0 5px;
+    margin: 10px 0px;
 }
 
 div.h6,h6 {
@@ -1468,7 +1513,7 @@ div.h6,h6 {
         margin: 5px 5px 5px 0px
     }
 
-}
+
 @media(min-width:576px) and (max-width:767px) {
     #sidebar {
         width: 35%
@@ -1532,4 +1577,4 @@ div.h6,h6 {
     #mobile-filter {
         clear: both
     }
-}
+}}

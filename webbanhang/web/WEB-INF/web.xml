@@ -4,17 +4,25 @@
         <servlet-name>home</servlet-name>
         <servlet-class>Controller.home</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>category</servlet-name>
+        <servlet-class>Controller.category</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>home</servlet-name>
         <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>category</servlet-name>
+        <url-pattern>/category</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
-      <welcome-file-list>  
-   <welcome-file>home</welcome-file>  
-   <welcome-file>home</welcome-file>  
-  </welcome-file-list>  
+    <welcome-file-list>
+        <welcome-file>home</welcome-file>
+        <welcome-file>home</welcome-file>
+    </welcome-file-list>
 </web-app>
