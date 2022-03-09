@@ -10,19 +10,18 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Brand;
-import model.Category;
-import model.Product;
-import model.SubCategory;
+import javax.servlet.http.HttpSession;
+import model.Account;
 
 /**
  *
  * @author ADMIN
  */
-public class category extends HttpServlet {
+public class login extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,23 +34,22 @@ public class category extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        DAO dao = new DAO();
-        String cid = (String) (request.getParameter("cid"));
-        ArrayList<Product> product;
-        if (cid == null) {
-            product = dao.getProducts();
-        } else {
-            product = dao.getProductsbyCid(cid);
+        String action = request.getParameter("action");
+        String link = request.getParameter("link");
+        HttpSession session = request.getSession();
+        Account user = (Account) session.getAttribute("user");
+        if (action == null) {
+
+            if (user == null) {
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            } else {
+                response.sendRedirect("home");
+            }
+        } else if (action.equalsIgnoreCase("logout")) {
+            session.removeAttribute("user");
+            response.sendRedirect(link);
+
         }
-        ArrayList<Category> category = dao.getCategory();
-        ArrayList<SubCategory> subcategory = dao.getSubCategory();
-        ArrayList<Brand> brand = dao.getBrands();
-        request.setAttribute("list", product);
-        request.setAttribute("category", category);   
-        request.setAttribute("subcategory", subcategory);
-        request.setAttribute("brand", brand);
-        request.setAttribute("cid",cid);
-        request.getRequestDispatcher("category.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -66,7 +64,9 @@ public class category extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         processRequest(request, response);
+
     }
 
     /**
@@ -80,7 +80,35 @@ public class category extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        DAO dao = new DAO();
+
+        ArrayList<Account> a = dao.getAccounts();
+        Account account = dao.getAccountByUsernameAndPassword(username, password);
+        if (account != null) // login successfully!
+        {
+            String remember = request.getParameter("remember");
+            if (remember != null) {
+                Cookie c_user = new Cookie("username", username);
+                Cookie c_pass = new Cookie("password", password);
+                c_user.setMaxAge(3600 * 24 * 30);
+                c_pass.setMaxAge(3600 * 24 * 30);
+                response.addCookie(c_pass);
+                response.addCookie(c_user);
+
+            }
+            HttpSession session = request.getSession();
+            session.setAttribute("user", account);
+
+//           response.getWriter().println("login successful!");
+            response.sendRedirect("home");
+
+        } else //login fail
+        {
+            request.setAttribute("message", "Wrong username or password");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }
     }
 
     /**

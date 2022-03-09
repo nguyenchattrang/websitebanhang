@@ -13,16 +13,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Brand;
-import model.Category;
+import model.Picture;
 import model.Product;
-import model.SubCategory;
+import model.Variation;
 
 /**
  *
  * @author ADMIN
  */
-public class category extends HttpServlet {
+public class Productdetails extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,23 +34,15 @@ public class category extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        DAO dao = new DAO();
-        String cid = (String) (request.getParameter("cid"));
-        ArrayList<Product> product;
-        if (cid == null) {
-            product = dao.getProducts();
-        } else {
-            product = dao.getProductsbyCid(cid);
-        }
-        ArrayList<Category> category = dao.getCategory();
-        ArrayList<SubCategory> subcategory = dao.getSubCategory();
-        ArrayList<Brand> brand = dao.getBrands();
-        request.setAttribute("list", product);
-        request.setAttribute("category", category);   
-        request.setAttribute("subcategory", subcategory);
-        request.setAttribute("brand", brand);
-        request.setAttribute("cid",cid);
-        request.getRequestDispatcher("category.jsp").forward(request, response);
+  String id=(String) request.getParameter("pid");
+  DAO dao = new DAO();
+  ArrayList<Picture> pictures = dao.getPicturesbyId(id);
+  Product a = dao.getSingleProduct(id);
+        ArrayList<Variation> variations= dao.getVariation(id);
+  request.setAttribute("pictures", pictures);
+  request.setAttribute("product", a);
+   request.setAttribute("variations", variations);
+  request.getRequestDispatcher("Productdetails.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

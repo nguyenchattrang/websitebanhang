@@ -53,3 +53,32 @@ function printRatingResult(result, num = 0) {
 }
 
 executeRating(ratingStars, ratingResult);
+
+// var a = document.getElementById("subcategory").getElementsByTagName('div');
+//        function Filter(){
+//           
+//             var a = document.getElementsByClassName("subcategory");
+//            var b="";
+//            for(let i=0;i<a.length;i++)
+//            {
+//                          if(a[i].checked==true)
+//                {
+//                   if(b==="") b += 'subcategory_id='+(i+1);
+//                   else
+//                  b += ' or subcategory_id='+(i+1);
+//                }
+//            }
+//            console.log(b);
+//
+//
+//$.ajax({
+//    url: "Filter",
+//    type: 'POST',
+//    data:{ amount:b},
+//    async: true,
+//    success: function(response) {
+//var row = document.getElementById("content");
+//row.innerHTML+=content;
+//    }
+//});
+//            }

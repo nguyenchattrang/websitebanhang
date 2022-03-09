@@ -34,6 +34,12 @@ body{
     margin-right:  20%;
     margin-top: 5%;
 }
+.checkoutlabel h4{
+    font-family: Roboto Condensed,sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+  
+}
 .header-category{
     background-image: url("../img/bg.gif");
     background-size: cover;
@@ -337,7 +343,7 @@ color: white;
     text-transform: uppercase;
     color: black;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
     padding: 0 15px;
     padding-top: 25px;
     
@@ -726,7 +732,7 @@ color: white;
 }
 
 .cart {
-    background-color:#d8d8d8;
+    background-color:white;
     padding: 4vh 5vh;
     border-bottom-left-radius: 1rem;
     border-top-left-radius: 1rem
@@ -779,7 +785,9 @@ color: white;
     padding: 2vh 0;
     width: 100%
 }
-
+#form1{
+    text-align: center;
+}
 .col-2,
 .col {
     padding: 0 1vh
@@ -939,8 +947,13 @@ color: black;
     color: purple;
     }
     .product_count input{
+        text-align: center;
         width: 10%;
         margin-left: 20px;
+    }
+        .product_count {
+        text-align: left;
+        margin: 10px 0px;
     }
 .list{
     list-style-type: none;
@@ -1417,11 +1430,90 @@ div.text-muted {
 }
 .bottom-price{
     padding: 20px 20px;
+    text-align: left;
     width: 100%;
     transition: all 0.7s ease-out;
     -moz-transition: all 0.7s ease-out;
     -webkit-transition: all 0.7s ease-out;
     -o-transition: all 0.7s ease-out;
+}
+.list-group a {
+    text-decoration: none;
+}
+.list-group a .active {
+    background-color: black;
+    border-color: white;
+}
+#products .row a{
+    text-decoration: none;
+    color:black;
+}
+.variation-section {
+    text-align: left;
+}
+.variation-section .price-elements{
+    font-size: 25px;
+    font-weight: bold;
+}
+.variation-section .checked{
+    display: block;
+}
+.cart-section b-b-b{
+    color:red;
+    text-decoration: none;
+}
+.cart-section .b-b-b i:hover{
+    color:red;
+   
+}
+.cart-section .b-b-b i{
+    color:black;
+ font-size:25px;
+ width: 40px;
+}
+.item{
+    text-align: center;
+}
+.size-choice {
+    display: flex;
+    color:white;
+    padding: 10px 0px;
+}
+.qtt{
+    width: 10%;
+}
+.qtt input{
+    width: 20%;
+}
+.size-choice select {
+    padding: 10px 5px;
+    width: 50%;
+    text-align: left;
+}
+.size-choice option {
+    padding: 10px 0px;
+    width: 50%;
+    text-align: left;
+}
+.size-choice checked {
+   background-color: black;
+}
+.size-choice checked:hover {
+   background-color: black;
+   
+}
+.product_count button {
+   width:50px;
+}
+.price-choice .price-elements
+{
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+#sidebar a{
+    color: black;
+    text-decoration: none;
 }
 .bottom-price .h6{
     font-weight: bold;

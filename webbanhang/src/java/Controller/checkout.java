@@ -5,7 +5,6 @@
  */
 package Controller;
 
-import DAL.DAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -13,16 +12,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Brand;
-import model.Category;
-import model.Product;
-import model.SubCategory;
+import javax.servlet.http.HttpSession;
+import model.Product_Variation;
 
 /**
  *
  * @author ADMIN
  */
-public class category extends HttpServlet {
+public class checkout extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,23 +32,15 @@ public class category extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        DAO dao = new DAO();
-        String cid = (String) (request.getParameter("cid"));
-        ArrayList<Product> product;
-        if (cid == null) {
-            product = dao.getProducts();
-        } else {
-            product = dao.getProductsbyCid(cid);
+        HttpSession session = request.getSession();
+        ArrayList<Product_Variation> cart;
+        cart = (ArrayList<Product_Variation>) session.getAttribute("cart");
+        if(cart==null){
+            response.sendRedirect("cart?action=noproduct");
         }
-        ArrayList<Category> category = dao.getCategory();
-        ArrayList<SubCategory> subcategory = dao.getSubCategory();
-        ArrayList<Brand> brand = dao.getBrands();
-        request.setAttribute("list", product);
-        request.setAttribute("category", category);   
-        request.setAttribute("subcategory", subcategory);
-        request.setAttribute("brand", brand);
-        request.setAttribute("cid",cid);
-        request.getRequestDispatcher("category.jsp").forward(request, response);
+        else      
+request.getRequestDispatcher("checkout.jsp").forward(request, response);
+   
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

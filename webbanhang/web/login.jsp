@@ -1,3 +1,11 @@
+<%-- 
+    Document   : login
+    Created on : Mar 9, 2022, 2:19:37 PM
+    Author     : ADMIN
+--%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -41,61 +49,86 @@
         <div class="blank">
       
         </div>
-          <nav id="navbar" class=" py-0 sticky-top navbar navbar-expand-lg navbar-light  ">
-              <!-- navbar là cái tên class k phải ở bootstrap
-              navbar-expand-lg: màn hình to thì nó dài ra còn bé hơn thì nó có cái nút
-              navbar-light:chữ hợp với màu nền trắng
-              bg-light: màu nền trắng
-              -->
-              <div class="container-fluid greybox">
-                <a class="navbar-brand" href="#"> <img class="" src="img/Kitten.png" alt="logo"> Kitten Cosmestics Shop</a>
-                <!-- brand name có cả hình ảnh chữ logo to hơn bình thường -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarmenu" aria-controls="navbarmenu" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- navbar toggler là cái nút có ba cái gạch ngang, màn hình nhỏ thì nó có hay xao kb -->
-                <div class="collapse navbar-collapse" id="navbarmenu">
-                    <!-- navbar-collapse để gộp nó vào, cái id liên kết với cái databstarget bên trên nên phải đặt cho nó đúng tên -->
-                  <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                      <a class="nav-link " aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Shop
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="makeup.html">Makeup Products</a></li>
-                        <li><a class="dropdown-item" href="#">Skincare Products</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Blog</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Pages
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Login</a></li>
-                        <li><a class="dropdown-item" href="#">Tracking</a></li>
-                        
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#"><img class="icon" src="img/icon/cart.png"></a>
-                    </li>
-                  </ul>
-                  <form class="d-flex">
-                    <input class="form-control mx-3" type="search" placeholder="Search" aria-label="Search">
-                    <img class="icon  btn-outline-danger " type="submit" src="img/icon/search2.png">
-                  </form>
+         <nav id="navbar" class=" py-0 sticky-top navbar navbar-expand-lg navbar-light  ">
+                <!-- navbar là cái tên class k phải ở bootstrap
+                navbar-expand-lg: màn hình to thì nó dài ra còn bé hơn thì nó có cái nút
+                navbar-light:chữ hợp với màu nền trắng
+                bg-light: màu nền trắng
+                -->
+                <div class="container-fluid greybox">
+                    <a style="font-size: 0.8rem;" class="navbar-brand" href="home"> <img class="" src="img/Kitten.png" alt="logo"> Kitten Cosmestics Shop</a>
+                    <!-- brand name có cả hình ảnh chữ logo to hơn bình thường -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarmenu" aria-controls="navbarmenu" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- navbar toggler là cái nút có ba cái gạch ngang, màn hình nhỏ thì nó có hay xao kb -->
+                    <div class="collapse navbar-collapse" id="navbarmenu">
+                        <!-- navbar-collapse để gộp nó vào, cái id liên kết với cái databstarget bên trên nên phải đặt cho nó đúng tên -->
+                        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="home">Home</a>
+                            </li>
+                      <li class="nav-item">
+                                <a class="nav-link" href="category">Category</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Blog</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Pages
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Login</a></li>
+                                    <li><a class="dropdown-item" href="#">Tracking</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                            <c:if test="${user==null}" > 
+                                <li class="nav-item">
+                                    <a class="nav-link" href="login?link=login"><span><i class="fa-solid fa-user"></i></span></a>
+
+                                </li>
+                            </c:if>
+                            <li class="nav-item">
+                                <a class="nav-link" href="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+
+                            </li>  
+
+                            <c:if test="${user!=null}" > 
+<!--                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><span><i class="fa-solid fa-user-check"></i> Hello ${user.username}</span></a>
+
+                                </li>-->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link " href="login" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span><i class="fa-solid fa-user-check"></i> Hello ${user.username}</span>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="makeup.html">Profile</a></li>
+                                        <li><a class="dropdown-item" href="#">Wish List</a></li>
+                                         <li><a class="dropdown-item" href="login?action=logout&link=login">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </c:if>
+                            <!--                            <li class="nav-item">
+                                                            <a class="nav-link" href="#"><img class="icon" src="img/icon/cart.png"></a>
+                                                        </li>-->
+                             <li class="nav-item">
+                                <form class="d-flex">
+                                    <input class="form-control mx-3" type="search" placeholder="Search" aria-label="Search">
+                                    <img class="icon  btn-outline-danger " type="submit" src="img/icon/search2.png">
+                                </form>
+                            </li>
+
+                        </ul>
+
+                    </div>
                 </div>
-       
-      </nav>
+                    </nav>
 	  <div id="signin"  class="container-fluid login-form">
 		<div class="d-flex justify-content-center h-100">
 			<div class="box">
@@ -128,6 +161,9 @@
 							<input type="submit" value="Login" class="btn btn-dark btn-outline-light">
 						</div>
 					</form>
+                                            <c:if test="${message !=null }  "  >  
+                                                <p style="color:white;" >${message}</p>
+        </c:if>
 				</div>
 				<div class="card-footer">
 					<div class="d-flex justify-content-center links">

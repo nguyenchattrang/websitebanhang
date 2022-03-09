@@ -70,9 +70,10 @@ public String[] getLowestandHighestPrice()
         return dao.getLowestandHighestPrice(""+id) ;
     
 }
+
     @Override
     public String toString() {
         return "Product{" + "id=" + id + ", name=" + name + ", sdesc=" + sdesc + ", longdesc=" + longdesc + '}';
     }
-      
+
 }

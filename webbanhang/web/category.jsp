@@ -37,67 +37,86 @@
     <div class="blank">
 
     </div>
-    <nav id="navbar" class=" py-0 sticky-top navbar navbar-expand-lg navbar-light  ">
-      <!-- navbar là cái tên class k phải ở bootstrap
-          navbar-expand-lg: màn hình to thì nó dài ra còn bé hơn thì nó có cái nút
-          navbar-light:chữ hợp với màu nền trắng
-          bg-light: màu nền trắng
-          -->
-      <div class="container-fluid greybox">
-        <a class="navbar-brand" href="#"> <img class="" src="img/Kitten.png" alt="logo"> Kitten Cosmestics Shop</a>
-        <!-- brand name có cả hình ảnh chữ logo to hơn bình thường -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarmenu"
-          aria-controls="navbarmenu" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- navbar toggler là cái nút có ba cái gạch ngang, màn hình nhỏ thì nó có hay xao kb -->
-        <div class="collapse navbar-collapse" id="navbarmenu">
-          <!-- navbar-collapse để gộp nó vào, cái id liên kết với cái databstarget bên trên nên phải đặt cho nó đúng tên -->
-          <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link " href="category.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Shop
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="makeup.html">Makeup Products</a></li>
-                <li><a class="dropdown-item" href="#">Skincare Products</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Pages
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Login</a></li>
-                <li><a class="dropdown-item" href="#">Tracking</a></li>
+                 <nav id="navbar" class=" py-0 sticky-top navbar navbar-expand-lg navbar-light  ">
+                <!-- navbar là cái tên class k phải ở bootstrap
+                navbar-expand-lg: màn hình to thì nó dài ra còn bé hơn thì nó có cái nút
+                navbar-light:chữ hợp với màu nền trắng
+                bg-light: màu nền trắng
+                -->
+                <div class="container-fluid greybox">
+                    <a style="font-size: 0.8rem;" class="navbar-brand" href="home"> <img class="" src="img/Kitten.png" alt="logo"> Kitten Cosmestics Shop</a>
+                    <!-- brand name có cả hình ảnh chữ logo to hơn bình thường -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarmenu" aria-controls="navbarmenu" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- navbar toggler là cái nút có ba cái gạch ngang, màn hình nhỏ thì nó có hay xao kb -->
+                    <div class="collapse navbar-collapse" id="navbarmenu">
+                        <!-- navbar-collapse để gộp nó vào, cái id liên kết với cái databstarget bên trên nên phải đặt cho nó đúng tên -->
+                        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="home">Home</a>
+                            </li>
+                      <li class="nav-item">
+                                <a class="nav-link" href="category">Category</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Blog</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Pages
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Login</a></li>
+                                    <li><a class="dropdown-item" href="#">Tracking</a></li>
 
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><img class="icon" src="img/icon/cart.png"></a>
-            </li>
-            <li>
-              <form class="d-flex">
-                <input class="form-control mx-3" type="search" placeholder="Search" aria-label="Search">
-                <img class="icon  btn-outline-danger " type="submit" src="img/icon/search2.png">
-              </form>
-            </li>
-          </ul>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                            <c:if test="${user==null}" > 
+                                <li class="nav-item">
+                                    <a class="nav-link" href="login?link=category"><span><i class="fa-solid fa-user"></i></span></a>
 
-        </div>
+                                </li>
+                            </c:if>
+                            <li class="nav-item">
+                                <a class="nav-link" href="cart"><i class="fa-solid fa-cart-shopping"></i></a>
 
-    </nav>
+                            </li>  
+
+                            <c:if test="${user!=null}" > 
+<!--                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><span><i class="fa-solid fa-user-check"></i> Hello ${user.username}</span></a>
+
+                                </li>-->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link " href="login" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span><i class="fa-solid fa-user-check"></i> Hello ${user.username}</span>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="makeup.html">Profile</a></li>
+                                        <li><a class="dropdown-item" href="#">Wish List</a></li>
+                                         <li><a class="dropdown-item" href="login?action=logout&link=category">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </c:if>
+                            <!--                            <li class="nav-item">
+                                                            <a class="nav-link" href="#"><img class="icon" src="img/icon/cart.png"></a>
+                                                        </li>-->
+                             <li class="nav-item">
+                                <form class="d-flex">
+                                    <input class="form-control mx-3" type="search" placeholder="Search" aria-label="Search">
+                                    <img class="icon  btn-outline-danger " type="submit" src="img/icon/search2.png">
+                                </form>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+                    </nav>
     <div class="title">
       <h1>
         Shop Category
@@ -141,7 +160,7 @@
         </select> </div>
     </div>
     <div class="d-sm-flex align-items-sm-center pt-2 clear">
-      <div class="text-muted filter-label">Applied Filters:</div>
+        <div id="filter-label" class="text-muted filter-label">Applied Filters:</div>
       <div class="purple-label font-weight-bold p-0 px-1 mx-sm-1 mx-0 my-sm-0 my-2">Selected Filtre <span
           class=" px-1 close">&times;</span> </div>
       <div class="purple-label font-weight-bold p-0 px-1 mx-sm-1 mx-0">Selected Filtre <span
@@ -152,47 +171,34 @@
     <div class=" py-md-0 py-3 mb-5">
       <section id="sidebar">
         <div class="py-3">
-          <h5 class="font-weight-bold">Categories</h5>
+            <a href="category"> <h5 class="font-weight-bold">Categories</h5> </a> 
           <ul class="list-group">
+            </a>
+              <c:forEach var="category" items="${category}" >
+                  <a href="category?cid=${category.id}">
             <li
-              class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category">
-              Skincare Products <span class="badge badge-primary badge-pill">328</span> </li>
-            <li
-              class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category">
-              Makeup Products <span class="badge badge-primary badge-pill">112</span> </li>
-            <li
-              class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category">
-              Gift Sets <span class="badge badge-primary badge-pill">32</span> </li>
+                class=" ${cid==category.id ? "active":""}  list-group-item list-group-item-action d-flex justify-content-between align-items-center category">
+              ${category.name} <span class="badge badge-primary badge-pill">${category.total}</span> </li>
+            </a>
+            </c:forEach>
           </ul>
         </div>
         <div class="py-3">
-          <h5 class="font-weight-bold">A</h5>
-          <form class="brand">
-            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Face <input
-                  type="checkbox"> <span class="check"></span> </label> </div>
-            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Eyes <input
-                  type="checkbox" checked> <span class="check"></span> </label> </div>
-            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Lips <input
-                  type="checkbox" checked> <span class="check"></span> </label> </div>
-            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Blender <input
-                  type="checkbox"> <span class="check"></span> </label> </div>
-            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Others <input
-                  type="checkbox"> <span class="check"></span> </label> </div>
+          <h5 class="font-weight-bold">Sub Category</h5>
+          <form class="brand" onChange="Filter()" id="subcategory">
+              <c:forEach var="subcategory" items="${subcategory}" >
+                  <div  class=" form-inline d-flex align-items-center py-1"> <label class="tick">${subcategory.name} <input
+                              class="subcategory"  type="checkbox"> <span class="check"></span> </label> </div>
+                   </c:forEach>
           </form>
         </div>
         <div class="py-3">
           <h5 class="font-weight-bold">Brands</h5>
-          <form class="brand">
-            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Laroche Possay <input
-                  type="checkbox"> <span class="check"></span> </label> </div>
-            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Kiehls <input
-                  type="checkbox" checked> <span class="check"></span> </label> </div>
-            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Clinique <input
-                  type="checkbox" checked> <span class="check"></span> </label> </div>
-            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Innisfree <input
-                  type="checkbox"> <span class="check"></span> </label> </div>
-            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">Anessa <input
-                  type="checkbox"> <span class="check"></span> </label> </div>
+          <form class="brand" onchange="Filter()">
+               <c:forEach var="brand" items="${brand}" >
+            <div class="form-inline d-flex align-items-center py-1"> <label class="tick">${brand.name}<input
+                        class="brand-product"   type="checkbox"> <span class="check"></span> </label> </div>
+               </c:forEach>
           </form>
         </div>
         <div class="py-3">
@@ -225,9 +231,11 @@
       </section> <!-- Products Section -->
       <section id="products">
         <div class="container py-3">
-          <div class="row">
+          <div class="row" id="content" >
                <c:forEach items="${list}" var="a"  >
+                  
             <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-5">
+                 <a href="Productdetails?pid=${a.id}">
               <div class="card"> <div class="card-img-top" ><img class="img-fluid"
                   src="${a.getPicture()}">
                 </div> 
@@ -240,14 +248,16 @@
                   <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
                     <div class="d-flex flex-column">
                         <c:set var="price" value="${a.getLowestandHighestPrice()}"></c:set>
-                      <div class="h6">${price[0]} <c:if test="${price[1]!=null}">-${price[1]} </c:if> </div>
+                        <div class="h6">$${price[0]}<c:if test="${price[1]!=null}"><br>$${price[1]}</c:if></div>
      
                     </div>
-                    <div class="btn btn-primary">Buy now</div>
+                    <div class="btn btn-dark btn-outline-light">Add To Cart</div>
                   </div>
                 </div>
               </div>
+                       </a>
             </div>
+                     
                </c:forEach>
           </div>
         </div>
@@ -266,8 +276,49 @@
       </section>
     </div>
   </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script> function Filter(){
+        var filterlabel=document.getElementById("filter-label");
+           
+             var a = document.getElementsByClassName("subcategory");
+             var c = document.getElementsByClassName("brand-product");
+            var b="";
+            var d="";
+            for(let i=0;i<a.length;i++)
+            {
+                          if(a[i].checked==true)
+                {
+                    filterlabel.innerHTML='<div class="purple-label font-weight-bold p-0 px-1 mx-sm-1 mx-0 my-sm-0 my-2">'+ a[i].innerHTML+' <span class=" px-1 close">&times;</span> </div>';
+                   if(b==="") b += 'subcategory_id='+(i+1);
+                   else
+                  b += ' or subcategory_id='+(i+1);
+                }
+            }
+            
+                        for(let i=0;i<c.length;i++)
+            {
+                          if(c[i].checked==true)
+                {
+                   if(d==="") d += 'brand_id='+(i+1);
+                   else
+                  d += ' or brand_id='+(i+1);
+                }
+            }
+            console.log(b);
+            console.log(d);
 
 
+$.ajax({
+    url: "Filter",
+    type: 'get',
+    data:{ subcategory:b, brand:d },
+    async: true,
+    success: function(response) {
+var row = document.getElementById("content");
+row.innerHTML=response;
+    }
+});
+            }</script>
 
   <!-- <div class="container category my-5">
     <div class="row">
