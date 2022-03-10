@@ -131,7 +131,7 @@
 
                                 </li>-->
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link " href="login" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a class="nav-link " href="login?link=checkout" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <span><i class="fa-solid fa-user-check"></i> Hello ${user.username}</span>
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -163,7 +163,7 @@
                     <p>Home -> Cart</p>
                 </div>
             </section> 
-            <c:if test="${user==null}">
+            
 <div class="container" style="width:70%" >
     <main>
       <div class="py-5 text-center">
@@ -175,11 +175,20 @@
       <div  class="">
 
     </div>
+      <c:if test="${user==null}">
     <div  >
      <div class="checkoutlabel align-items-center" style="height:50px; background-color: lightgray;">  <h4  style="    padding: 10px 10px;"> SIGN IN & CHECKOUT </h4> </div>
-       <a class="btn btn-dark" href="login.html">LOGIN</a>
+       <a class="btn btn-dark" href="login?link=checkout">LOGIN</a>
         
     </div>
+    </c:if>
+    <c:if test="${user!=null}">
+    <div  >
+     <div class="checkoutlabel align-items-center" style="height:50px; background-color: lightgray;">  <h4  style="    padding: 10px 10px;"> HI ${user.username} PLEASE CHECKOUT </h4> </div>
+       
+        
+    </div>
+    </c:if>
       <div class="row g-5">
         <div class="col-md-5 col-lg-4 order-md-last">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -187,13 +196,17 @@
             <span class="badge bg-primary rounded-pill">3</span>
           </h4>
           <ul class="list-group mb-3">
+              <c:set var="total" value="${0}" > </c:set>
+              <c:forEach items="${cart}" var="a">
             <li class="list-group-item d-flex justify-content-between lh-sm">
               <div>
-                <h6 class="my-0">Product name</h6>
-                <small class="text-muted">Brief description</small>
+                <h6 class="my-0">${a.product.name}</h6>
+                <small class="text-muted">${a.var.name}</small>
               </div>
-              <span class="text-muted">$12</span>
+              <span class="text-muted">${a.getTotal()}</span>
             </li>
+            <c:set var="total" value="${total + a.getTotal()}" > </c:set>
+            </c:forEach>
             <li class="list-group-item d-flex justify-content-between lh-sm">
               <div>
                 <h6 class="my-0">Second product</h6>
@@ -217,18 +230,24 @@
             </li>
             <li class="list-group-item d-flex justify-content-between">
               <span>Total (USD)</span>
-              <strong>$20</strong>
+              <strong>${total}</strong>
             </li>
           </ul>
         </div>
+            
         <div class=" col-md-7 col-lg-8" style="text-align: left;">
+              <c:if test="${user==null}" >  
             <div class="my-5" >
                 <div class="align-items-center  checkoutlabel" style="height:50px; background-color: lightgray;">  <h4  style="    padding: 10px 10px;"> CHECKOUT AS GUEST </h4> </div>
                
-                   
+                          
                </div>
-          <h4 class="my-3">Billing address</h4>
-          <form class="needs-validation" novalidate>
+             <h4 class="my-3">Billing address</h4>
+                  </c:if>   
+         
+          
+             <form action="checkout" method="post" class="needs-validation" novalidate>
+              <c:if test="${user==null}">
             <div class="row g-3" style="text-align: left;">
               <div class="col-sm-6">
                 <label for="firstName" class="form-label">First name</label>
@@ -295,7 +314,7 @@
                 </div>
               </div>
             </div>
-  
+  </c:if>
             <!--<hr class="my-4">-->
   
 <!--            <div class="form-check">
@@ -312,36 +331,40 @@
   
             <h4 class="mb-3">Payment</h4>
   
-            <div class="my-3">
+            <div class="my-3" onchange="displayMethod(this)">
               <div class="form-check">
-                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
-                <label class="form-check-label" for="credit">Credit carrr</label>
+                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required value="credit">
+                <label class="form-check-label" for="credit">Credit card</label>
               </div>
               <div class="form-check">
-                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
-                <label class="form-check-label" for="debit">Debit carrr</label>
+                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required value="debit">
+                <label class="form-check-label" for="debit">Debit card</label>
               </div>
               <div class="form-check">
-                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required value="paypal">
                 <label class="form-check-label" for="paypal">PayPal</label>
+              </div>
+                <div class="form-check">
+                <input id="cod" name="paymentMethod" type="radio" class="form-check-input" required value="cod">
+                <label class="form-check-label" for="cod">COD</label>
               </div>
             </div>
   
             <div class="row gy-3">
               <div class="col-md-6">
-                <label for="cc-name" class="form-label">Name on carrr</label>
+                <label for="cc-name" class="form-label">Name on card</label>
                 <input type="text" class="form-control" id="cc-name" placeholder="" required>
-                <small class="text-muted">Full name as displayed on carrr</small>
+                <small class="text-muted">Full name as displayed on card</small>
                 <div class="invalid-feedback">
-                  Name on carrr is required
+                  Name on card is required
                 </div>
               </div>
   
               <div class="col-md-6">
-                <label for="cc-number" class="form-label">Credit carrr number</label>
+                <label for="cc-number" class="form-label">Credit card number</label>
                 <input type="text" class="form-control" id="cc-number" placeholder="" required>
                 <div class="invalid-feedback">
-                  Credit carrr number is required
+                  Credit card number is required
                 </div>
               </div>
   
@@ -372,128 +395,8 @@
 
         </main>       
 </div>
-</c:if>
- <c:if test="${user!=null}">
-<div class="container" style="width:70%" >
-    <main>
-      <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="img/Kitten.png" alt="" width="20%">
-        <h2>Checkout</h2>
-        <!--<p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>-->
-      </div>
 
-      <div class="row g-5">
-        <div class="col-md-5 col-lg-4 order-md-last">
-          <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-primary">Your cart</span>
-            <span class="badge bg-primary rounded-pill">3</span>
-          </h4>
-          <ul class="list-group mb-3">
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-              <div>
-                <h6 class="my-0">Product name</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$12</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-              <div>
-                <h6 class="my-0">Second product</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$8</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-              <div>
-                <h6 class="my-0">Third item</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$5</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between bg-light">
-              <div class="text-success">
-                <h6 class="my-0">Promo code</h6>
-                <small>EXAMPLECODE</small>
-              </div>
-              <span class="text-success">−$5</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between">
-              <span>Total (USD)</span>
-              <strong>$20</strong>
-            </li>
-          </ul>
-        </div>
-        <div class=" col-md-7 col-lg-8" style="text-align: left;">
-            <div class="mb-5" >
-                <div class="align-items-center  checkoutlabel" style="height:50px; background-color: lightgray;">  <h4  style="    padding: 10px 10px;"> CHECKOUT AS USER </h4> </div>
-               
-                   
-               </div>
-            <hr class="my-4">
-  
-            <h4 class="mb-3">Payment</h4>
-  
-            <div class="my-3">
-              <div class="form-check">
-                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
-                <label class="form-check-label" for="credit">Credit carrr</label>
-              </div>
-              <div class="form-check">
-                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
-                <label class="form-check-label" for="debit">Debit carrr</label>
-              </div>
-              <div class="form-check">
-                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
-                <label class="form-check-label" for="paypal">PayPal</label>
-              </div>
-            </div>
-  
-            <div class="row gy-3">
-              <div class="col-md-6">
-                <label for="cc-name" class="form-label">Name on carrr</label>
-                <input type="text" class="form-control" id="cc-name" placeholder="" required>
-                <small class="text-muted">Full name as displayed on carrr</small>
-                <div class="invalid-feedback">
-                  Name on carrr is required
-                </div>
-              </div>
-  
-              <div class="col-md-6">
-                <label for="cc-number" class="form-label">Credit carrr number</label>
-                <input type="text" class="form-control" id="cc-number" placeholder="" required>
-                <div class="invalid-feedback">
-                  Credit carrr number is required
-                </div>
-              </div>
-  
-              <div class="col-md-3">
-                <label for="cc-expiration" class="form-label">Expiration</label>
-                <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
-                <div class="invalid-feedback">
-                  Expiration date required
-                </div>
-              </div>
-  
-              <div class="col-md-3">
-                <label for="cc-cvv" class="form-label">CVV</label>
-                <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-                <div class="invalid-feedback">
-                  Security code required
-                </div>
-              </div>
-            </div>
-  
-            <hr class="my-4">
-  
-            <button class="w-100 btn  btn-dark btn-outline-light btn-lg" type="submit" style="border:solid black 1px;">Checkout</button>
-          </form>
-          
-        </div>
-      </div>
 
-        </main>       
-</div>
-</c:if>
 
       <footer class="container-fluid text-center">
         <div class="row">
@@ -522,6 +425,11 @@
         <a href=""><i class="fa-brands fa-instagram"></i></a>
         <a href=""><i class="fa-brands fa-twitter"></i></a>
         </div>
-        
+            <script>
+                function displayMethod(){
+                    if(x.value=='COD')
+                }
+                
+            </script>
         </footer>
     </body>

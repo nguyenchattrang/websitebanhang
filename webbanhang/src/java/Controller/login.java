@@ -36,7 +36,11 @@ public class login extends HttpServlet {
             throws ServletException, IOException {
         String action = request.getParameter("action");
         String link = request.getParameter("link");
+       
+//        PrintWriter out = response.getWriter();
+//out.print(link);
         HttpSession session = request.getSession();
+        session.setAttribute("link", link);
         Account user = (Account) session.getAttribute("user");
         if (action == null) {
 
@@ -82,8 +86,8 @@ public class login extends HttpServlet {
             throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        
         DAO dao = new DAO();
-
         ArrayList<Account> a = dao.getAccounts();
         Account account = dao.getAccountByUsernameAndPassword(username, password);
         if (account != null) // login successfully!
@@ -99,10 +103,14 @@ public class login extends HttpServlet {
 
             }
             HttpSession session = request.getSession();
+            String link = (String) session.getAttribute("link");
+            session.removeAttribute("link");
+            if(link==null) link="home";
             session.setAttribute("user", account);
-
-//           response.getWriter().println("login successful!");
-            response.sendRedirect("home");
+//PrintWriter out = response.getWriter();
+//out.print(link);
+           response.getWriter().println("login successful!");
+            response.sendRedirect(link);
 
         } else //login fail
         {

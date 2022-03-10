@@ -54,7 +54,7 @@ public class cart extends HttpServlet {
         }
         else if (action.equals("noproduct")) {
             request.setAttribute("message", "You have no products in your cart");
-            request.getRequestDispatcher("cart").forward(request, response);
+            display(request, response);
         }
     }
     
@@ -257,12 +257,12 @@ public class cart extends HttpServlet {
                 + "                    <p class=\"mb-2\">$"+(total+2.99)+"</p>\n"
                 + "                  </div>\n"
                 + "  \n"
-                + "                  <button type=\"button\" class=\"btn btn-dark btn-outline-light\">\n"
+                + "                   <a href=\"checkout\" type=\"button\" class=\"btn btn-dark btn-outline-light\">\n"
                 + "                    <div class=\"d-flex justify-content-between\">\n"
                 + "                      <span>Checkout</span>\n"
                 + "                      <span>$"+(total+2.99)+"</span>\n"
                 + "                    </div>\n"
-                + "                  </button>\n"
+                + "                  </a>\n"
                 + "  \n"
                 + "                </div>\n"
                 + "              </div>\n"
@@ -366,12 +366,12 @@ public class cart extends HttpServlet {
                 + "                    <p class=\"mb-2\">$"+(total+2.99)+"</p>\n"
                 + "                  </div>\n"
                 + "  \n"
-                + "                  <button type=\"button\" class=\"btn btn-dark btn-outline-light\">\n"
+                + "                  <a href=\"checkout\" type=\"button\" class=\"btn btn-dark btn-outline-light\">\n"
                 + "                    <div class=\"d-flex justify-content-between\">\n"
                 + "                      <span>Checkout</span>\n"
                 + "                      <span>$"+(total+2.99)+"</span>\n"
                 + "                    </div>\n"
-                + "                  </button>\n"
+                + "                  </a>\n"
                 + "  \n"
                 + "                </div>\n"
                 + "              </div>\n"

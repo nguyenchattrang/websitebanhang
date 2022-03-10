@@ -182,7 +182,6 @@
 	<div class="container">
 		<!-- <div class="row"></div>
 		<div class="col-md-6"> -->
-<form action="">
 
 	<div class="container" style="width:70%" >
 		<main>
@@ -190,7 +189,7 @@
 			<img class="d-block mx-auto mb-4" src="img/Kitten.png" alt="" width="20%">
 			<h2>REGISTER FORM</h2>
 			<p class="lead">Already have an account?</p>
-			<a href="login.html">LOGIN</a>
+			<a href="login">LOGIN</a>
 		  </div>
 	
 		  <div  class="">
@@ -199,37 +198,36 @@
 		  <div class="row g-5">
 			<div class=" col-md-7 col-lg-12" style="text-align: left;">
 			  <h4 class="my-3">ACCOUNT</h4>
-			  <form class="needs-validation" novalidate>
+                          <form action="register" method="post" class="was-validated">
+                              
 				<div class="row g-3" style="text-align: left;">
 					<div class="col-12">
-						<label for="username" class="form-label">Username</label>
+						<label for="username1" class="form-label">Username</label>
 						<div class="input-group has-validation">
 						  <span class="input-group-text">@</span>
-						  <input type="text" class="form-control" id="username" placeholder="Username" required>
-						<div class="invalid-feedback">
-							Your username is required.
-						  </div>
+                                                  <input  name="username" type="text" class="form-control "  id="username1" placeholder="Username" required>
+                                                  <div id="invalidusername" class="invalid-feedback">
+					  Input valid username
+					</div>
 						</div>
 					  </div>
 					  <div class="col-12">
-						<label for="address" class="form-label">Password:</label>
-						<input type="text" class="form-control" id="address" placeholder="*****" required>
-						<div class="invalid-feedback">
-						  Please enter your shipping address.
-						</div>
+						<label for="password2" class="form-label">Password:</label>
+						<input name="password" type="text" class="form-control" id="password2" placeholder="*****" required>
+						
 					  </div>
 					  <div class="col-12">
 						<label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-						<input type="email" class="form-control" id="email" placeholder="you@example.com">
+						<input name="email" type="email" class="form-control" id="email" placeholder="you@example.com">
 						<div class="invalid-feedback">
-						  Please enter a valid email address for shipping updates.
-						</div>
+					  Password
+					</div>
 					  </div>
 					  <hr class="my-4">	 
 					  <h4 class="my-3">CONTACT DETAILS</h4>
 				  <div class="col-sm-6">
 					<label for="firstName" class="form-label">First name</label>
-					<input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+					<input name="firstname" type="text" class="form-control" id="firstName" placeholder="" value="" required>
 					<div class="invalid-feedback">
 					  Valid first name is required.
 					</div>
@@ -237,22 +235,22 @@
 	  
 				  <div class="col-sm-6">
 					<label for="lastName" class="form-label">Last name</label>
-					<input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+					<input name="lastname" type="text" class="form-control" id="lastName" placeholder="" value="" required>
 					<div class="invalid-feedback">
 					  Valid last name is required.
 					</div>
 				  </div>
 
 				  <div class="col-12">
-					<label for="address" class="form-label">Phone Number</label>
-					<input type="text" class="form-control" id="phonenumber" placeholder="+84123456789" required>
+					<label for="phonenumber" class="form-label">Phone Number</label>
+					<input name="phonenumber" type="text" class="form-control" id="phonenumber" placeholder="+84123456789" required>
 					<div class="invalid-feedback">
 					  Please enter your shipping address.
 					</div>
 				  </div>	  
 				  <div class="col-12">
 					<label for="address" class="form-label">Address</label>
-					<input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+					<input name="address1" type="text" class="form-control" id="address" placeholder="1234 Main St" required>
 					<div class="invalid-feedback">
 					  Please enter your shipping address.
 					</div>
@@ -260,23 +258,19 @@
 	  
 				  <div class="col-12">
 					<label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
-					<input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+					<input name="address2" type="text" class="form-control" id="address2" placeholder="Apartment or suite">
 				  </div>
 
 				  <div class="col-md-6">
-					<label for="state" class="form-label">City</label>
-					<select class="form-select" id="state" required>
-					  <option value="">Choose...</option>
-					  <option>California</option>
-					</select>
+					<label for="city" class="form-label">City</label>
+					<input name="city" type="text" class="form-control" id="city" placeholder="" required>
 					<div class="invalid-feedback">
-					  Please provide a valid state.
+					  Zip code required.
 					</div>
-				  </div>
-	  
+	  </div>
 				  <div class="col-md-6">
 					<label for="zip" class="form-label">Zip</label>
-					<input type="text" class="form-control" id="zip" placeholder="" required>
+					<input name="zip"  type="text" class="form-control" id="zip" placeholder="" required>
 					<div class="invalid-feedback">
 					  Zip code required.
 					</div>
@@ -288,11 +282,10 @@
 				<hr class="my-4">
 	  
 				<button class="w-100 btn  btn-dark btn-outline-light btn-lg" type="submit" style="border:solid black 1px;">REGISTER</button>
-			  </form>
+			 </form>
 			</div>
 		  </div>
 	</div>
-</form>
 		</div>
 		<div class="col-md-6">
 

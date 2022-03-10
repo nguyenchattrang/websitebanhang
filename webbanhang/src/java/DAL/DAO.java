@@ -455,6 +455,146 @@ public class DAO extends BaseDAO {
         return null;
 
     }
+//    ------Orders----------------------------------
+
+    public void insertNewOrder(ArrayList<Product_Variation> a, int userid, String shipname, String email, String phone, String shipaddress, String shipaddress2, String city, String zip, double shippingfee, double totalprice, String orderdate) {
+
+        insertOrder(userid, shipname, email, phone, shipaddress, shipaddress2, city, zip, shippingfee, totalprice, orderdate);
+        int orderid = selectLastOrderId();
+        for (Product_Variation o : a) {
+            insertOrderDetails(orderid, o.getProduct().getId(), o.getVar().getId(), o.getTotal(), o.getAmount());
+        }
+
+    }
+
+    public void insertOrder(int userid, String shipname, String email, String phone, String shipaddress, String shipaddress2, String city, String zip, double shippingfee, double totalprice, String orderdate) {
+        try {
+            String sql = "INSERT INTO [Assignment].[dbo].[Order]\n"
+                    + "           ([user_id]\n"
+                    + "           ,[shipname]\n"
+                    + "           ,[email]\n"
+                    + "           ,[phone]\n"
+                    + "           ,[shipaddress]\n"
+                    + "           ,[shipaddress2]\n"
+                    + "           ,[city]\n"
+                    + "           ,[zip]\n"
+                    + "           ,[shippingfee]\n"
+                    + "           ,[totalprice]\n"
+                    + "           ,[orderdate])\n"
+                    + "     VALUES\n"
+                    + "           (?\n"
+                    + "           ,?\n"
+                    + "           ,?\n"
+                    + "           ,?\n"
+                    + "           ,?\n"
+                    + "           ,?\n"
+                    + "           ,?\n"
+                    + "           ,?\n"
+                    + "           ,?\n"
+                    + "           ,?\n"
+                    + "           ,?)";
+            PreparedStatement statement = connection.prepareStatement(sql);
+//           statement.setInt(1, s.getId());
+            statement.setInt(1, userid);
+            statement.setString(2, shipname);
+            statement.setString(3, email);
+            statement.setString(4, phone);
+            statement.setString(5, shipaddress);
+            statement.setString(6, shipaddress2);
+            statement.setString(7, city);
+            statement.setString(8, zip);
+            statement.setDouble(9, shippingfee);
+            statement.setDouble(10, totalprice);
+            statement.setString(11, orderdate);
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void insertOrderDetails(int orderid, int productid, int varid, double price, int amount) {
+        try {
+            String sql = "INSERT INTO [Assignment].[dbo].[OrderDetail]\n"
+                    + "           ([order_id]\n"
+                    + "           ,[product_id]\n"
+                    + "           ,[var_id]\n"
+                    + "           ,[price]\n"
+                    + "           ,[amount])\n"
+                    + "     VALUES\n"
+                    + "           (?\n"
+                    + "           ,?\n"
+                    + "           ,?\n"
+                    + "           ,?\n"
+                    + "           ,?)";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, orderid);
+            statement.setInt(2, productid);
+            statement.setInt(3, varid);
+            statement.setDouble(4, price);
+            statement.setInt(5, amount);
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public int selectLastOrderId() {
+
+        String sql = "Select top 1 id from [Order] order by id DESC";
+        int id = -1;
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                id = rs.getInt("id");
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return id;
+    }
+//    -------------------------------------------------------------
+        public void insertAccount(String username,String password,String email, String firstname,String lastname,String phonenumber, String address1, String address2, String city, String zip) {
+        try {
+            String sql = "INSERT INTO [Assignment].[dbo].[Account]\n" +
+"           ([username]\n" +
+"           ,[password]\n" +
+"           ,[email]\n" +
+"           ,[firstname]\n" +
+"           ,[lastname]\n" +
+"           ,[phonenumber]\n" +
+"           ,[address1]\n" +
+"           ,[address2]\n" +
+"           ,[city]\n" +
+"           ,[zip])\n" +
+"     VALUES\n" +
+"           (?\n" +
+"           ,?\n" +
+"           ,?\n" +
+"           ,?\n" +
+"           ,?\n" +
+"           ,?\n" +
+"           ,?\n" +
+"           ,?\n" +
+"           ,?\n" +
+"           ,?)";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, username);
+            statement.setString(2, password);
+            statement.setString(3, email);
+            statement.setString(4, firstname);
+            statement.setString(5, lastname);
+            statement.setString(6, phonenumber);
+            statement.setString(7, address1);
+            statement.setString(8, address2);
+            statement.setString(9, city);
+            statement.setString(10, zip);
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     public static void main(String[] args) {
         DAO dao = new DAO();
@@ -462,6 +602,7 @@ public class DAO extends BaseDAO {
         for (Account o : a) {
             System.out.println(o.toString());
         }
+        
         System.out.println(dao.getAccountByUsernameAndPassword("trang", "1"));
         System.out.println(dao.getPicture("10"));
         System.out.println(dao.getLowestandHighestPrice("2")[1]);
