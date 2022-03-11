@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 import model.Account;
 import model.Brand;
 import model.Category;
+import model.Order;
 import model.Picture;
 import model.Product;
 import model.Product_Variation;
@@ -455,6 +456,22 @@ public class DAO extends BaseDAO {
         return null;
 
     }
+
+    public boolean checkDuplicateUsername(String username) {
+        try {
+            String sql = "Select username from Account where username=?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, username);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+
+    }
 //    ------Orders----------------------------------
 
     public void insertNewOrder(ArrayList<Product_Variation> a, int userid, String shipname, String email, String phone, String shipaddress, String shipaddress2, String city, String zip, double shippingfee, double totalprice, String orderdate) {
@@ -555,30 +572,31 @@ public class DAO extends BaseDAO {
         return id;
     }
 //    -------------------------------------------------------------
-        public void insertAccount(String username,String password,String email, String firstname,String lastname,String phonenumber, String address1, String address2, String city, String zip) {
+
+    public void insertAccount(String username, String password, String email, String firstname, String lastname, String phonenumber, String address1, String address2, String city, String zip) {
         try {
-            String sql = "INSERT INTO [Assignment].[dbo].[Account]\n" +
-"           ([username]\n" +
-"           ,[password]\n" +
-"           ,[email]\n" +
-"           ,[firstname]\n" +
-"           ,[lastname]\n" +
-"           ,[phonenumber]\n" +
-"           ,[address1]\n" +
-"           ,[address2]\n" +
-"           ,[city]\n" +
-"           ,[zip])\n" +
-"     VALUES\n" +
-"           (?\n" +
-"           ,?\n" +
-"           ,?\n" +
-"           ,?\n" +
-"           ,?\n" +
-"           ,?\n" +
-"           ,?\n" +
-"           ,?\n" +
-"           ,?\n" +
-"           ,?)";
+            String sql = "INSERT INTO [Assignment].[dbo].[Account]\n"
+                    + "           ([username]\n"
+                    + "           ,[password]\n"
+                    + "           ,[email]\n"
+                    + "           ,[firstname]\n"
+                    + "           ,[lastname]\n"
+                    + "           ,[phonenumber]\n"
+                    + "           ,[address1]\n"
+                    + "           ,[address2]\n"
+                    + "           ,[city]\n"
+                    + "           ,[zip])\n"
+                    + "     VALUES\n"
+                    + "           (?\n"
+                    + "           ,?\n"
+                    + "           ,?\n"
+                    + "           ,?\n"
+                    + "           ,?\n"
+                    + "           ,?\n"
+                    + "           ,?\n"
+                    + "           ,?\n"
+                    + "           ,?\n"
+                    + "           ,?)";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, username);
             statement.setString(2, password);
@@ -596,17 +614,139 @@ public class DAO extends BaseDAO {
         }
     }
 
+    public void updateAccount(String email, String firstname, String lastname, String phonenumber, String address1, String address2, String city, String zip, int id) {
+        try {
+            String sql = "UPDATE [Account]\n"
+                    + "   SET \n"
+                    + "      [email] = ?\n"
+                    + "      ,[firstname] = ?\n"
+                    + "      ,[lastname] = ?\n"
+                    + "      ,[phonenumber] = ?\n"
+                    + "      ,[address1] = ?\n"
+                    + "      ,[address2] = ?\n"
+                    + "      ,[city] = ?\n"
+                    + "      ,[zip] = ?\n"
+                    + " WHERE id = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+
+            statement.setString(1, email);
+            statement.setString(2, firstname);
+            statement.setString(3, lastname);
+            statement.setString(4, phonenumber);
+            statement.setString(5, address1);
+            statement.setString(6, address2);
+            statement.setString(7, city);
+            statement.setString(8, zip);
+            statement.setInt(9, id);
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void updatePassword(String password, int id) {
+        try {
+            String sql = "UPDATE [Account]\n"
+                    + "   SET \n"
+                    + "      [password] = ?\n"
+                    + "     \n"
+                    + " WHERE id=?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+
+            statement.setString(1, password);
+            statement.setInt(2, id);
+
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+//--------------------------------------------
+
+    public ArrayList<Order> getOrdersById(int id) {
+        ArrayList<Order> orders = new ArrayList<Order>();
+        String sql = "Select * from [Order] where user_id=?";
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                Order a = new Order();
+                a.setId(rs.getInt("id"));
+                a.setPrice(rs.getDouble("totalprice"));
+                a.setShippingfee(rs.getDouble("shippingfee"));
+                orders.add(a);
+            }
+            return orders;
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
+    public ArrayList<Product_Variation> getProductVariations(int id) {
+        ArrayList<Product_Variation> productvars = new ArrayList<Product_Variation>();
+        String sql = "Select Product.id,Product.name,sdesc,longdesc,Variation.id as varid, Variation.name as varname,Variation.price,OrderDetail.amount, Category.name as categoryname from Product inner join Variation\n"
+                + "            on Product.id=Variation.product_id\n"
+                + "             inner join Category\n"
+                + "            on Product.category_id=Category.id\n"
+                + "            inner join OrderDetail\n"
+                + "            on Variation.id=OrderDetail.var_id\n"
+                + "           where OrderDetail.order_id=?";
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                Product a = new Product();
+                Variation b = new Variation();
+                a.setId(rs.getInt("id"));
+                a.setName(rs.getString("name"));
+                a.setSdesc(rs.getString("sdesc"));
+                a.setLongdesc(rs.getString("longdesc"));
+                b.setId(rs.getInt("varid"));
+                b.setName(rs.getString("varname"));
+
+                b.setPrice(rs.getDouble("price"));
+
+                Product_Variation c = new Product_Variation(a, b, rs.getString("categoryname"));
+                c.setAmount(rs.getInt("amount"));
+
+                productvars.add(c);
+            }
+            return productvars;
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
     public static void main(String[] args) {
         DAO dao = new DAO();
         ArrayList<Account> a = dao.getAccounts();
         for (Account o : a) {
             System.out.println(o.toString());
         }
-        
+
         System.out.println(dao.getAccountByUsernameAndPassword("trang", "1"));
         System.out.println(dao.getPicture("10"));
         System.out.println(dao.getLowestandHighestPrice("2")[1]);
         System.out.println(dao.getProductVariation("3").toString());
+        System.out.println(dao.checkDuplicateUsername("trang"));
+        
+        ArrayList<Order> ordersById = dao.getOrdersById(1);
+         for (Order o : ordersById) {
+            ArrayList<Product_Variation> listpv = o.getListpv();
+            for(Product_Variation b : listpv)
+            {
+                System.out.println(b.toString());
+               
+            }
+             System.out.println("Het mot order");
+        }
+        
     }
 
 }

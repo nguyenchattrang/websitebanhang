@@ -193,7 +193,7 @@
         <div class="col-md-5 col-lg-4 order-md-last">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-primary">Your cart</span>
-            <span class="badge bg-primary rounded-pill">3</span>
+            <span class="badge bg-primary rounded-pill">${cart.size()}</span>
           </h4>
           <ul class="list-group mb-3">
               <c:set var="total" value="${0}" > </c:set>
@@ -201,33 +201,13 @@
             <li class="list-group-item d-flex justify-content-between lh-sm">
               <div>
                 <h6 class="my-0">${a.product.name}</h6>
-                <small class="text-muted">${a.var.name}</small>
+                <small class="text-muted">${a.var.name} x ${a.getAmount()}</small>
               </div>
               <span class="text-muted">${a.getTotal()}</span>
             </li>
             <c:set var="total" value="${total + a.getTotal()}" > </c:set>
             </c:forEach>
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-              <div>
-                <h6 class="my-0">Second product</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$8</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-              <div>
-                <h6 class="my-0">Third item</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$5</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between bg-light">
-              <div class="text-success">
-                <h6 class="my-0">Promo code</h6>
-                <small>EXAMPLECODE</small>
-              </div>
-              <span class="text-success">−$5</span>
-            </li>
+     
             <li class="list-group-item d-flex justify-content-between">
               <span>Total (USD)</span>
               <strong>${total}</strong>
@@ -246,12 +226,12 @@
                   </c:if>   
          
           
-             <form action="checkout" method="post" class="needs-validation" novalidate>
+             <form action="checkout" method="post" class="was-validated" >
               <c:if test="${user==null}">
             <div class="row g-3" style="text-align: left;">
               <div class="col-sm-6">
                 <label for="firstName" class="form-label">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <input name="firstname" type="text" class="form-control" id="firstName" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
@@ -259,26 +239,24 @@
   
               <div class="col-sm-6">
                 <label for="lastName" class="form-label">Last name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                <input name="lastname" type="text" class="form-control" id="lastName" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid last name is required.
                 </div>
               </div>
   
-              <div class="col-12">
-                <label for="username" class="form-label">Username</label>
-                <div class="input-group has-validation">
-                  <span class="input-group-text">@</span>
-                  <input type="text" class="form-control" id="username" placeholder="Username" required>
-                <div class="invalid-feedback">
-                    Your username is required.
-                  </div>
-                </div>
-              </div>
+  
   
               <div class="col-12">
                 <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                <input name="email" type="email" class="form-control" id="email" placeholder="you@example.com">
+                <div class="invalid-feedback">
+                  Please enter a valid email address for shipping updates.
+                </div>
+              </div>
+                   <div class="col-12">
+                <label for="phonenumber" class="form-label">Phone Number <span class="text-muted">(Optional)</span></label>
+                <input name="phonenumber" type="tel" class="form-control" id="phonenumber" placeholder="0123456789">
                 <div class="invalid-feedback">
                   Please enter a valid email address for shipping updates.
                 </div>
@@ -286,7 +264,7 @@
   
               <div class="col-12">
                 <label for="address" class="form-label">Address</label>
-                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                <input name="address" type="text" class="form-control" id="address" placeholder="1234 Main St" required>
                 <div class="invalid-feedback">
                   Please enter your shipping address.
                 </div>
@@ -294,12 +272,12 @@
   
               <div class="col-12">
                 <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
-                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                <input name="address2" type="text" class="form-control" id="address2" placeholder="Apartment or suite">
               </div>
   
               <div class="col-md-6">
                 <label for="city" class="form-label">City</label>
-                <input class="form-control" id="city" type="text">
+                <input name="city" class="form-control" id="city" type="text">
               
                 <div class="invalid-feedback">
                   Please provide a valid state.
@@ -308,7 +286,7 @@
   
               <div class="col-md-6">
                 <label for="zip" class="form-label">Zip</label>
-                <input type="text" class="form-control" id="zip" placeholder="" required>
+                <input name="zip" type="text" class="form-control" id="zip" placeholder="" required>
                 <div class="invalid-feedback">
                   Zip code required.
                 </div>

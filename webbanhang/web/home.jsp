@@ -110,7 +110,7 @@
                                         <span><i class="fa-solid fa-user-check"></i> Hello ${user.username}</span>
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="makeup.html">Profile</a></li>
+                                        <li><a class="dropdown-item" href="profile.jsp">Profile</a></li>
                                         <li><a class="dropdown-item" href="#">Wish List</a></li>
                                          <li><a class="dropdown-item" href="login?action=logout&link=home">Logout</a></li>
                                     </ul>

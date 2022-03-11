@@ -8,22 +8,18 @@ package Controller;
 import DAL.DAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Account;
-import model.Product_Variation;
 
 /**
  *
  * @author ADMIN
  */
-public class checkout extends HttpServlet {
+public class profile extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,16 +33,12 @@ public class checkout extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        ArrayList<Product_Variation> cart;
-        cart = (ArrayList<Product_Variation>) session.getAttribute("cart");
-        session.setAttribute("cart", cart);
-        if (cart == null) {
-            response.sendRedirect("cart?action=noproduct");
-            return;
+        Account a = (Account) session.getAttribute("user");
+        if (a == null) {
+            response.sendRedirect("login");
         } else {
-            request.getRequestDispatcher("checkout.jsp").forward(request, response);
+            request.getRequestDispatcher("profile.jsp").forward(request, response);
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -75,34 +67,47 @@ public class checkout extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
         DAO dao = new DAO();
-        Account user = (Account) session.getAttribute("user");
-        ArrayList<Product_Variation> products = (ArrayList<Product_Variation>) session.getAttribute("cart");
-        int total = 0;
-        for (Product_Variation o : products) {
-            total += o.getTotal();
-        }
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy H:mm:ss");
-        String date;
-        date = sdf.format(new Date());
-//   response.getWriter().print(date);
-        if (user != null) {
-            dao.insertNewOrder(products, user.getId(), user.getFirstname() + " " + user.getLastname(), user.getEmail(), user.getPhonenumber(), user.getAddress1(), user.getAddress2(), user.getCity(), user.getZip(), 2.99, total, date);
-
-        } else {
+        String action = request.getParameter("action");
+        HttpSession session = request.getSession();
+        PrintWriter out = response.getWriter();
+        Account a = (Account) session.getAttribute("user");
+        if (action.equals("profile")) {
+            String email = request.getParameter("email");
             String firstname = request.getParameter("firstname");
             String lastname = request.getParameter("lastname");
-            String email = request.getParameter("email");
             String phonenumber = request.getParameter("phonenumber");
-            String address = request.getParameter("address");
+            String address1 = request.getParameter("address1");
             String address2 = request.getParameter("address2");
             String city = request.getParameter("city");
             String zip = request.getParameter("zip");
-           
-            dao.insertNewOrder(products, -1, firstname + " " + lastname, email, phonenumber, address, address2, city, zip, 2.99, total, date);
+            a.setEmail(email);
+            a.setFirstname(firstname);
+            a.setLastname(lastname);
+            a.setPhonenumber(phonenumber);
+            a.setAddress1(address1);
+            a.setAddress2(address2);
+            a.setCity(city);
+            a.setZip(zip);
+//        dao.insertAccount(username, password, email, firstname, lastname, phonenumber, address1, address2, city, zip);
+            dao.updateAccount(email, firstname, lastname, phonenumber, address1, address2, city, zip, a.getId());
+            response.sendRedirect("profile.jsp");
+            out.print("bbbbb");
         }
-
+        
+        if (action.equals("changepassword")) {
+            String oldpassword = request.getParameter("oldpassword");
+            if (!oldpassword.equals(a.getPassword())) {
+                
+                request.setAttribute("message", "Wrong input old password!");
+                request.getRequestDispatcher("profile.jsp").forward(request, response);
+                return;
+            }
+            String newpassword = request.getParameter("newpassword");
+            dao.updatePassword(newpassword, a.getId());
+        }
+        
+        response.sendRedirect("profile.jsp");
     }
 
     /**
