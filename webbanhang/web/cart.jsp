@@ -196,7 +196,7 @@
                   </td>
                   <td class="align-middle">
                       <a class="b-b-b" href="cart?action=remove&vid=${a.var.id}"> <i id="delete-button" class="fa-solid fa-skull" onmouseover="test(this)" onmouseout="test1(this)"></i>  </a>
-
+                            
                   </td>
                 </tr>
                 </c:forEach>

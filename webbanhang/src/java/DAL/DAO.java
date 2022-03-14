@@ -207,6 +207,38 @@ public class DAO extends BaseDAO {
 
     }
 
+    public Product getProductbyPID(String id) {
+        Product a = null;
+        String sql = "SELECT [id]\n"
+                + "      ,[name]\n"
+                + "      ,[sdesc]\n"
+                + "      ,[category_id]\n"
+                + "      ,[longdesc]\n"
+                + "      ,[subcategory_id]\n"
+                + "      ,[brand_id]\n"
+                + "  FROM [Product] where id =?";
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, id);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                a = new Product();
+                a.setId(rs.getInt("id"));
+                a.setName(rs.getString("name"));
+                a.setSdesc(rs.getString("sdesc"));
+                a.setLongdesc(rs.getString("longdesc"));
+                a.setCategoryid(rs.getInt("category_id"));
+                a.setSubcategoryid(rs.getInt("subcategory_id"));
+                a.setBrandid(rs.getInt("brand_id"));
+            }
+            return a;
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+
+    }
+
     public String getPicture(String id) {
         String sql = "Select top 1 link from Product \n"
                 + "inner join Product_Media\n"
@@ -723,30 +755,87 @@ public class DAO extends BaseDAO {
         return null;
     }
 
+    public ArrayList<Order> getOrders() {
+        ArrayList<Order> orders = new ArrayList<Order>();
+        String sql = "SELECT [Order].id,shipname,email,phone,shipaddress,shipaddress2,city,zip,shippingfee,totalprice,orderdate,status from \n"
+                + "[Order] inner join Order_Status\n"
+                + "on [Order].id = [Order_Status].orderid inner join [Status]\n"
+                + "on statusid=[Status].id order by id DESC";
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                Order a = new Order();
+                a.setId(rs.getInt("id"));
+                a.setShipname(rs.getString("shipname"));
+                a.setEmail(rs.getString("email"));
+                a.setPhone(rs.getString("phone"));
+                a.setShipaddress(rs.getString("shipaddress"));
+                a.setShipaddress2(rs.getString("shipaddress2"));
+                a.setCity(rs.getString("city"));
+                a.setZip(rs.getString("zip"));
+                a.setShippingfee(rs.getDouble("shippingfee"));
+                a.setPrice(rs.getDouble("totalprice"));
+                a.setOrderdate(rs.getString("orderdate"));
+                a.setStatus(rs.getString("status"));
+                orders.add(a);
+            }
+            return orders;
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
+    public void updateProductSummary(String name, String sdesc,String category, String longdesc, String subcategory, String brand,String id) {
+        try {
+            String sql = "UPDATE [Product]\n"
+                    + "   SET [name] = ?\n"
+                    + "      ,[sdesc] = ?\n"
+                    + "      ,[category_id] = ?\n"
+                    + "      ,[longdesc] = ?\n"
+                    + "      ,[subcategory_id] = ?\n"
+                    + "      ,[brand_id] = ?\n"
+                    + " WHERE id =?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+
+            statement.setString(1, name);
+            statement.setString(2, sdesc);
+            statement.setString(3, category);
+            statement.setString(4, longdesc);
+            statement.setString(5, subcategory);
+            statement.setString(6, brand);
+            statement.setString(7, id);
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     public static void main(String[] args) {
         DAO dao = new DAO();
-        ArrayList<Account> a = dao.getAccounts();
-        for (Account o : a) {
-            System.out.println(o.toString());
-        }
-
-        System.out.println(dao.getAccountByUsernameAndPassword("trang", "1"));
-        System.out.println(dao.getPicture("10"));
-        System.out.println(dao.getLowestandHighestPrice("2")[1]);
-        System.out.println(dao.getProductVariation("3").toString());
-        System.out.println(dao.checkDuplicateUsername("trang"));
-        
-        ArrayList<Order> ordersById = dao.getOrdersById(1);
-         for (Order o : ordersById) {
-            ArrayList<Product_Variation> listpv = o.getListpv();
-            for(Product_Variation b : listpv)
-            {
-                System.out.println(b.toString());
-               
-            }
-             System.out.println("Het mot order");
-        }
-        
+//        ArrayList<Account> a = dao.getAccounts();
+//        for (Account o : a) {
+//            System.out.println(o.toString());
+//        }
+//
+//        System.out.println(dao.getAccountByUsernameAndPassword("trang", "1"));
+//        System.out.println(dao.getPicture("10"));
+//        System.out.println(dao.getLowestandHighestPrice("2")[1]);
+//        System.out.println(dao.getProductVariation("3").toString());
+//        System.out.println(dao.checkDuplicateUsername("trang"));
+//
+//        ArrayList<Order> ordersById = dao.getOrders();
+//        for (Order o : ordersById) {
+//            ArrayList<Product_Variation> listpv = o.getListpv();
+//            for (Product_Variation b : listpv) {
+//                System.out.println(b.toString());
+//
+//            }
+//            System.out.println("Het mot order");
+//        }
+        System.out.println(dao.getProductbyPID("2"));
     }
 
 }

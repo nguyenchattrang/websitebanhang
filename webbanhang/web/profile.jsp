@@ -204,7 +204,7 @@
                     </c:if>
                             <div id="changepassword" class="p-3 py-5"
                                  style="text-align: left; margin-bottom: 10px; display: none;" >
-                                <label class="labels" for="oldpassword">Old PassWord</label><input id="oldpassword"
+                                <label class="labels" for="oldpassword">Current Password</label><input id="oldpassword"
                                                                                                    name="oldpassword" type="password" class="form-control" value="">
 
                                 <label class="labels" for="newpassword">New Pasword</label><input id="newpassword"

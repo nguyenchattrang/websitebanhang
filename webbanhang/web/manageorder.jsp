@@ -1,3 +1,14 @@
+<%-- 
+    Document   : manageorder
+    Created on : Mar 12, 2022, 12:42:47 PM
+    Author     : ADMIN
+--%>
+
+<%@page import="model.Product_Variation"%>
+<%@page import="model.Order"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.ArrayList"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,10 +17,13 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Dashboard Template · Bootstrap v5.1</title>
+    <title>Manage Order</title>
 
-    <!--<link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">-->
-
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <!-- bundle của bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+       
     
 
     <!-- Bootstrap core CSS -->
@@ -31,15 +45,16 @@
         }
       }
     </style>
-
+<link href="css/dashboard.css" rel="stylesheet">
     
     <!-- Custom styles for this template -->
-    <link href="css/dashboard.css" rel="stylesheet">
+    
+    
   </head>
   <body>
     
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Kitten Cosmestic Shop</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -123,152 +138,71 @@
         </ul>
       </div>
     </nav>
-
+<%ArrayList<Order> orders=(ArrayList<Order>) request.getAttribute("orders"); %>
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group me-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-          </div>
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="calendar"></span>
-            This week
-          </button>
-        </div>
-      </div>
 
-      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 
-      <h2>Section title</h2>
+     
+<%for(Order o: orders){ %>
+        <h2>Order ID #<%=o.getId()%> Order Date:<%=o.getOrderdate()%></h2>
+        <p>Status: <%=o.getStatus()%>    <button class="btn btn-dark btn-outline-light">Change Status</button></p>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
+              <th scope="col">Product Picture</th>
+              <th scope="col">Name</th>
+              <th scope="col">Size</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Unit price</th>
+              <th scope="col">Total Price</th>
+               <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+              <%for(Product_Variation a : o.getListpv()) {%>
+            <tr>
+               <td style="width: 20%"><img style="width: 50%" src="<%=a.getPicture()%>" alt=""></td>
+              <td><%=a.getProduct().getName()%></td>
+              <td><%=a.getVar().getName()%></td>
+              <td><%=a.getAmount()%></td>
+              <td><%=a.getVar().getPrice()%></td>
+              <td><%=a.getTotal()%></td>
+              <td></td>
+              <td></td>
+            </tr>
+      <%}%>
+             <thead>
+            <tr>
+              <th scope="col">Ship name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+               <th scope="col">Address/Address2</th>
+              <th scope="col">City</th>
+              <th scope="col">Zip</th>
+               <th scope="col">Shipping</th>
+               <th scope="col">Total</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><img src="img/Kitten.png" alt=""></td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
+                <td><%=o.getShipname()%></td>
+              <td><%=o.getEmail()%></td>
+              <td><%=o.getPhone()%></td>
+               <td><%=o.getShipaddress()%> <%=o.getShipaddress2()%></td>
+              <td><%=o.getCity()%></td>
+              <td><%=o.getZip()%></td>
+              <td><%=o.getShippingfee()%></td>
+              <td><%=o.getPrice()%></td>
             </tr>
-            <tr>
-              <td>1,002</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td>layout</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>data</td>
-              <td>rich</td>
-              <td>dashboard</td>
-              <td>tabular</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>information</td>
-              <td>placeholder</td>
-              <td>illustrative</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,004</td>
-              <td>text</td>
-              <td>random</td>
-              <td>layout</td>
-              <td>dashboard</td>
-            </tr>
-            <tr>
-              <td>1,005</td>
-              <td>dashboard</td>
-              <td>irrelevant</td>
-              <td>text</td>
-              <td>placeholder</td>
-            </tr>
-            <tr>
-              <td>1,006</td>
-              <td>dashboard</td>
-              <td>illustrative</td>
-              <td>rich</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,007</td>
-              <td>placeholder</td>
-              <td>tabular</td>
-              <td>information</td>
-              <td>irrelevant</td>
-            </tr>
-            <tr>
-              <td>1,008</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
-            <tr>
-              <td>1,009</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td>layout</td>
-            </tr>
-            <tr>
-              <td>1,010</td>
-              <td>data</td>
-              <td>rich</td>
-              <td>dashboard</td>
-              <td>tabular</td>
-            </tr>
-            <tr>
-              <td>1,011</td>
-              <td>information</td>
-              <td>placeholder</td>
-              <td>illustrative</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,012</td>
-              <td>text</td>
-              <td>placeholder</td>
-              <td>layout</td>
-              <td>dashboard</td>
-            </tr>
-            <tr>
-              <td>1,013</td>
-              <td>dashboard</td>
-              <td>irrelevant</td>
-              <td>text</td>
-              <td>visual</td>
-            </tr>
-            <tr>
-              <td>1,014</td>
-              <td>dashboard</td>
-              <td>illustrative</td>
-              <td>rich</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,015</td>
-              <td>random</td>
-              <td>tabular</td>
-              <td>information</td>
-              <td>text</td>
-            </tr>
+          </tbody>
+<!
           </tbody>
         </table>
       </div>
+             <br><br><br><br><br>
+      <%}%>
     </main>
   </div>
 </div>
@@ -282,3 +216,4 @@
     <script src="js/dashboard.js"></script>
   </body>
 </html>
+

@@ -40,6 +40,14 @@
         <servlet-name>order</servlet-name>
         <servlet-class>Controller.order</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>manageproduct</servlet-name>
+        <servlet-class>Controller.manageproduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>manageupdate</servlet-name>
+        <servlet-class>Controller.manageupdate</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>home</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -79,6 +87,14 @@
     <servlet-mapping>
         <servlet-name>order</servlet-name>
         <url-pattern>/order</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>manageproduct</servlet-name>
+        <url-pattern>/manage/product</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>manageupdate</servlet-name>
+        <url-pattern>/manage/update</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

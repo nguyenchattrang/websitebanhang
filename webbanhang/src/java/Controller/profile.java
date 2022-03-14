@@ -91,14 +91,13 @@ public class profile extends HttpServlet {
             a.setZip(zip);
 //        dao.insertAccount(username, password, email, firstname, lastname, phonenumber, address1, address2, city, zip);
             dao.updateAccount(email, firstname, lastname, phonenumber, address1, address2, city, zip, a.getId());
-            response.sendRedirect("profile.jsp");
-            out.print("bbbbb");
+
         }
-        
+
         if (action.equals("changepassword")) {
             String oldpassword = request.getParameter("oldpassword");
             if (!oldpassword.equals(a.getPassword())) {
-                
+
                 request.setAttribute("message", "Wrong input old password!");
                 request.getRequestDispatcher("profile.jsp").forward(request, response);
                 return;
@@ -106,7 +105,7 @@ public class profile extends HttpServlet {
             String newpassword = request.getParameter("newpassword");
             dao.updatePassword(newpassword, a.getId());
         }
-        
+
         response.sendRedirect("profile.jsp");
     }
 

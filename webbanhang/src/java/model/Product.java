@@ -12,10 +12,38 @@ import DAL.DAO;
  * @author ADMIN
  */
 public class Product {
+
     private int id;
-     private String name;
-      private String sdesc;
-      private String longdesc;
+    private String name;
+    private String sdesc;
+    private String longdesc;
+    private int categoryid;
+
+    public int getCategoryid() {
+        return categoryid;
+    }
+
+    public void setCategoryid(int categoryid) {
+        this.categoryid = categoryid;
+    }
+
+    public int getSubcategoryid() {
+        return subcategoryid;
+    }
+
+    public void setSubcategoryid(int subcategoryid) {
+        this.subcategoryid = subcategoryid;
+    }
+
+    public int getBrandid() {
+        return brandid;
+    }
+
+    public void setBrandid(int brandid) {
+        this.brandid = brandid;
+    }
+    private int subcategoryid;
+    private int brandid;
 
     public Product() {
     }
@@ -58,18 +86,18 @@ public class Product {
     public void setLongdesc(String longdesc) {
         this.longdesc = longdesc;
     }
-public String getPicture()
-{
-    DAO dao = new DAO();
-        return dao.getPicture(""+id) ;
-    
-}
-public String[] getLowestandHighestPrice()
-{
-    DAO dao = new DAO();
-        return dao.getLowestandHighestPrice(""+id) ;
-    
-}
+
+    public String getPicture() {
+        DAO dao = new DAO();
+        return dao.getPicture("" + id);
+
+    }
+
+    public String[] getLowestandHighestPrice() {
+        DAO dao = new DAO();
+        return dao.getLowestandHighestPrice("" + id);
+
+    }
 
     @Override
     public String toString() {

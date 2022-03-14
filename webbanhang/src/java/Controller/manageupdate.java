@@ -8,20 +8,23 @@ package Controller;
 import DAL.DAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.Account;
+import model.Brand;
+import model.Category;
+import model.Picture;
+import model.Product;
+import model.SubCategory;
+import model.Variation;
 
 /**
  *
  * @author ADMIN
  */
-@WebServlet(name = "register", urlPatterns = {"/register"})
-public class register extends HttpServlet {
+public class manageupdate extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,21 +38,23 @@ public class register extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         DAO dao = new DAO();
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String email = request.getParameter("email");
-        String firstname = request.getParameter("firstname");
-        String lastname = request.getParameter("lastname");
-        String phonenumber = request.getParameter("phonenumber");
-        String address1 = request.getParameter("address1");
-        String address2 = request.getParameter("address2");
-        String city = request.getParameter("city");
-        String zip = request.getParameter("zip");       
-        dao.insertAccount(username, password, email, firstname, lastname, phonenumber, address1, address2, city, zip);
-        Account a = dao.getAccountByUsernameAndPassword(username, password);
-        HttpSession session = request.getSession();
-        session.setAttribute("user", a);
-        response.sendRedirect("home");
+        String id = request.getParameter("id");
+        Product product = dao.getProductbyPID(id);
+        ArrayList<Category> category = dao.getCategory();
+        ArrayList<SubCategory> subcategory = dao.getSubCategory();
+        ArrayList<Brand> brand = dao.getBrands();
+        ArrayList<Picture> pictures = dao.getPicturesbyId(id);
+        ArrayList<Variation> variations = dao.getVariation(id);
+        request.setAttribute("pictures", pictures);
+        request.setAttribute("variations", variations);
+        request.setAttribute("category", category);
+        request.setAttribute("subcategory", subcategory);
+        request.setAttribute("brand", brand);
+        PrintWriter out = response.getWriter();
+//        out.print(product);
+        request.setAttribute("product", product);
+        request.getRequestDispatcher("../manageproductdetails.jsp").forward(request, response);
+//  
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -64,7 +69,7 @@ public class register extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       processRequest(request, response);
     }
 
     /**
@@ -78,7 +83,18 @@ public class register extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+      
+          String action = request.getParameter("action");
+        String id = request.getParameter("id");
+        String name = request.getParameter("name");
+        String sdesc = request.getParameter("sdesc");
+        String longdesc = request.getParameter("longdesc");
+        String category = request.getParameter("category");
+        String subcategory = request.getParameter("subcategory");
+        String brand = request.getParameter("brand");
+        DAO dao = new DAO();
+        dao.updateProductSummary(name, sdesc, category, longdesc, subcategory, brand, id);
+        response.sendRedirect("update?id="+id);
     }
 
     /**

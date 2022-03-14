@@ -58,6 +58,7 @@ public class Filter extends HttpServlet {
         for (Product o : product) {
             String[] price = o.getLowestandHighestPrice();
             out.print(" <div class=\"col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-5\">\n"
+                    +" <a href=\"Productdetails?pid="+o.getId()+"\">\n"
                     + "              <div class=\"card\"> <div class=\"card-img-top\" ><img class=\"img-fluid\"\n"
                     + "                  src=\"" + o.getPicture() + "\">\n"
                     + "                </div> \n"
@@ -80,6 +81,7 @@ public class Filter extends HttpServlet {
                     + "                  </div>\n"
                     + "                </div>\n"
                     + "              </div>\n"
+                    +"</a>\n"
                     + "            </div>");
         }
     }

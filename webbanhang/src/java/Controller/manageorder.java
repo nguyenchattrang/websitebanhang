@@ -8,22 +8,21 @@ package Controller;
 import DAL.DAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.Account;
+import model.Order;
 import model.Product_Variation;
 
 /**
  *
  * @author ADMIN
  */
-public class checkout extends HttpServlet {
+@WebServlet(name = "manageorder", urlPatterns = {"/manage/order"})
+public class manageorder extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,17 +35,20 @@ public class checkout extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        ArrayList<Product_Variation> cart;
-        cart = (ArrayList<Product_Variation>) session.getAttribute("cart");
-        session.setAttribute("cart", cart);
-        if (cart == null) {
-            response.sendRedirect("cart?action=noproduct");
-            return;
-        } else {
-            request.getRequestDispatcher("checkout.jsp").forward(request, response);
+        DAO dao = new DAO();
+        ArrayList<Order> orders = dao.getOrders();
+        PrintWriter out = response.getWriter();
+         for (Order c : orders) {
+            c.setListpv(dao.getProductVariations(c.getId()));
         }
-
+//             for (Order c : orders) {
+//               for (Product_Variation d : c.getListpv()) {
+//           out.print(d);
+//        }
+//        }
+        request.setAttribute("orders", orders);
+        request.getRequestDispatcher("../manageorder.jsp").forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -75,35 +77,7 @@ public class checkout extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        DAO dao = new DAO();
-        Account user = (Account) session.getAttribute("user");
-        ArrayList<Product_Variation> products = (ArrayList<Product_Variation>) session.getAttribute("cart");
-        int total = 0;
-        for (Product_Variation o : products) {
-            total += o.getTotal();
-        }
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy H:mm:ss");
-        String date;
-        date = sdf.format(new Date());
-//   response.getWriter().print(date);
-        if (user != null) {
-            dao.insertNewOrder(products, user.getId(), user.getFirstname() + " " + user.getLastname(), user.getEmail(), user.getPhonenumber(), user.getAddress1(), user.getAddress2(), user.getCity(), user.getZip(), 2.99, total, date);
-
-        } else {
-            String firstname = request.getParameter("firstname");
-            String lastname = request.getParameter("lastname");
-            String email = request.getParameter("email");
-            String phonenumber = request.getParameter("phonenumber");
-            String address = request.getParameter("address");
-            String address2 = request.getParameter("address2");
-            String city = request.getParameter("city");
-            String zip = request.getParameter("zip");
-
-            dao.insertNewOrder(products, -1, firstname + " " + lastname, email, phonenumber, address, address2, city, zip, 2.99, total, date);
-        }
-        session.removeAttribute("cart");
-        request.getRequestDispatcher("thanks.html").forward(request, response);
+        processRequest(request, response);
     }
 
     /**
