@@ -43,6 +43,7 @@ public class category extends HttpServlet {
         } else {
             product = dao.getProductsbyCid(cid);
         }
+       
         ArrayList<Category> category = dao.getCategory();
         ArrayList<SubCategory> subcategory = dao.getSubCategory();
         ArrayList<Brand> brand = dao.getBrands();

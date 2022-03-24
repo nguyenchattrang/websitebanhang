@@ -56,6 +56,7 @@ public class cart extends HttpServlet {
             request.setAttribute("message", "You have no products in your cart");
             display(request, response);
         }
+        
     }
     
     protected void display(HttpServletRequest request, HttpServletResponse response)
@@ -110,7 +111,7 @@ public class cart extends HttpServlet {
     
     protected void AddtoCart(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        String link = request.getParameter("link");
         int varid = Integer.parseInt(request.getParameter("varid"));
         Double price = Double.parseDouble(request.getParameter("price"));
         int quantity = Integer.parseInt(request.getParameter("qty"));
@@ -140,7 +141,7 @@ public class cart extends HttpServlet {
             }
             session.setAttribute("cart", cart);
         }
-        response.sendRedirect("cart");
+        response.sendRedirect(link);
 //cart.get(varid).get.getId();
 //        PrintWriter out = response.getWriter();
 //        for (Product_Variation o : cart) {

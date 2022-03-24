@@ -109,8 +109,8 @@
                                         <span><i class="fa-solid fa-user-check"></i> Hello ${user.username}</span>
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="makeup.html">Profile</a></li>
-                                        <li><a class="dropdown-item" href="#">Wish List</a></li>
+                                        <li><a class="dropdown-item" href="profile">Profile</a></li>
+                                        <li><a class="dropdown-item" href="order">Order List</a></li>
                                          <li><a class="dropdown-item" href="login?action=logout&link=cart">Logout</a></li>
                                     </ul>
                                 </li>
@@ -438,7 +438,26 @@ row.innerHTML=response;
  }
      else if(y===2){
         
+    input = document.getElementById("form1");
+     vid=x.value;
+    console.log(x.value);
+ 
+    
+    if(y===1){
+        
    
+    $.ajax({
+    url: "cart?action=low",
+    type: 'get',
+    data:{vid:vid  },
+    async: true,
+    success: function(response) {
+        row= document.getElementById("tbrow");
+row.innerHTML=response;
+
+    }
+});
+ }
     $.ajax({
     url: "cart?action=high",
     type: 'get',

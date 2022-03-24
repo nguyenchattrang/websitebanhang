@@ -4,6 +4,7 @@
     Author     : ADMIN
 --%>
 
+<%@page import="model.Account"%>
 <%@page import="DAL.DAO"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -76,6 +77,15 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Blog</a>
                             </li>
+                            <%DAO dao =new DAO();
+                            Account a =(Account) session.getAttribute("user");
+                          if( a!=null&& dao.checkAccountRole(a.getId()))
+                          {
+                            %>
+                             <li class="nav-item">
+                                <a class="nav-link" href="manage/order">Dashboard</a>
+                            </li>
+                            <%}%>
                             <li class="nav-item dropdown">
                                 <a class="nav-link " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Pages
@@ -111,7 +121,7 @@
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><a class="dropdown-item" href="profile.jsp">Profile</a></li>
-                                        <li><a class="dropdown-item" href="#">Wish List</a></li>
+                                        <li><a class="dropdown-item" href="order">Order List</a></li>
                                          <li><a class="dropdown-item" href="login?action=logout&link=home">Logout</a></li>
                                     </ul>
                                 </li>
@@ -145,7 +155,7 @@
                                 <h5>Limited Edition Sun-Kissed Essentials Set</h5>
                                 <p>A look as easy as summer. Includes 5 full sizes + a bright train case.</p>
                                 <p class="price-top">US$35.00</p>
-                                <a href="https://www.clinique.com/product/16422/86419/gift-center/all-gifts-sets/limited-edition-sun-kissed-essentials-set" class="btn btn-outline-light btn-dark">Gift Now</a>
+                                <a href="category" class="btn btn-outline-light btn-dark">Gift Now</a>
                             </div>
                             <div class="col-sm-6 d-none d-sm-block	">
                                 <img class="img-fluid" src="img/banner5.png"  alt="...">
@@ -158,7 +168,7 @@
                                 <h5>ANTI AGING ROUTINE SET</h5>
                                 <p>VALUE ROUTINE FOR WRINKLES & DARK CIRCLES.</p>
                                 <p class="price-top">$124.00</p>
-                                <a href="https://www.laroche-posay.us/our-products/anti-aging/anti-aging-routine-set-antiagingskincareset.html" class="btn btn-outline-light btn-dark">Gift Now</a>
+                                <a href="category" class="btn btn-outline-light btn-dark">Gift Now</a>
 
                             </div>
                             <div class="col-sm-6 d-none d-sm-block">
@@ -172,7 +182,7 @@
                                 <h5>Best Sellers Jumbo Value Bundle</h5>
                                 <p>$253.30 ($298 Value!) A hydrating jumbo skincare bundle for glowing, smooth skin.</p>
                                 <p class="price-top">$253.30</p>
-                                <a href="https://www.kiehls.com/gifts-and-value-sets/gifts-for-all/best-sellers-jumbo-value-bundle/KHLB202201.html" class="btn btn-outline-light btn-dark">Gift Now</a>
+                                <a href="category" class="btn btn-outline-light btn-dark">Gift Now</a>
 
                             </div>
                             <div class="col-sm-6 d-none d-sm-block">
@@ -264,9 +274,9 @@
                             <div class="row row-item">
                                 <!--                    <a href="" class="item-a">-->
                                 <c:forEach items="${list}" var="a"  begin = "1" end = "8">
-
+                               
                                     <div  class="col-lg-3 col-md-6 item  ">
-
+                                     
                                         <img src="${a.getPicture()}" class="img-fluid" alt="...">
 
                                         <div class="product-details ">
@@ -277,28 +287,28 @@
                                                 <h6>$${price[0]}  <c:if test="${price[1]!=null}">  - $${price[1]} </c:if> </h6>
                                                 </div>
                                                 <div class="info">
-                                                    <a class="each-link" href="">
+                                                    <a class="each-link" href="Productdetails?pid=${a.id}">
                                                         <span> <i class="fa-solid fa-cart-plus"></i></span>
                                                         <p>Add to Cart</p> 
                                                     </a>
-                                                    <a class="each-link" href="">
+<!--                                                    <a class="each-link" href="">
                                                         <span><i class="fa-regular fa-heart"></i></span>
                                                         <p>Wishlist</p>   
-                                                    </a>
+                                                    </a>-->
 
 
                                                 </div>
 
                                             </div>
-
                                         </div>
+                               
 
                                         <!--</a>-->
                                 </c:forEach>
 
                             </div>
                             <div class="button">
-                                <a href="#" class="btn btn-light">View All</a>
+                                <a href="category" class="btn btn-light">View All</a>
                             </div>
                         </div>
                         <div class="sample-item container ">
@@ -310,39 +320,42 @@
                                 </div>
                             </div>
                             <div class="row row-item">
-                                <c:forEach items="${list}" var="a"  begin = "1" end = "8">
-                                    <a>
-                                        <div class="col-lg-3 col-md-6 item  ">
-                                            <a href="" class="item-a">
-                                                <img src="${a.getPicture()}" class="img-fluid" alt="...">
+                                <!--                    <a href="" class="item-a">-->
+                                <c:forEach items="${list2}" var="a"  begin = "1" end = "8">
+                               
+                                    <div  class="col-lg-3 col-md-6 item  ">
+                                     
+                                        <img src="${a.getPicture()}" class="img-fluid" alt="...">
 
-                                                <div class="product-details ">
-                                                    <h6 class="product-name">${a.name}</h6>
-                                                    <div class="short-desc">${a.sdesc}</div> 
-                                                    <div class="price">
-                                                        <c:set var="price" value="${a.getLowestandHighestPrice()}" scope="session"></c:set>
-                                                        <h6>$${price[0]}  <c:if test="${price[1]!=null}">  - $${price[1]} </c:if> </h6>
+                                        <div class="product-details ">
+                                            <h6 class="product-name">${a.name}</h6>
+                                            <div class="short-desc">${a.sdesc}</div> 
+                                            <div class="price">
+                                                <c:set var="price" value="${a.getLowestandHighestPrice()}" scope="session"></c:set>
+                                                <h6>$${price[0]}  <c:if test="${price[1]!=null}">  - $${price[1]} </c:if> </h6>
+                                                </div>
+                                                <div class="info">
+                                                    <a class="each-link" href="Productdetails?pid=${a.id}">
+                                                        <span> <i class="fa-solid fa-cart-plus"></i></span>
+                                                        <p>Add to Cart</p> 
+                                                    </a>
+<!--                                                    <a class="each-link" href="">
+                                                        <span><i class="fa-regular fa-heart"></i></span>
+                                                        <p>Wishlist</p>   
+                                                    </a>-->
 
 
-                                                        </div>
-                                                        <div class="info">
-                                                            <a class="each-link" href="">
-                                                                <span> <i class="fa-solid fa-cart-plus"></i></span>
-                                                                <p>Add to Cart</p> 
-                                                            </a>
-                                                            <a class="each-link" href="">
-                                                                <span><i class="fa-regular fa-heart"></i></span>
-                                                                <p>Wishlist</p>   
-                                                            </a>
+                                                </div>
 
-
-                                                        </div>
-
-                                                    </div>
-                                                </a>
                                             </div>
-                                    </c:forEach>
-                                    <div class="col-lg-3 col-md-6 item  ">
+                                        </div>
+                               
+
+                                        <!--</a>-->
+                                </c:forEach>
+
+                            </div>
+<!--                                    <div class="col-lg-3 col-md-6 item  ">
                                         <a href="" class="item-a">
                                             <img src="img/Kitten.png" class="img-fluid" alt="...">
                                             <div class="product-details ">
@@ -519,7 +532,7 @@
                                         </div>
                                     </a>
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="button">
                                 <a href="#" class="btn btn-light">View All</a>
                             </div>
@@ -534,7 +547,7 @@
                                 <h5>SIGN UP TO RECEIVE
                                     A FREE TOLERIANE FACE
                                     MOISTURIZER UV SAMPLE</h5>  
-                                <button class="btn btn-danger btn-outline-light"><a class="nav-link" href="#">SIGN UP</a></button>
+                                <button class="btn btn-danger btn-outline-light"><a class="nav-link" href="login">SIGN UP</a></button>
                             </div>
                         </div>
 

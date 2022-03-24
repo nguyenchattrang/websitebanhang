@@ -37,24 +37,32 @@ public class manageupdate extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
         DAO dao = new DAO();
         String id = request.getParameter("id");
-        Product product = dao.getProductbyPID(id);
-        ArrayList<Category> category = dao.getCategory();
-        ArrayList<SubCategory> subcategory = dao.getSubCategory();
-        ArrayList<Brand> brand = dao.getBrands();
-        ArrayList<Picture> pictures = dao.getPicturesbyId(id);
-        ArrayList<Variation> variations = dao.getVariation(id);
-        request.setAttribute("pictures", pictures);
-        request.setAttribute("variations", variations);
-        request.setAttribute("category", category);
-        request.setAttribute("subcategory", subcategory);
-        request.setAttribute("brand", brand);
-        PrintWriter out = response.getWriter();
+        String action = request.getParameter("action");
+        if (action != null && action.equals("delete")) {
+//            out.print(id+action);
+            dao.deleteProduct(id);
+            response.sendRedirect("product");
+        } else {
+            Product product = dao.getProductbyPID(id);
+            ArrayList<Category> category = dao.getCategory();
+            ArrayList<SubCategory> subcategory = dao.getSubCategory();
+            ArrayList<Brand> brand = dao.getBrands();
+            ArrayList<Picture> pictures = dao.getPicturesbyId(id);
+            ArrayList<Variation> variations = dao.getVariation(id);
+            request.setAttribute("pictures", pictures);
+            request.setAttribute("variations", variations);
+            request.setAttribute("category", category);
+            request.setAttribute("subcategory", subcategory);
+            request.setAttribute("brand", brand);
+
 //        out.print(product);
-        request.setAttribute("product", product);
-        request.getRequestDispatcher("../manageproductdetails.jsp").forward(request, response);
-//  
+            request.setAttribute("product", product);
+
+            request.getRequestDispatcher("../manageproductdetails.jsp").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -69,7 +77,7 @@ public class manageupdate extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       processRequest(request, response);
+        processRequest(request, response);
     }
 
     /**
@@ -83,8 +91,8 @@ public class manageupdate extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      
-          String action = request.getParameter("action");
+
+        String action = request.getParameter("action");
         String id = request.getParameter("id");
         String name = request.getParameter("name");
         String sdesc = request.getParameter("sdesc");
@@ -94,7 +102,7 @@ public class manageupdate extends HttpServlet {
         String brand = request.getParameter("brand");
         DAO dao = new DAO();
         dao.updateProductSummary(name, sdesc, category, longdesc, subcategory, brand, id);
-        response.sendRedirect("update?id="+id);
+        response.sendRedirect("update?id=" + id);
     }
 
     /**

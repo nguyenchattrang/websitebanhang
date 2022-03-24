@@ -13,18 +13,17 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.Account;
+import model.Brand;
+import model.Category;
 import model.Picture;
-import model.Product;
-import model.Rating;
+import model.SubCategory;
 import model.Variation;
 
 /**
  *
  * @author ADMIN
  */
-public class Productdetails extends HttpServlet {
+public class managecreate extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,27 +36,14 @@ public class Productdetails extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String id = (String) request.getParameter("pid");
         DAO dao = new DAO();
-        HttpSession session = request.getSession();
-        Account user = (Account) session.getAttribute("user");
-        ArrayList<Picture> pictures = dao.getPicturesbyId(id);
-        ArrayList<Rating> ratings = dao.getRatingsbyId(id);
-        Product a = dao.getSingleProduct(id);
-        ArrayList<Variation> variations = dao.getVariation(id);
-        request.setAttribute("pictures", pictures);
-        request.setAttribute("product", a);
-        request.setAttribute("variations", variations);
-        if (ratings != null) {
-            request.setAttribute("ratings", ratings);
-        }
-        if(user!=null){
-        boolean checkBeenOrder = dao.checkBeenOrder(id, user.getId());
-        boolean checkBeenComment = dao.checkBeenComment(id, user.getId());
-        request.setAttribute("checkorder", checkBeenOrder);
-        request.setAttribute("checkcomment", checkBeenComment);
-        }
-        request.getRequestDispatcher("Productdetails.jsp").forward(request, response);
+        ArrayList<Category> category = dao.getCategory();
+        ArrayList<SubCategory> subcategory = dao.getSubCategory();
+        ArrayList<Brand> brand = dao.getBrands();
+        request.setAttribute("category", category);
+        request.setAttribute("subcategory", subcategory);
+        request.setAttribute("brand", brand);
+        request.getRequestDispatcher("../managecreate.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -86,7 +72,22 @@ public class Productdetails extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        DAO dao = new DAO();
+        
+        String name = request.getParameter("name");
+        String sdesc = request.getParameter("sdesc");
+        String longdesc = request.getParameter("longdesc");
+        String category = request.getParameter("category");
+        String subcategory = request.getParameter("subcategory");
+        String brand = request.getParameter("brand");
+        String alt = request.getParameter("alt");
+        String link = request.getParameter("link");
+        String size = request.getParameter("size");
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
+        double price = Double.parseDouble(request.getParameter("price"));
+//        response.getWriter().print(name+sdesc+longdesc+category+subcategory+brand+alt+link+size+quantity+price);
+        dao.insertNewProduct(name, sdesc, longdesc, category, subcategory, brand, alt, link, size, quantity, price);
+        response.sendRedirect("product");
     }
 
     /**

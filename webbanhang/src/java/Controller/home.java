@@ -34,7 +34,9 @@ public class home extends HttpServlet {
             throws ServletException, IOException {
         DAO dao = new DAO(); 
         ArrayList<Product> product = dao.getNewProducts();
+           ArrayList<Product> product2 = dao.getBestSeller();
           request.setAttribute("list", product);
+          request.setAttribute("list2", product2);
 request.getRequestDispatcher("home.jsp").forward(request, response);
     }
 

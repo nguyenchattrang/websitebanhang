@@ -99,9 +99,11 @@ public class checkout extends HttpServlet {
             String address2 = request.getParameter("address2");
             String city = request.getParameter("city");
             String zip = request.getParameter("zip");
-
-            dao.insertNewOrder(products, -1, firstname + " " + lastname, email, phonenumber, address, address2, city, zip, 2.99, total, date);
+//            response.getWriter().print(firstname+lastname+email+phonenumber+address+address2+city+zip);
+            dao.insertNewOrder(products, 8, firstname + " " + lastname, email, phonenumber, address, address2, city, zip, 2.99, total, date);
         }
+       
+        
         session.removeAttribute("cart");
         request.getRequestDispatcher("thanks.html").forward(request, response);
     }

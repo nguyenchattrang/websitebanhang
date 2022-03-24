@@ -196,7 +196,7 @@ ArrayList<Order> orders= (ArrayList<Order>)request.getAttribute("orders");
         <div class="d-flex flex-wrap justify-content-between align-items-center pb-4">
           <div class="mt-4">
             <label class="text-muted font-weight-normal">Status:</label>
-            <div class="text-large">Delivering</div>
+            <div class="text-large"><%=a.getStatus()%></div>
             <button style="width:100px;" type="submit" placeholder="ABC" class="btn-dark btn btn-outline-light">Got it?</button>
           </div>
             <div class="text-right mt-4">

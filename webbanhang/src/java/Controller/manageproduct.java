@@ -13,7 +13,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Brand;
+import model.Category;
 import model.Product;
+import model.SubCategory;
 
 /**
  *
@@ -60,8 +63,39 @@ public class manageproduct extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         DAO dao = new DAO();
+        String action = request.getParameter("action");
         ArrayList<Product> product = dao.getProducts();
+        ArrayList<Category> category = dao.getCategory();
+        ArrayList<SubCategory> subcategory = dao.getSubCategory();
+        ArrayList<Brand> brand = dao.getBrands();
+        request.setAttribute("category", category);
+        request.setAttribute("subcategory", subcategory);
+        request.setAttribute("brand", brand);
+
+        if (action != null && action.equals("search")) {
+            response.getWriter().print(action);
+            String id = request.getParameter("id");
+            String name = request.getParameter("name");
+            String categoryid = request.getParameter("category");
+            String subcategoryid = request.getParameter("subcategory");
+            String brandid = request.getParameter("brand");
+            response.getWriter().print(id + "name " + name + "ca " + categoryid + " " + subcategoryid + " " + brandid);
+            product = dao.searchAllProduct(id, name, subcategoryid, categoryid, brandid);
+            for (Product a : product) {
+                System.out.println(a);
+            }
+            request.setAttribute("id", id);
+            request.setAttribute("name", name);
+       
+            request.setAttribute("categoryid", categoryid);
+     
+            request.setAttribute("subcategoryid", subcategoryid);
+         
+            request.setAttribute("brandid", brandid);
+        }
+
         request.setAttribute("list", product);
+
         request.getRequestDispatcher("../manageproduct.jsp").forward(request, response);
     }
 
@@ -76,7 +110,7 @@ public class manageproduct extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
     }
 
     /**

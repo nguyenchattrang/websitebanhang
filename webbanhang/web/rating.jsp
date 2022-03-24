@@ -4,6 +4,8 @@
     Author     : ADMIN
 --%>
 
+<%@page import="model.Rating"%>
+<%@page import="model.Account"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="model.Status"%>
 <%@page import="model.Product_Variation"%>
@@ -14,16 +16,16 @@
 <!doctype html>
 <html lang="en">
     <head>
+        <script src="https://kit.fontawesome.com/ca0aaad838.js" crossorigin="anonymous"></script>
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
         <meta name="generator" content="Hugo 0.88.1">
         <title>Manage Order</title>
-        
-<script src="https://kit.fontawesome.com/ca0aaad838.js" crossorigin="anonymous"></script>
-        
-<link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
+
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <!-- bundle của bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -76,7 +78,7 @@
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link active " href="order">
+                                <a class="nav-link  " href="order">
                                     <span data-feather="file"></span>
                                     Orders
                                 </a>
@@ -94,153 +96,66 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="rating">
+                                <a class="nav-link active" href="rating">
                                     <span data-feather="star"></span>
                                     Rating
                                 </a>
                             </li>  </ul>
+
                     </div>
                 </nav>
-                <%ArrayList<Order> orders = (ArrayList<Order>) request.getAttribute("orders");
-                    ArrayList<Status> status = (ArrayList<Status>) request.getAttribute("status");
+                <% ArrayList<Rating> ratings = (ArrayList<Rating>) request.getAttribute("ratings");
+
                 %>
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                    <div id="formsearch" class="my-5">
-                        <!--<h3>Search</h3>-->
-                        <form action="order"  method="get" class="requires-validation " is-validated>
-                            <div class="d-flex justify-content-between">
-                                <input style="display:none;" value="search" name="action">
-                                <div class="col-md-3" >
-                                    <label class="" for="id">Order ID </label>
-                                    <input  value="${id}" class="form-control" type="text" name="id" placeholder="Input ID to search" >
-
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="" for="name">Customer Name </label>
-                                    <input value="${name}"  class="form-control" type="text" name="name" placeholder="Input name to search" >
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="" for="address">Address </label>
-                                    <input value="${address}"  class="form-control" type="text" name="address" placeholder="Input address to search" >
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="" for="status">Status </label>
-                                    <select name="status" id="status" class="form-select" >
-                                        <option value="">
-                                            All
-                                        </option>
-
-                                        <option value="Received"  ${statusid eq "Received"?"selected":""}
-                                                >Received</option>
-                                        <option value="Delivering"  ${statusid eq "Delivering"?"selected":""}
-                                                >Delivering</option>
-                                        <option value="Completed"  ${statusid eq "Completed"?"selected":""}
-                                                >Completed</option>
-                                        <option value="Canceled"  ${statusid eq "Canceled"?"selected":""}
-                                                >Canceled</option>
-
-                                    </select>
-                                </div>
-                            </div>
-                            <input style="float:right;" id="ip1" class="btn btn-dark btn-outline-light mb-5 mt-2" type="submit" value="Search">
-                        </form>
-                    </div>
 
 
 
-                    <div style="clear: both; border: solid black 1px;">
+
+                    <div class="mt-5" style="clear: both; border: solid black 1px;">
                         <div class="table-responsive ">
                             <table class="table table-bordered table-sm table-striped" style="margin-bottom: 10px; font-size: 15px; " > 
                                 <tr>
                                     <th>
-                                        ID 
+                                        Username
                                     </th>
                                     <th >
-                                        Ship name 
+                                        Product ID
                                     </th>
                                     <th >
-                                        Ship address 
+                                        Comment
                                     </th>
                                     <th >
-                                        Ship address 2
-                                    </th>
-                                    <th >
-                                        Email 
-                                    </th>
-                                    <th >
-                                        Phone
-                                    </th>
-                                    <th >
-                                        City
-                                    </th>
-                                    <th >
-                                        Zip
-                                    </th>
-                                    <th >
-                                        Shipping fee 
-                                    </th>
-                                    <th >
-                                        Total Price 
-                                    </th>
-                                    <th >
-                                        Order Date  
-                                    </th>
-                                    <th >
-                                        Status
+                                        Rating Value
                                     </th>
                                     <th >
 
                                     </th>
 
                                 </tr>
-                                <%for (Order o : orders) {%>
+                                <%for (Rating o : ratings) {%>
                                 <tr>
                                     <td>
-                                        #<%=o.getId()%>
+                                        <%=o.getUsername()%>
                                     </td>
                                     <td >
-                                        <%=o.getShipname()%>
+                                        <a href="../Productdetails?pid=<%=o.getProductid()%>">Go To Product id = <%=o.getProductid()%></a> 
                                     </td>
                                     <td >
-                                        <%=o.getShipaddress()%>
+                                        <%=o.getComment()%>
                                     </td>
                                     <td >
-                                        <%=o.getShipaddress2()%>
+                                        <%=o.getRating()%>
                                     </td>
-                                    <td >
-                                        <%=o.getEmail()%>
-                                    </td>
-                                    <td >
-                                        <%=o.getPhone()%>
-                                    </td>
-                                    <td >
-                                        <%=o.getCity()%>
-                                    </td>
-                                    <td >
-                                        <%=o.getZip()%>
-                                    </td>
-                                    <td >
-                                        <%=o.getShippingfee()%>
-                                    </td>
-                                    <td >
-                                        <%=o.getPrice()%>
-                                    </td>
-                                    <td >
-                                        <%=o.getOrderdate()%>
-                                    </td>
-                                    <td >
-                                        <%=o.getStatus()%>
-                                    </td>
-                                    <td >
-                                        <a href="orderdetails?id=<%=o.getId()%>" class=""><i class="fa-solid fa-pen"></i> </a>
-                                        <a href="order?action=delete&id=<%=o.getId()%>" class=""><i class="fa-regular fa-trash-can"></i></a>
+                                    <td>
+                                        <a href="ratingdetails?&uid=<%=o.getUserid()%>&pid=<%=o.getProductid()%>" class=""><i class="fa-solid fa-pen"></i> </a>
+                                        <a href="rating?action=delete&uid=<%=o.getUserid()%>&pid=<%=o.getProductid()%>" class=""><i class="fa-regular fa-trash-can"></i></a>
                                     </td>
                                 </tr>
                                 <%}%>
                             </table>
                         </div> 
                     </div>
-
 
             </div>
         </div>

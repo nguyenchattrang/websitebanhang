@@ -18,6 +18,14 @@ public class Product {
     private String sdesc;
     private String longdesc;
     private int categoryid;
+    
+
+    public double getRating() {
+        DAO dao = new DAO();
+        return dao.getRatings(id);
+    }
+
+
 
     public int getCategoryid() {
         return categoryid;

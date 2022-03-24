@@ -771,10 +771,7 @@ color: white;
     padding: 0
 }
 
-.row {
-   
-    text-align: center;
-}
+
 
 .title b {
     font-size: 1.5rem
@@ -911,7 +908,7 @@ a:hover {
         opacity: 1;
       }
       #expandedImg{
-          width: 100%;
+          width: 80%;
          
       }
       
@@ -925,6 +922,7 @@ a:hover {
 /* Product */
 .product_text{
     margin-top: 50px;
+    text-align: center;
 }
 .product_text .list a{
 text-decoration: none;

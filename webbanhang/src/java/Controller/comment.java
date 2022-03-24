@@ -8,23 +8,18 @@ package Controller;
 import DAL.DAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Account;
-import model.Picture;
-import model.Product;
-import model.Rating;
-import model.Variation;
 
 /**
  *
  * @author ADMIN
  */
-public class Productdetails extends HttpServlet {
+public class comment extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,27 +32,16 @@ public class Productdetails extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String id = (String) request.getParameter("pid");
-        DAO dao = new DAO();
+        String message = request.getParameter("message");
+        String link = request.getParameter("link");
+        int star = Integer.parseInt(request.getParameter("starvalue"));
+        int id = Integer.parseInt(request.getParameter("pid"));
         HttpSession session = request.getSession();
         Account user = (Account) session.getAttribute("user");
-        ArrayList<Picture> pictures = dao.getPicturesbyId(id);
-        ArrayList<Rating> ratings = dao.getRatingsbyId(id);
-        Product a = dao.getSingleProduct(id);
-        ArrayList<Variation> variations = dao.getVariation(id);
-        request.setAttribute("pictures", pictures);
-        request.setAttribute("product", a);
-        request.setAttribute("variations", variations);
-        if (ratings != null) {
-            request.setAttribute("ratings", ratings);
-        }
-        if(user!=null){
-        boolean checkBeenOrder = dao.checkBeenOrder(id, user.getId());
-        boolean checkBeenComment = dao.checkBeenComment(id, user.getId());
-        request.setAttribute("checkorder", checkBeenOrder);
-        request.setAttribute("checkcomment", checkBeenComment);
-        }
-        request.getRequestDispatcher("Productdetails.jsp").forward(request, response);
+//        response.getWriter().print(message + star+id+user.getId()  );
+        DAO dao = new DAO();
+        dao.insertRating(user.getId(), id, message, star);
+        response.sendRedirect(link);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -17,7 +17,23 @@ public class Product_Variation {
     private Variation var;
     private String categoryname;
     private int amount;
+    private int id;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public DAO getDao() {
+        return dao;
+    }
+
+    public void setDao(DAO dao) {
+        this.dao = dao;
+    }
 
 
 

@@ -13,19 +13,22 @@ import java.util.ArrayList;
  * @author ADMIN
  */
 public class Order {
-   private int id;
-   private String shipname;
-   private String email;
-   private double price;
-   private String phone;
-   private String shipaddress;
-   private String shipaddress2;
-   private String city;
-   private String zip;
-   private String orderdate;
-   private String status;
-   private double shippingfee;
-   private ArrayList<Product_Variation> listpv;
+
+    private int id;
+    private String shipname;
+    private String email;
+    private double price;
+    private String phone;
+    private String shipaddress;
+    private String shipaddress2;
+    private String city;
+    private String zip;
+    private String orderdate;
+    private String status;
+    private double shippingfee;
+    private ArrayList<Product_Variation> listpv;
+
+
 
     public Order(int id, double price, double shippingfee, ArrayList<Product_Variation> listpv) {
         this.id = id;
@@ -121,7 +124,6 @@ public class Order {
     public void setStatus(String status) {
         this.status = status;
     }
-    
 
     public Order() {
     }
@@ -151,7 +153,7 @@ public class Order {
     }
 
     public ArrayList<Product_Variation> getListpv() {
-     
+
         return listpv;
     }
 
@@ -164,6 +166,4 @@ public class Order {
         return "Order{" + "id=" + id + ", shipname=" + shipname + ", email=" + email + ", price=" + price + ", phone=" + phone + ", shipaddress=" + shipaddress + ", shipaddress2=" + shipaddress2 + ", city=" + city + ", zip=" + zip + ", orderdate=" + orderdate + ", status=" + status + ", shippingfee=" + shippingfee + ", listpv=" + listpv + '}';
     }
 
-
-   
 }

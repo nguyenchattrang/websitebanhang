@@ -21,6 +21,15 @@ private String address1;
 private String address2;
 private String city;
 private String zip;
+private String role;
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
     public Account(int id, String username, String password, String email, String firstname, String lastname, String phonenumber, String address1, String address2, String city, String zip) {
         this.id = id;

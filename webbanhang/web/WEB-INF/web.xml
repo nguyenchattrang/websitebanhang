@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <filter>
+        <filter-name>Cookiecheck</filter-name>
+        <filter-class>Controller.Cookiecheck</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Cookiecheck</filter-name>
+        <url-pattern/>
+        <url-pattern>/home</url-pattern>
+        <url-pattern>/category</url-pattern>
+        <url-pattern>/cart</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>home</servlet-name>
         <servlet-class>Controller.home</servlet-class>
@@ -48,6 +59,42 @@
         <servlet-name>manageupdate</servlet-name>
         <servlet-class>Controller.manageupdate</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>updateproduct</servlet-name>
+        <servlet-class>Controller.updateproduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>managecreate</servlet-name>
+        <servlet-class>Controller.managecreate</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>comment</servlet-name>
+        <servlet-class>Controller.comment</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>manageorderdetails</servlet-name>
+        <servlet-class>Controller.manageorderdetails</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>manageaccount</servlet-name>
+        <servlet-class>Controller.manageaccount</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>managerating</servlet-name>
+        <servlet-class>Controller.managerating</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddNewProductToOrder</servlet-name>
+        <servlet-class>Controller.AddNewProductToOrder</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>manageaccountdetails</servlet-name>
+        <servlet-class>Controller.manageaccountdetails</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>manageratingdetails</servlet-name>
+        <servlet-class>Controller.manageratingdetails</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>home</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -95,6 +142,42 @@
     <servlet-mapping>
         <servlet-name>manageupdate</servlet-name>
         <url-pattern>/manage/update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateproduct</servlet-name>
+        <url-pattern>/updateproduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>managecreate</servlet-name>
+        <url-pattern>/manage/create</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>comment</servlet-name>
+        <url-pattern>/comment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>manageorderdetails</servlet-name>
+        <url-pattern>/manage/orderdetails</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>manageaccount</servlet-name>
+        <url-pattern>/manage/account</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>managerating</servlet-name>
+        <url-pattern>/manage/rating</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddNewProductToOrder</servlet-name>
+        <url-pattern>/addnewproducttoorder</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>manageaccountdetails</servlet-name>
+        <url-pattern>/manage/accountdetails</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>manageratingdetails</servlet-name>
+        <url-pattern>/manage/ratingdetails</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
