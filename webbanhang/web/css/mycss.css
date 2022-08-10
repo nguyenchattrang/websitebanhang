@@ -1,6 +1,6 @@
 
 body{
-    font-family:"Poppins", sans-serif;;
+  font-family: "Open Sans", sans-serif;
     background: #29212a;
 }
 .header{
@@ -11,20 +11,37 @@ body{
     height: 100vh;
  
 }
+.article .title
+{
+  background-color: #898aa687;
+  padding: 20px;
+  text-align: center;
+ 
+}
+.article .title h5
+{
+  font-weight: bold;
+}
+.article .title p
+{
+  font-weight: bold;
+  color: #FFC18E;
+  font-size: 15px;
+}
 .carousel-inner img{
     width: 80%;
 }
 .carousel-inner h5{
     color: white;
-    font: 500 2rem/1 Times New Roman,serif;
+    font: 30px;
     margin: 0 0 0.625rem;
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 30px;
 }
 .carousel-inner p{
-    color: #000;
-    font: 1rem/1.5 Roboto,sans-serif;
+    color: #ffc18e;
+    font: 20px;
     text-transform: none;
 }
 .title{
@@ -47,14 +64,15 @@ body{
    height: 60vh;
 }
 .product-details{
-    margin-bottom: 50px;
-    background: url(../img/corner.jpg) left bottom repeat-x #cd6fc2;
+    margin-bottom: 20px;
+    background: white;
     text-align: center;
     padding-top: 30px ;
     transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     -webkit-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
+   
 }
 /* .item:hover .product-details{
     padding-top: 40px 0px;
@@ -63,7 +81,7 @@ body{
    transform: scale(1.1);
 }
 .container-item{
-    background-color: #29212a;
+   background-image: linear-gradient(120deg, #7A4495, #FCE2DB);
     padding-bottom: 50px;
 
 }
@@ -100,6 +118,7 @@ footer{
     background-image:url("../img/blinking.webp");
     background-repeat:no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     padding: 50px;
 }
 .each-link{
@@ -148,15 +167,18 @@ footer{
     -o-transition: all 0.3s ease-out;
 }
 .item h6{
-    font-size: 20px;
-    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding: 0px 5px;
+    font-weight: bold;
+    color: black;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     white-space: initial;
-    height: 45px;
+    height: 30px;
 }
 .item:hover .info{
     visibility: visible;
@@ -177,10 +199,10 @@ footer{
     transition: 0.3s;
 }
 .short-desc{
-    margin-top: 20px;
+    margin-top: 30px;
     padding: 0 5px;
         font-size: 15px;
-    color: white;
+    color: black;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -300,12 +322,23 @@ color: white;
 }
 .text{
     padding: 12rem 20%;
+    height:75vh;
+ 
+}
+.text2{
+   padding-top: 10vh;
+    height:75vh;
+ 
 }
 .carousel-inner .price-top{
+    
+    padding-top: 20px;
     font-size: 28px;
     line-height: 1;
     font-weight: bold;
+    color: white;
 }
+
 .slide{
     overflow: hidden;
 }
@@ -459,6 +492,7 @@ margin-bottom: 0.5rem;
     z-index: 99;
 }
 .price{
+    margin-top: 20px;
     position: relative;
     border-bottom: 1px dotted rgba(0,0,0,.3);
   
@@ -1570,16 +1604,17 @@ div.h6,h6 {
 
 
 .btn.btn-primary {
-    background-color: purple;
+       background-color: #9DD6DF;
     color: #fff;
-    border: 1px solid purple;
+    border: 1px solid #937dc2;
     border-radius: 10px;
     font-weight: 800
 }
 
 .btn.btn-primary:hover {
-    background-color: #48b83ee8
+    background-color: #4D4C7D;
 }
+
 
 
 
@@ -1668,3 +1703,52 @@ div.h6,h6 {
         clear: both
     }
 }}
+
+.title .nav-link:hover {
+    color: white;
+}
+
+.text .desc{
+  padding: 10px;
+   background-color: #898aa687;
+   cursor: pointer;
+}
+
+.carousel-item .row
+{
+    padding: 0px 10vw;
+    
+}
+
+.card-card
+{
+	border-radius: 20px;
+        background-color: white;
+        border: solid 1px;
+        margin:0px 10px;
+        overflow: hidden;
+          transition: width 2s, height 4s;
+
+}
+.card-card:hover
+{
+    transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+  
+
+	transform: scale(1.1);
+        transition-duration: 0.3s;
+
+}
+.bigtitle h1
+{
+       border-bottom: dotted #b1e1ff 3px;
+    
+}
+.bigtitle i
+{
+        color: #b1e1ff;
+}
+
