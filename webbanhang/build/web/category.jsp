@@ -10,6 +10,10 @@
 <html lang="en">
 
     <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">   
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -127,46 +131,24 @@
 
         <div class="wrapper">
             <div class="d-flex row">
-                <div class="h3 col-8">Shop Categories</div>
+
+                <div class=" col-8  text-left">
+
+
+                    <h1 style=" font-family: 'Julius Sans One'; color: black; font-weight: bold;">
+                        Shop Categories
+                    </h1>
+
+                </div>
+
                 <div class=" views col-4 d-flex align-items-center">
-                    <span class="btn "> <span class="fas fa-th"></span>
-                        Grid view
-                    </span>
-                    <!--        <span class="btn"> <span class="fas fa-list-ul"></span>
-                            List view 
-                          </span>-->
-                    <span class="purple-label ">${list.size()}</span> Products
+                    Showing 12 products
                 </div>
             </div>
             <div class="d-lg-flex align-items-lg-center pt-2">
-                <!--      <div class="form-inline d-flex align-items-center my-2 mr-lg-2 radio bg-light border"> <label class="options">Most
-                          Popular <input type="radio" name="radio"> <span class="checkmark"></span> </label> <label
-                          class="options">Cheapest <input type="radio" name="radio" checked> <span class="checkmark"></span> </label>
-                      </div>
-                      <div class="form-inline d-flex align-items-center my-2 checkbox bg-light border mx-lg-2"> <label class="tick">Farm
-                          <input type="checkbox" checked="checked"> <span class="check"></span> </label> <span
-                          class="text-success px-2 count"> 328</span> </div>
-                      <div class="form-inline d-flex align-items-center my-2 checkbox bg-light border mx-lg-2"> <label class="tick">Bio
-                          <input type="checkbox"> <span class="check"></span> </label> <span class="text-success px-2 count"> 72</span>
-                      </div>-->
-                <!--      <div class="form-inline d-flex align-items-center my-2 checkbox bg-light border mx-lg-2"> <label
-                          class="tick">Czech republic <input type="checkbox"> <span class="check"></span> </label> <span
-                          class="border px-1 mx-2 mr-3 font-weight-bold count"> 12</span> <select name="country" id="country"
-                          class="bg-light">
-                          <option value="" hidden>Country</option>
-                          <option value="India">India</option>
-                          <option value="USA">USA</option>
-                          <option value="Uk">UK</option>
-                        </select> </div>-->
-            </div>
-            <div class="d-sm-flex align-items-sm-center pt-2 clear">
-                <div id="filter-label" class="text-muted filter-label">Applied Filters:</div>
-                <div class="purple-label font-weight-bold p-0 px-1 mx-sm-1 mx-0 my-sm-0 my-2">Choose Filter <span
-                        class=" px-1 close">&times;</span> </div>
 
             </div>
-            <div class="filters"> <button class="btn btn-dark btn-outline-light">Filter<span
-                        class="px-1 fas fa-filter"></span></button> </div>
+
             <div class=" py-md-0 py-3 mb-5">
                 <section id="sidebar">
                     <div class="py-3">
@@ -201,31 +183,31 @@
                         </form>
                     </div>
                     <div class="py-3">
-<!--                        <h5 class="font-weight-bold">Rating</h5>
-                        <form class="rating">
-                            <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span
-                                        class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span
-                                        class="fas fa-star"></span> <span class="fas fa-star"></span> <input type="checkbox"> <span
-                                        class="check"></span> </label> </div>
-                            <div class="form-inline d-flex align-items-center py-2"> <label class="tick"> <span
-                                        class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span
-                                        class="fas fa-star"></span> <span class="far fa-star px-1 text-muted"></span> <input type="checkbox">
-                                    <span class="check"></span> </label> </div>
-                            <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span
-                                        class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span
-                                        class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <input
-                                        type="checkbox"> <span class="check"></span> </label> </div>
-                            <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span
-                                        class="fas fa-star"></span> <span class="fas fa-star"></span> <span
-                                        class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <span
-                                        class="far fa-star px-1 text-muted"></span> <input type="checkbox"> <span class="check"></span>
-                                </label> </div>
-                            <div class="form-inline d-flex align-items-center py-2"> <label class="tick"> <span
-                                        class="fas fa-star"></span> <span class="far fa-star px-1 text-muted"></span> <span
-                                        class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <span
-                                        class="far fa-star px-1 text-muted"></span> <input type="checkbox"> <span class="check"></span>
-                                </label> </div>
-                        </form>-->
+                        <!--                        <h5 class="font-weight-bold">Rating</h5>
+                                                <form class="rating">
+                                                    <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span
+                                                                class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span
+                                                                class="fas fa-star"></span> <span class="fas fa-star"></span> <input type="checkbox"> <span
+                                                                class="check"></span> </label> </div>
+                                                    <div class="form-inline d-flex align-items-center py-2"> <label class="tick"> <span
+                                                                class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span
+                                                                class="fas fa-star"></span> <span class="far fa-star px-1 text-muted"></span> <input type="checkbox">
+                                                            <span class="check"></span> </label> </div>
+                                                    <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span
+                                                                class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span
+                                                                class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <input
+                                                                type="checkbox"> <span class="check"></span> </label> </div>
+                                                    <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span
+                                                                class="fas fa-star"></span> <span class="fas fa-star"></span> <span
+                                                                class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <span
+                                                                class="far fa-star px-1 text-muted"></span> <input type="checkbox"> <span class="check"></span>
+                                                        </label> </div>
+                                                    <div class="form-inline d-flex align-items-center py-2"> <label class="tick"> <span
+                                                                class="fas fa-star"></span> <span class="far fa-star px-1 text-muted"></span> <span
+                                                                class="far fa-star px-1 text-muted"></span> <span class="far fa-star px-1 text-muted"></span> <span
+                                                                class="far fa-star px-1 text-muted"></span> <input type="checkbox"> <span class="check"></span>
+                                                        </label> </div>
+                                                </form>-->
                     </div>
                 </section> <!-- Products Section -->
                 <section id="products">
@@ -233,17 +215,23 @@
                         <div class="row" id="content" >
                             <c:forEach items="${list}" var="a"  >
 
-                                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-5">
+                                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-5 wow bounceInUp">
                                     <a href="Productdetails?pid=${a.id}">
                                         <div class="card"> <div class="card-img-top" ><img class="img-fluid"
                                                                                            src="${a.getPicture()}">
                                             </div> 
                                             <div class="card-body">
                                                 <h6 class="font-weight-bold pt-1 text-center">${a.name}</h6>
+                                           
                                                 <div class="text-muted description">${a.sdesc}</div>
-                                                <div class="d-flex align-items-center product"> 
+                                              
+                                                <c:set var="price" value="${a.getLowestandHighestPrice()}"></c:set>
+                                                <div class="text-center mb-3">
+                                                                                    <div class=" btn btn-primary btn-outline-light">View</div>
+</div>
+                                                    <div class="d-flex align-items-center justify-content-center product"> 
                                                     <c:set var = "b" value = "${a.getRating()}" ></c:set>
-                                                     <c:if test="${b==0}">
+                                                    <c:if test="${b==0}">
                                                         <span class="far fa-star">No reviews</span> 
                                                     </c:if>  
                                                     <c:if test="${1<=b}">
@@ -261,35 +249,33 @@
                                                     <c:if test="${5<=b}">
                                                         <span class="far fa-star"></span> 
                                                     </c:if>  
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-between pt-3 bottom-price">
-                                                    <div class="d-flex flex-column">
-                                                        <c:set var="price" value="${a.getLowestandHighestPrice()}"></c:set>
-                                                        <div class="h6">$${price[0]}<c:if test="${price[1]!=null}"><br>$${price[1]}</c:if></div>
 
-                                                        </div>
-                                                        <div class="btn btn-dark btn-outline-light">Add To Cart</div>
-                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex align-items-center justify-content-center pt-3 bottom-price">
+                                                    <div class="text-center mb-3 h5">$${price[0]}<c:if test="${price[1]!=null}"> - $${price[1]}</c:if></div>
+
                                                 </div>
                                             </div>
-                                        </a>
-                                    </div>
+                                        </div>
+                                    </a>
+                                </div>
 
                             </c:forEach>
                         </div>
                     </div>
 
-<!--                    <div class="pagination">
-                        <a href="#">&laquo;</a>
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <a href="#">5</a>
-                        <a href="#">6</a>
-                        <a href="#">&raquo;</a>
-
-                    </div>-->
+                    <!--                    <div class="pagination">
+                                            <a href="#">&laquo;</a>
+                                            <a href="#">1</a>
+                                            <a href="#">2</a>
+                                            <a href="#">3</a>
+                                            <a href="#">4</a>
+                                            <a href="#">5</a>
+                                            <a href="#">6</a>
+                                            <a href="#">&raquo;</a>
+                    
+                                        </div>-->
                 </section>
             </div>
         </div>
@@ -330,7 +316,7 @@
                                 $.ajax({
                                     url: "Filter",
                                     type: 'get',
-                                    data: {subcategory: b, brand: d,category:x},
+                                    data: {subcategory: b, brand: d, category: x},
                                     async: true,
                                     success: function (response) {
                                         var row = document.getElementById("content");
@@ -729,6 +715,10 @@
             inputRight.addEventListener("mouseup", function () {
                 thumbRight.classList.remove("active");
             });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+        <script type="text/javascript">
+            new WOW().init();
         </script>
     </body>
 

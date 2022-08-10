@@ -294,15 +294,20 @@
 
                         <div  class=" col-lg-3 col-md-6 item wow bounceInUp animated " data-wow-delay="0.5s" >
                             <div class="card-card">
+                                  <div class="card-top-img">
                                 <img src="${a.getPicture()}"  class="img-fluid" alt="...">
-
+                                  </div>
                                 <div class="product-details ">
+                                  
                                     <h6 class="product-name">${a.name}</h6>
-                                    <div class="short-desc">${a.sdesc}</div> 
+                                      <div class="name-desc">
+                                    <div class="short-desc">${a.sdesc}</div>
+                                   
                                     <div class="price">
                                         <c:set var="price" value="${a.getLowestandHighestPrice()}" scope="session"></c:set>
                                         <h6>$${price[0]}  <c:if test="${price[1]!=null}">  - $${price[1]} </c:if> </h6>
                                         </div>
+                                         </div>
                                         <div class="bottom" >
                                             <a class="btn btn-primary " href="Productdetails?pid=${a.id}">
                                             View Product
@@ -329,8 +334,9 @@
                     <c:forEach items="${list2}" var="a"  begin = "1" end = "8">
               <div  class=" col-lg-3 col-md-6 item wow bounceInUp animated " data-wow-delay="0.5s" >
                             <div class="card-card">
+                                <div class="card-top-img">
                                 <img src="${a.getPicture()}"  class="img-fluid" alt="...">
-
+                            </div>
                                 <div class="product-details ">
                                     <h6 class="product-name">${a.name}</h6>
                                     <div class="short-desc">${a.sdesc}</div> 
